@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2019-07-29'>
+<title>The Future of Data Engineering | Chris Riccomini</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {margin: 0px;}
+h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0px;}
+h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0px; line-height: 1;}
+img {width: 100%;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+div.home {position: fixed; font-size: 15pt; padding: 10px; background-color: #333;}
+div.social {position: fixed; right: 25px; padding: 10px; font-size: 15pt;;}
+div.title {text-align: center;}
+/* TODO responsive width */
+div.main {width: 600px; margin: 25px auto;}
+span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+i.social {margin-left: 10px; color: #ccc;}
+i.home {color: white;}
+</style>
+</head>
+<body>
+
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div>
+
+<div class="main">
+
+<div class="title">
+<h1>The Future of Data Engineering</h1>
+<span class="by">Chris Riccomini on July 29, 2019</span>
+</div>
+
+<div class="article">
+<p>I have been thinking lately about where we’ve come in data engineering over the past few years, and about what the future holds for work in this area. Most of this thought has been framed in the context of what some of our teams are doing at WePay, but I believe the framework below applies more broadly, and is worth sharing.</p>
+<p><em>I presented an expanded version of this blog post for QCon SF 2019. The video of the talk is available <a href="https://www.infoq.com/presentations/data-engineering-pipelines-warehouses">here</a>.</em></p>
+<p>Data engineering’s job is to help an organization move and process data. This generally requires two different systems, broadly speaking: a data pipeline, and a data warehouse. The data pipeline is responsible for moving the data, and the data warehouse is responsible for processing it. I acknowledge that this is a bit overly simplistic. You can do processing in the pipeline itself by doing transformations between extraction and loading with batch and stream processing. The “data warehouse” now includes many storage and processing systems (Flink, Spark, Presto, Hive, BigQuery, Redshift, etc), as well as auxiliary systems such as data catalogs, job schedulers, and so on. Still, I believe the paradigm holds.</p>
+<p>The industry is working through changes in how these systems are built and managed. There are four areas, in particular, where I expect to see shifts over the next few years.</p>
+<ul>
+<li>Timeliness: From batch to realtime</li>
+<li>Connectivity: From one:one bespoke integrations to many:many</li>
+<li>Centralization: From centrally managed to self-serve tooling</li>
+<li>Automation: From manually managed to automated tooling</li>
+</ul>
+<h2 id="from-batch-to-realtime">From batch to realtime</h2>
+<p>Both data pipelines and data processing have been batch-based in the past. Data was transported between systems in batch ETL snapshots, and data was processed in a periodic cadence, which was managed by a job scheduler (Airflow, Oozie, Azkaban, Luigi).</p>
+<p>We are now shifting to both realtime data pipelines and realtime data processing systems. Change data capture systems such as Debezium, as well as the robust connector ecosystem in Kafka have made realtime data pipelines possible. Stream processing has gone through a renaissance over the last five years, and there are now more realtime data processing systems than I can keep track of. The combination of these factors means that the ingress (extraction), processing (transformation), and egress (loading) can all happen in realtime.</p>
+<p>The trade off right now seems to be in cost and complexity. If a company is getting a data warehouse off the ground, and needs an immediate 4-6 week impact, it’s a heavy load to set up a realtime pipeline. Batch is still much easier to get up and running. I expect that this will change over the next few years as tooling in the realtime area continues to mature, and cloud hosting continues to grow.</p>
+<h2 id="connectivity">Connectivity</h2>
+<p>Connecting upstream data sources to the data warehouse used to mean adding an entirely new bespoke integration for each one-to-one connection between systems. <a href="https://twitter.com/jaykreps">Jay Kreps</a>’ seminal post, <a href="https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying">The Log: What every software engineer should know about real-time data’s unifying abstraction</a>, illustrates this well:</p>
+<figure>
+<img src="assets/images/2019-07-29-future-data-engineering/datapipeline_complex.png" title="Complex data pipeline" alt="Complex data pipeline" /><figcaption aria-hidden="true">Complex data pipeline</figcaption>
+</figure>
+<p>The post also goes into detail about the future of data integration. It was written in 2013, and a lot of what is predicted and proposed is just coming to fruition today. The launch of <a href="https://www.confluent.io/">Confluent</a>, <a href="https://docs.confluent.io/current/connect/index.html">Kafka Connect</a>, and the connector ecosystem now mean that there are many viable connectors to attach to an existing Kafka data pipeline.</p>
+<p>I suspect we’ll begin to see this architectural approach take hold. Detaching ingress from egress, and both from transform means that data pipelines can begin to take advantage of <a href="https://en.wikipedia.org/wiki/Metcalfe%27s_law">Metcalfe’s law</a>, where adding a new system to the pipeline will be both cheaper and more valuable than it was before.</p>
+<p>I’m aware that the paragraphs above are quite Kafka-centric, but I want to note that this approach need not be realtime (though I believe it will be). In <a href="https://github.com/apache/airflow/">Airflow</a>, for example, you currently see a GoogleCloudStorageHook, a BigQueryHook, and then a one-to-one operator: GoogleCloudStorageToBigQueryOperator. Untangling ingest from egress fully, so that a staging area in a common format exists would go a long way in improving even batch-based ETL.</p>
+<p>This pattern will also allow us to embrace more fine-grained data systems. Once it’s cheap to attach new systems to the pipeline, the value of adding a new specialized system to the ecosystem will outweigh its cost. As a result, I expect to see more usage of niche data processing systems such as graph databases, realtime OLAP systems, search indices, and the like. The pattern will also allow for more experimentation, since attaching a new system to the pipeline and then discovering it doesn’t meet your need is much cheaper than it used to be. (This is a theme that I’ve already covered in a post from earlier this year, <a href="https://riccomini.name/kafka-escape-hatch">Kafka is your escape hatch</a>.)</p>
+<p>The cloud also adds an interesting wrinkle to the connectivity story. The dream of having your data integration story amount to a series of checkboxes in an AWS console is not yet realized, and I don’t expect that we’ll see a full integration amongst all systems in each cloud provider any time soon. The idea of full integration between cloud providers in a point-and-click UI seems even farther off. Lastly, integrating cloud and non-cloud (or even third-party hosted) systems will still require work.</p>
+<p>For these reasons, I think cloud-based third-party solutions such as <a href="https://www.stitchdata.com/">Stitch</a> will continue to be valuable. This also means that the realtime Kafka architecture that I describe above will be the most mature solution if you can afford to build and operate it.</p>
+<h2 id="automation-decentralization">Automation &amp; decentralization</h2>
+<p>The last two items in my list, automation and centralization, really go hand-in hand. Most organizations have a single data engineering and/or data warehousing team that manages the data pipeline and data warehouse. When a request comes into these teams, they need to evaluate the request across two criteria:</p>
+<ul>
+<li>What can we do (technical)</li>
+<li>What may we do (policy)</li>
+</ul>
+<p>In my experience, a centralized team will usually have some automation, but it will be mostly focused on technical automation. This is natural, as it’s more in an engineering team’s wheel house. This kind of work usually means replacing operational <a href="https://landing.google.com/sre/sre-book/chapters/eliminating-toil/">toil</a> with automation; activities like adding a new connector, setting up monitoring or data quality checks, creating a new database or table, granting permission, and so on.</p>
+<p>There is, however, a second type of toil that I believe data engineering has not yet automated: policy toil. This kind of drudgery involves making decision about who can have access to what data, how long data should be persisted, what kind of sensitive data is allowed to be in which data systems, and in which geographies data may reside. Data engineering is usually not the team that ultimately decides the answers to these questions, but they often must act as a liason or driver when finding the answers. This usually means navigating requests through other parts of the organization such as security, compliance, and legal.</p>
+<p>This kind of work is already important because of regulation such as <a href="https://eugdpr.org/">GDPR</a> and <a href="https://www.caprivacy.org/">CCPA</a>. If I add government regulation to the ongoing expansion of tech beyond traditional software companies, and into areas such as health and finance (see <a href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">Why Software Is Eating the World</a>), it is inevitable that the importance of automating policy toil will only grow.</p>
+<p>Policy automation will require focus in areas that are usually neglected in less mature data ecosystems. Tooling such as Lyft’s <a href="https://eng.lyft.com/amundsen-lyfts-data-discovery-metadata-engine-62d27254fbb9">Amundsen</a>, <a href="https://ranger.apache.org/">Apache Ranger</a>, and Google’s <a href="https://cloud.google.com/data-catalog/">Data Catalog</a> will need to be adopted. Policy enforcement such as audits, <a href="https://en.wikipedia.org/wiki/DLP">DLP</a>, sensitive data detection, retention enforcement, and access control management will all need to be fully automated.</p>
+<p>As automation matures in both the technical and policy areas, the next logical question will be: why do we need a single team to manage this? If tools are enforcing policy guidelines, and automating the data pipeline, why not empower teams around the organization to directly manage their data pipelines and data warehouses?</p>
+<p>On the data pipeline front, decentralization will mean that any team may decide to plug into the existing data pipeline, provided that they conform to (automatically enforced) technical and policy guidelines. In the data warehouse, teams will be able to create databases, datasets, data marts, and data lakes as their needs arise (some of this already exists today). This will cause a lot of complexity, confusion, and duplication, which is why tooling (such as those listed above) is such an important prerequisite to decentralization.</p>
+<p>The topic of decentralization is something that’s covered in greater detail in <a href="https://twitter.com/zhamakd">Zhamak Dehghani</a>’s post, <a href="https://martinfowler.com/articles/data-monolith-to-mesh.html">How to Move Beyond a Monolithic Data Lake to a Distributed Data Mesh</a>, and I invite you to read it. Due to the <a href="https://techbeacon.com/app-dev-testing/forget-monoliths-vs-microservices-cognitive-load-what-matters">cognitive load</a> required to manage a more complex data ecosystem, I suspect the only scalable and efficient way forward will be through automation and decentralization. This will, in some ways, look like the <a href="https://en.wikipedia.org/wiki/CI/CD">CI/CD</a> and monolith-to-micro-service migration we’ve seen play out over the past decade in the application layer.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>All of this leaves me optimistic. There’s a lot left to do, and with that a lot of opportunity. I expect data engineering to grow in organizations to meet these demands. Open source communities will continue to expand, and new projects and startups will be built. All of this should lead to massive efficiency gains for organizations as a whole, and hopefully more rigorous data management practices.</p>
+</div>
+
+</div>
+
+</body>
+</html>
