@@ -24,3 +24,6 @@ pandoc -f markdown-implicit_figures --template _templates/essays.html -Mtitle=Es
 
 # Render index page
 pandoc -f markdown-implicit_figures --template _templates/index.html index.md -o index.html
+
+# Render 404
+pandoc -f markdown-implicit_figures --template _templates/404.html 404.md -o 404.html
