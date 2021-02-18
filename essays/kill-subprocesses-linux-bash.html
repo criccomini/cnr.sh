@@ -7,26 +7,24 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"><title>Killing Subprocesses in Linux/Bash | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
-body {padding: 1.5em 0em; margin: 0em;}
-h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0em;}
-h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0em; line-height: 1;}
-img {width: 100%;}
+body {padding: 1.25em 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+h1, h2, h3, h4 {font-family: 'Roboto Condensed', sans-serif; margin: 0em; line-height: 1.25;}
+h1 {font-size: 30pt;}
 a {color: #ff0080; text-decoration: none; font-weight: bold;}
-div.home {position: fixed; font-size: 15pt; padding: .5em; background-color: #333;}
-div.social {position: fixed; font-size: 15pt; padding: .5em; right: 1.5em;}
+div.home {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; background-color: #333;}
+div.social {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; right: 1.5em;}
 div.title {text-align: center;}
-div.main {width: 38em; margin: 0em auto;}
-span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
-div.intro {width: 30em; margin: 0em auto; line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
-div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.main {width: 32em; margin: 0em auto;}
+div.intro {width: 30em; margin: 0em auto;}
 div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
-div.essays {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.essays {width: 40em; margin: 0em auto;}
 div.essays table {border-spacing: 0em 1em;}
 div.essays td.essay-date {text-align: right; width: 10em; padding-right: .5em; vertical-align: top;}
 i.social {color: #ccc;}
 i.home {color: white;}
 div.intro p:first-of-type {font-size: 22pt;}
 div.article p:first-of-type {font-size: 18pt;}
+div.article img {width: 100%;}
 @media screen and (min-width : 768px) and (max-width : 1023px){}
 @media screen and (min-width : 0px) and (max-width : 767px){
 body {padding: 0em;}
@@ -34,7 +32,8 @@ div.main {width: auto; padding: 4em 2em;}
 div.intro {width: auto; padding: 0em 3em;}
 div.home {position: absolute;}
 div.social {display: none;}
-div.article {padding-top: 2em;}
+div.essays {padding-top: 1em; width: auto; padding: 4em 2em;}
+span.by {display: block; margin-top: .5em;}
 }</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
 <script>
