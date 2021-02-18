@@ -26,7 +26,7 @@ The trade off right now seems to be in cost and complexity. If a company is gett
 ## Connectivity
 Connecting upstream data sources to the data warehouse used to mean adding an entirely new bespoke integration for each one-to-one connection between systems. [Jay Kreps](https://twitter.com/jaykreps)’ seminal post, [The Log: What every software engineer should know about real-time data’s unifying abstraction](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying), illustrates this well:
 
-![Complex data pipeline](assets/images/2019-07-29-future-data-engineering/datapipeline_complex.png "Complex data pipeline")
+![Complex data pipeline](../img/2019-07-29-future-data-engineering/datapipeline_complex.png "Complex data pipeline")
 
 The post also goes into detail about the future of data integration. It was written in 2013, and a lot of what is predicted and proposed is just coming to fruition today. The launch of [Confluent](https://www.confluent.io/), [Kafka Connect](https://docs.confluent.io/current/connect/index.html), and the connector ecosystem now mean that there are many viable connectors to attach to an existing Kafka data pipeline.
 
