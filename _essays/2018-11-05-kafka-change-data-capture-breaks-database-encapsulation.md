@@ -55,7 +55,7 @@ A similar solution can be implemented by transforming data in the CDC pipeline. 
 
 An example data warehousing pipeline follows.
 
-![source db, kafka, destination db](assets/images/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation/example-data-warehousing.png "CDC example: data warehousing")
+![source db, kafka, destination db](/img/essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation/example-data-warehousing.png "CDC example: data warehousing")
 
 A mutation in a source DB is consumed by a Kafka source connector. It's then emitted to Kafka as a fully schema'd Avro message. A Kafka sink connector then consumes the message and inserts it into the destination data warehouse DB. Transformations can be placed at any point in this flow.
 

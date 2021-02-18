@@ -21,10 +21,7 @@ You might be familiar with a story structure called the [three-act structure](ht
 
 > The three-act structure is a model used in narrative fiction that divides a story into three parts (acts), often called the Setup, the Confrontation and the Resolution.
 
-<figure>
-  <img src="{{site.baseurl}}/assets/images/2018-10-23-your-first-technical-presentation/1024px-Tension_of_three_act_structure.png" alt="my alt text"/>
-  <figcaption>Image attribution: <a href="https://commons.wikimedia.org/wiki/File:Tension_of_three_act_structure.png">UfofVincent/Wikimedia</a>.</figcaption>
-</figure>
+![Three Act Structure (UfofVincent/Wikimedia)](/img/essays/2018-10-23-your-first-technical-presentation/1024px-Tension_of_three_act_structure.png "Three Act Structure (UfofVincent/Wikimedia)")
 
 The example I provided above loosely follows this structure. Start with the setup. Describe the surrounding ecosystem. Whatever it is that the audience needs to know. Then, hit them with the problem. Now, confront the problem. Describe your attempt(s) to fix it. Lastly, you give them the resolution. The outcome, learnings, future work, etc.
 

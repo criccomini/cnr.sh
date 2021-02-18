@@ -78,7 +78,7 @@ Using <a href="https://twitter.com/apachekafka?ref_src=twsrc%5Etfw"><span class=
 <p>A similar solution can be implemented by transforming data in the CDC pipeline. The high-level approach is to emit the new data to a new topic in Kafka, and then use a transformation to consume the new data, and emit it to the old topic so that legacy consumers will continue to receive updates until they’re migrated.</p>
 <h2 id="managing-schema-migrations">Managing schema migrations</h2>
 <p>An example data warehousing pipeline follows.</p>
-<p><img src="assets/images/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation/example-data-warehousing.png" title="CDC example: data warehousing" alt="source db, kafka, destination db" /></p>
+<p><img src="/img/essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation/example-data-warehousing.png" title="CDC example: data warehousing" alt="source db, kafka, destination db" /></p>
 <p>A mutation in a source DB is consumed by a Kafka source connector. It’s then emitted to Kafka as a fully schema’d Avro message. A Kafka sink connector then consumes the message and inserts it into the destination data warehouse DB. Transformations can be placed at any point in this flow.</p>
 <ul>
 <li>Transformations can reside in the source DB through the use of triggers and materialized views.</li>
