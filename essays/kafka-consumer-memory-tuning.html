@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2012-10-05'>
+<title>Kafka Consumer Memory Tuning | Chris Riccomini</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {margin: 0px;}
+h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0px;}
+h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0px; line-height: 1;}
+img {width: 100%;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+div.home {position: fixed; font-size: 15pt; padding: 10px; background-color: #333;}
+div.social {position: fixed; right: 25px; padding: 10px; font-size: 15pt;;}
+div.title {text-align: center;}
+/* TODO responsive width */
+div.main {width: 600px; margin: 25px auto;}
+span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+i.social {margin-left: 10px; color: #ccc;}
+i.home {color: white;}
+</style>
+</head>
+<body>
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div>
+<div class="main">
+<div class="title">
+<h1>Kafka Consumer Memory Tuning</h1>
+<span class="by">Chris Riccomini on October 5, 2012</span>
+</div>
+<div class="article">
+<p>Yesterday, I had a process that was consuming a single Kafka topic. I was running it in our “staging” environment, and everything worked great. My heap space for the process was set to 512 megabytes (<code>-Xmx512M</code>). When I moved this process to production, my process would fail with an out of memory exception. I was seeing:</p>
+<pre><code>java.lang.OutOfMemoryError: Java heap space
+BoundedByteBufferReceive [ERROR] OOME with size 4800026
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+FetcherRunnable [ERROR] error in FetcherRunnable</code></pre>
+<p>Let’s review what happened, and how to fix it.</p>
+<p><strong><em>WARNING: This is for the legacy Java Kafka consumer.</em></strong></p>
+<h2 id="buffers">Buffers</h2>
+<p>When you create a Kafka consumer, you first instantiate a Kafka connector (<a href="https://github.com/kafka-dev/kafka/blob/master/core/src/main/scala/kafka/consumer/ConsumerConnector.scala">ConsumerConnector.scala</a>). Then, you create multiple threads that feed off of one or more topics:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create 4 partitions of the stream for topic &quot;test&quot;, to allow 4 threads to consume</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">List</span><span class="op">&lt;</span>KafkaStream<span class="op">&lt;</span>Message<span class="op">&gt;&gt;&gt;</span> topicMessageStreams <span class="op">=</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    consumerConnector<span class="op">.</span><span class="fu">createMessageStreams</span><span class="op">(</span>ImmutableMap<span class="op">.</span><span class="fu">of</span><span class="op">(</span><span class="st">&quot;test&quot;</span><span class="op">,</span> <span class="dv">4</span><span class="op">));</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span>KafkaStream<span class="op">&lt;</span>Message<span class="op">&gt;&gt;</span> streams <span class="op">=</span> topicMessageStreams<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="st">&quot;test&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>Internally, Kafka creates a buffer for each thread attached to the ConsumerConnector. In this case, there are four threads, and therefore four buffers. These buffers, which are queues, are populated asynchronously until they are “full”. When your code reads from a stream, Kafka dequeues from the stream/thread’s queue, and gives you a message.</p>
+<h2 id="tuning-memory-usage">Tuning memory usage</h2>
+<p>Two important questions arise from this:</p>
+<ul>
+<li>When are the queues full?</li>
+<li>What are the queues populated with?</li>
+</ul>
+<p>A queue is full when it reaches the configured maximum queue size (queuedchunks.max). That is, if queuedchunks.max=10, then the queue will be full when 10 objects are in it.</p>
+<p>This leads me to question number two: What are these objects that the queue is populated with? It turns out, <em>they are not messages</em>. Instead, they are fetched byte buffers that contain <em>multiple messages</em>. The size of these byte buffers is determined by the configuration parameter: fetch.size.</p>
+<p>So, to calculate how much memory your consumer is going to take, you have to use this formula:</p>
+<pre><code>(number of consumer threads) * (queuedchunks.max) * (fetch.size)</code></pre>
+<p>For example, if you have 24 threads, a max queue size of 10, and a fetch.size of 1.2 megabytes, your consumer is going to take 288 megabytes of heap space (24 threads * 10 fetches * 1.2 megabytes/fetch) if all queues are full.</p>
+<p>If you run out of space, you have a few options: increase heap space, reduce your consumer threads, or lower your fetch size or max queue size. Obviously, different tunings have different affects on your throughput. With fewer buffers, or fewer fetches per queue, you might negatively impact your throughput.</p>
+<h2 id="what-happened-to-my-process">What happened to my process?</h2>
+<p>The number of threads in my process was dependent on how many partitions the topic had that I was consuming from. When I moved from staging to production, the Kafka cluster I was consuming from had far more brokers, and far more partitions per topic. As a result, the memory footprint of my process drastically changed. I went from 22 threads to 32, which changed my heap usage from 264 megabytes to 384 megabytes. This was enough to set my process’ total memory usage over 512 megabytes, which caused the out of memory exceptions.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2018-11-19'>
+<title>Minimum viable infrastructure | Chris Riccomini</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {margin: 0px;}
+h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0px;}
+h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0px; line-height: 1;}
+img {width: 100%;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+div.home {position: fixed; font-size: 15pt; padding: 10px; background-color: #333;}
+div.social {position: fixed; right: 25px; padding: 10px; font-size: 15pt;;}
+div.title {text-align: center;}
+/* TODO responsive width */
+div.main {width: 600px; margin: 25px auto;}
+span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+i.social {margin-left: 10px; color: #ccc;}
+i.home {color: white;}
+</style>
+</head>
+<body>
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div>
+<div class="main">
+<div class="title">
+<h1>Minimum viable infrastructure</h1>
+<span class="by">Chris Riccomini on November 19, 2018</span>
+</div>
+<div class="article">
+<p>We’ve been discussing building some new infrastructure at work. The project involves writing some fresh code and interfacing with some other systems that we’ve never used before. There are a lot of unknowns. During a discussion about the project, I found myself making the statement, <strong>“Your goal is to build the smallest amount of the system while still providing value to at least one user.”</strong></p>
+<p>This is not a new idea. We see this pattern all over the place in software development. The term <a href="https://en.wikipedia.org/wiki/Program_optimization#When_to_optimize">premature optimization</a>, was coined by Donald Knuth in 1974.</p>
+<blockquote>
+<p>We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%. </p>
+</blockquote>
+<p>The trick here is knowing which 3% to implement. If you don’t know, the easiest way to find out is to run your code with no optimization and start fixing the slowest parts of the code first. This is risky, though. If the code is part of a critical path, slow code might be intolerable. So, you need to be selective about which users you start with. This combination of user selectivity and limiting implementation scope is well documented in the <a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimum viable product</a> philosophy.</p>
+<blockquote>
+<p>A minimum viable product has just those core features sufficient to deploy the product, and no more. Developers typically deploy the product to a subset of possible customers - such as early adopters thought to be more forgiving, more likely to give feedback, and able to grasp a product vision from an early prototype or marketing information. This strategy targets avoiding building products that customers do not want and seeks to maximize information about the customer per amount of money spent.</p>
+</blockquote>
+<p>Build the least amount of the product, be selective of your users, and gather as much information as possible.</p>
+<p>How does this approach look when developing new infrastructure? A good place to start is with the first use case. An ideal first user is one who is either not on the critical path of the application or whose usage can be <a href="https://martinfowler.com/articles/feature-toggles.html">feature flagged</a>. Removing your infrastructure from the critical path should be obviously important since it will limit the impact of a failure should things go wrong.</p>
+<p>The user should also derive real value from your software. This should go without saying. There might be an intermediate stage where you <a href="https://launchdarkly.com/blog/why-leading-companies-dark-launch/">dark launch</a>, but the final first milestone that’s shipped to production should solve a real problem.</p>
+<p>Lastly, the user should require a minimum set of features in your software. This is a big one. Doing this right means you’ll do less (useless) work. Limiting the feature set also means you’ll have to make fewer architectural decisions, which means more design flexibility going forward. The more decisions that are made, the harder it’s going to be to change them going forward. This is especially true in areas where data persistence is concerned. If you’re in a low information state, giving yourself more flexibility is key.</p>
+<p>This concept can be extended beyond building a single piece of infrastructure, too. I came across a <a href="https://speakerdeck.com/nzoschke/minimum-viable-infrastructure">talk</a> and <a href="https://nzoschke.github.io/mvi/">blog post</a> by <a href="https://twitter.com/nzoschke">Noah Zoschke</a> that discuss minimum viable infrastructure at the architectural level: what are the minimum pieces of infrastructure that you need to build the product that you want to build? This is an important question to ask, and I think we infrastructure developers would benefit from the lessons learned by our product counterparts.</p>
+</div>
+</div>
+</body>
+</html>

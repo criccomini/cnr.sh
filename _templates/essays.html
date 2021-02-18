@@ -22,34 +22,31 @@ span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
 div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
 i.social {margin-left: 10px; color: #ccc;}
 i.home {color: white;}
+li {margin-bottom: 10px;}
+ul {list-style-type: none;}
 </style>
 </head>
 <body>
-
 <div class="home">
 <a href="/"><i class="home fas fa-home"></i></a>
 </div>
-
 <div class="social">
 <a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
 </div>
-
 <div class="main">
-
 <div class="title">
 <h1>$title$</h1>
 <span class="by">Chris Riccomini</span>
 </div>
-
 <div class="article">
 <ul>
 $for(essay)$
-<li><a href="/essays/$essay.dir$">$essay.title$</a> ($essay.date$)</li>
+<li>
+<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">$essay.date$</span> <a href="/essays/$essay.dir$">$essay.title$</a>
+</li>
 $endfor$
 </ul>
 </div>
-
 </div>
-
 </body>
 </html>

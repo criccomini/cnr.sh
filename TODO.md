@@ -2,4 +2,7 @@
 - [ ] Responsive design for mobile
 - [ ] Custom 404
 - [ ] Header/footer includes
+- [ ] Migrate mailing list subscribers from mail chimp to tinyletter
+- [ ] Add Google analytics
+- [ ] Import old posts
 - [x] Add essays index page

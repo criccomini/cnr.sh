@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2019-02-04'>
+<title>Managing Kafka topic configuration | Chris Riccomini</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {margin: 0px;}
+h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0px;}
+h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0px; line-height: 1;}
+img {width: 100%;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+div.home {position: fixed; font-size: 15pt; padding: 10px; background-color: #333;}
+div.social {position: fixed; right: 25px; padding: 10px; font-size: 15pt;;}
+div.title {text-align: center;}
+/* TODO responsive width */
+div.main {width: 600px; margin: 25px auto;}
+span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+i.social {margin-left: 10px; color: #ccc;}
+i.home {color: white;}
+</style>
+</head>
+<body>
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div>
+<div class="main">
+<div class="title">
+<h1>Managing Kafka topic configuration</h1>
+<span class="by">Chris Riccomini on February 4, 2019</span>
+</div>
+<div class="article">
+<p>The lack of tooling available for managing Kafka topic configuration has been in the back of my mind for a while. It seems like a fairly obvious need, but there doesn’t appear to be much available. Unsurprisingly, I’m not the only person to recognize this need:</p>
+<center>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+Even better, add a database to store topic and config info as a source of truth.<br><br>And then open source it. One of the big missing pieces is the ability to manage SoT information across multiple clusters.
+</p>
+— Todd Palino ツ (<span class="citation" data-cites="bonkoif">@bonkoif</span>) <a href="https://twitter.com/bonkoif/status/1090784183025364992?ref_src=twsrc%5Etfw">January 31, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+<p>In this post, I’m going to take a look at Kafka’s various configuration needs, and what a topic configuration management tool might look like.</p>
+<p>Kafka is a large beast, and has a fair amount of configuration to be managed across a number of different systems. These configurations fall into quite a few categories:</p>
+<ul>
+<li><strong>Broker configuration</strong><br />
+Ports, ZooKeeper connection, topic defaults, etc.</li>
+<li><strong>Client configuration</strong><br />
+Producer and consumer timeouts, encoder/decoder, etc.</li>
+<li><strong>Topic configuration</strong><br />
+Security ACLs, partition count, etc.</li>
+<li><strong>Schema configuration</strong><br />
+Key/value schema, compatibility level, partition key, etc.</li>
+</ul>
+<p>Now, some observations. First, SREs have gotten pretty good at managing server and client configuration, so I don’t think it’s worth spending a lot of time here. Tools like <a href="https://www.saltstack.com/">Salt</a>, <a href="https://www.ansible.com/">Ansible</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>, <a href="https://www.terraform.io/">Terraform</a> and others can all help get a server or client off the ground with the appropriate configuration.</p>
+<p>I also deliberately left out a bunch of the surrounding ecosystem. <a href="https://docs.confluent.io/current/kafka-rest/docs/index.html">REST proxy</a> and <a href="https://docs.confluent.io/current/schema-registry/docs/index.html">schema registry</a> need some configuration, but they look fairly similar to the way you’d handle broker configuration. <a href="https://docs.confluent.io/current/connect/index.html">Kafka connect</a>, on the other hand, is a fairly unique system that <a href="https://multithreaded.stitchfix.com/blog/2018/09/05/datahighway/">requires some thought</a> when it comes to configuration. I’m leaving that aside, as I think it’s worth its own post.</p>
+<p>This leaves us with topic and schema configuration, which is where I want to focus. I believe the best place to start for ideas is to take a look at the needs of a traditional RDBMS:</p>
+<ul>
+<li><strong>DB server configuration</strong><br />
+Folder paths, timeouts, packet sizes, etc.</li>
+<li><strong>DB client configuration</strong><br />
+Timeouts, user/password, etc.</li>
+<li><strong>DDL</strong><br />
+Table schema, partitioning, indexing, etc.</li>
+<li><strong>DML</strong><br />
+INSERT, UPDATE, DELETE</li>
+</ul>
+<p>The Kafka configuration use cases map pretty clearly to the RDBMS space. The server and client configurations are 1:1. Kafka’s topic and schema management stuff maps to DDL. Interestingly, looking at RDBMS, something non-obvious gets exposed: the idea of running DML migrations to insert/delete specific messages.</p>
+<p>The best place to look is how traditional databases manage DDL and DML. The space is rich with tooling to solve these issues. A few examples are <a href="https://www.liquibase.org/">Liquibase</a>, <a href="https://flywaydb.org/">Flyway</a>, and <a href="https://alembic.sqlalchemy.org/en/latest/">Alembic</a>. There are a lot more, but they tend to look fairly similar. These tools usually comprise:</p>
+<ul>
+<li>A language for defining schema and configuration (SQL, YAML, XML, JSON, etc).</li>
+<li>A file structure to define a sequence of migrations that are run one after the next. Usually, this is just a list of files with checksums or ID numbers to identify and order them.</li>
+<li>A persistence mechanism for tracking which migrations have already been run on a DB (usually stored in a table).</li>
+<li>A set of tools to execute migrations, check status, roll back, etc.</li>
+</ul>
+<p>Borrowing these ideas and mapping them into the Kafka space would work fairly well. The schema language would just be Avro (or whatever serialization format you’re using). The configs can be defined using the key/value pairs that Kafka already defines as part of its configuration. All of this could be stored in a file structure that orders changes. Lastly, a topic could be use for persistence to track the migrations that have already executed, and a set of CLI tools very similar to those in Liquibase or Flyway could be written to run the commands. The tools could speak to the brokers via the <a href="https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html">AdminClient</a> or directly to the schema registry as needed.</p>
+<p>Topic partition assignments could even be managed this way. When a topic is created, partition assignments can be set. Future partition migrations could happen via configuration changes that are tracked in <a href="https://en.wikipedia.org/wiki/Version_control">VCS</a> and executed in the tool.</p>
+<p>It would also be interesting to support DML-like features such as inserting or deleting messages into specific topics. I’ve seen this need several times, and it usually ends with SREs running a one-off script, or using the <a href="https://kafka.apache.org/quickstart#quickstart_send">kafka-console-producer.sh</a> to get messages where they need to be. Having these changes revision controlled and tracked as part of the topic’s configuration would be quite useful.</p>
+<p>Most companies seem to solve these problems in house, and I haven’t seen much tooling make its way into the open source ecosystem. If you’re aware of any, please let me know. If not, perhaps this post will inspire a new tool set for Kafka topic configuration management.</p>
+<h2 id="update">Update</h2>
+<p>Some great conversation popped up on Twitter. Here a list of tools that exist in this area:</p>
+<ul>
+<li><a href="https://homeaway.github.io/stream-registry/">Stream Registry</a></li>
+<li><a href="https://github.com/simplesteph/kafka-security-manager">Kafka Security Manager</a></li>
+<li><a href="https://github.com/kafkawize/kafkawize">Kafkawize</a></li>
+<li><a href="https://github.com/Mongey/terraform-provider-kafka#kafka_topic">Terraform Kafka Provider</a></li>
+<li><a href="https://github.com/teslamotors/kafka-helmsman/tree/master/kafka_topic_enforcer">Kafka Helmsman</a></li>
+<li><a href="https://github.com/segmentio/topicctl">Topicctl</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
