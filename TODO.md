@@ -4,5 +4,6 @@
 - [ ] Header/footer includes
 - [ ] Migrate mailing list subscribers from mail chimp to tinyletter
 - [ ] Add Google analytics
-- [ ] Import old posts
+- [x] Import old posts
 - [x] Add essays index page
+- [x] Add README.md
