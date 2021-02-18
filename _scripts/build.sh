@@ -21,3 +21,6 @@ done
 
 # Render essays index page
 pandoc -f markdown-implicit_figures --template _templates/essays.html -Mtitle=Essays --metadata-file=_build/essays.yaml -o essays/index.html < /dev/null
+
+# Render index page
+pandoc -f markdown-implicit_figures --template _templates/index.html index.md -o index.html

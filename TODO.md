@@ -1,10 +1,10 @@
 - [ ] Add image zoom javascript
-- [ ] Responsive design for mobile
 - [ ] Custom 404
-- [ ] Header/footer includes
 - [ ] Migrate mailing list subscribers from mail chimp to tinyletter
 - [ ] Add newsletter signup at bottom of essay page
 - [ ] Add social card headers
+- [x] CSS, link, meta, js includes
+- [x] Responsive design for mobile
 - [x] Add Google analytics
 - [x] Import old posts
 - [x] Add essays index page

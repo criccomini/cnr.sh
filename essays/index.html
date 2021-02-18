@@ -3,117 +3,148 @@
 <head>
 <meta charset="utf-8">
 <meta name="date" content=''>
-<title>Essays | Chris Riccomini</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"><title>Essays | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
-body {margin: 0px;}
-h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0px;}
-h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0px; line-height: 1;}
+body {padding: 1.5em 0em; margin: 0em;}
+h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0em;}
+h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0em; line-height: 1;}
 img {width: 100%;}
 a {color: #ff0080; text-decoration: none; font-weight: bold;}
-div.home {position: fixed; font-size: 15pt; padding: 10px; background-color: #333;}
-div.social {position: fixed; right: 25px; padding: 10px; font-size: 15pt;;}
+div.home {position: fixed; font-size: 15pt; padding: .5em; background-color: #333;}
+div.social {position: fixed; font-size: 15pt; padding: .5em; right: 1.5em;}
 div.title {text-align: center;}
-/* TODO responsive width */
-div.main {width: 600px; margin: 25px auto;}
+div.main {width: 38em; margin: 0em auto;}
 span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+div.intro {width: 30em; margin: 0em auto; line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
 div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
-i.social {margin-left: 10px; color: #ccc;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+div.essays {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.essays table {border-spacing: 0em 1em;}
+div.essays td.essay-date {text-align: right; width: 10em; padding-right: .5em; vertical-align: top;}
+i.social {color: #ccc;}
 i.home {color: white;}
-li {margin-bottom: 10px;}
-ul {list-style-type: none;}
-</style>
+div.intro p:first-of-type {font-size: 22pt;}
+div.article p:first-of-type {font-size: 18pt;}
+@media screen and (min-width : 768px) and (max-width : 1023px){}
+@media screen and (min-width : 0px) and (max-width : 767px){
+body {padding: 0em;}
+div.main {width: auto; padding: 4em 2em;}
+div.intro {width: auto; padding: 0em 3em;}
+div.home {position: absolute;}
+div.social {display: none;}
+div.article {padding-top: 2em;}
+}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-3R91BN0RW0');
-</script>
-</head>
+</script></head>
 <body>
 <div class="home">
 <a href="/"><i class="home fas fa-home"></i></a>
 </div>
 <div class="social">
 <a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
-</div>
-<div class="main">
+</div><div class="main">
 <div class="title">
 <h1>Essays</h1>
 <span class="by">Chris Riccomini</span>
 </div>
-<div class="article">
-<ul>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">July 29, 2019</span> <a href="/essays/future-data-engineering">The Future of Data Engineering</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">February 19, 2019</span> <a href="/essays/yes-you-still-need-qa-team-not-for-writing-tests">Yes, you still need a QA team (but not for writing your tests)</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">February 4, 2019</span> <a href="/essays/managing-kafka-topic-configuration">Managing Kafka topic configuration</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">January 22, 2019</span> <a href="/essays/kafka-escape-hatch">Kafka is your escape hatch</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">January 15, 2019</span> <a href="/essays/research-cell-animal-human-software-simulation-speed-up-experimentation">Research in cell, animal, and human software simulation can speed up experimentation</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">November 27, 2018</span> <a href="/essays/in-defense-of-design-documents">In defense of design documents</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">November 19, 2018</span> <a href="/essays/minimum-viable-infrastructure">Minimum viable infrastructure</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">November 12, 2018</span> <a href="/essays/dont-tell-people-what-to-do-ask-them-how-to-do-it">Don’t tell people what to do, ask them how to do it</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">November 5, 2018</span> <a href="/essays/kafka-change-data-capture-breaks-database-encapsulation">Kafka change data capture breaks database encapsulation</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">October 29, 2018</span> <a href="/essays/models-microservices-should-be-using-same-continuous-delivery-stack">Models and microservices should be running on the same continuous delivery stack</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">October 23, 2018</span> <a href="/essays/your-first-technical-presentation">Your First Technical Presentation</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">November 11, 2017</span> <a href="/essays/trust-but-automate">Trust, but automate</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">August 29, 2017</span> <a href="/essays/how-paint-bike-shed-kafka-topic-naming-conventions">How to paint a bike shed: Kafka topic naming conventions</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">August 21, 2017</span> <a href="/essays/choosing-where-to-work">Choosing Where to Work</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">August 14, 2017</span> <a href="/essays/one-big-cluster-many-small-ones">One big cluster, or many small ones?</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">August 7, 2017</span> <a href="/essays/build-kafka-connector-source">So, you want to build a Kafka Connector? Source edition.</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">June 14, 2013</span> <a href="/essays/yarn-with-cgroups">Using YARN with Cgroups</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">October 22, 2012</span> <a href="/essays/tech-exits">Tech exits</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">October 5, 2012</span> <a href="/essays/kafka-consumer-memory-tuning">Kafka Consumer Memory Tuning</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">September 29, 2012</span> <a href="/essays/streaming-live-sports-schedule-scores-stats-api">Schedules &amp; Scores API for Streaming Live Sports Stats</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">September 25, 2012</span> <a href="/essays/kill-subprocesses-linux-bash">Killing Subprocesses in Linux/Bash</a>
-</li>
-<li>
-<span style="position: absolute; margin-left: -225px; color: #333; text-align: right; width: 200px;">November 13, 2009</span> <a href="/essays/sort-reducer-input-value-hadoop">Sorting Reducer Input Values in Hadoop</a>
-</li>
-</ul>
+<div class="essays">
+<table>
+<tr>
+<td class="essay-date">July 29, 2019</td>
+<td><a href="/essays/future-data-engineering">The Future of Data Engineering</a></td>
+</tr>
+<tr>
+<td class="essay-date">February 19, 2019</td>
+<td><a href="/essays/yes-you-still-need-qa-team-not-for-writing-tests">Yes, you still need a QA team (but not for writing your tests)</a></td>
+</tr>
+<tr>
+<td class="essay-date">February 4, 2019</td>
+<td><a href="/essays/managing-kafka-topic-configuration">Managing Kafka topic configuration</a></td>
+</tr>
+<tr>
+<td class="essay-date">January 22, 2019</td>
+<td><a href="/essays/kafka-escape-hatch">Kafka is your escape hatch</a></td>
+</tr>
+<tr>
+<td class="essay-date">January 15, 2019</td>
+<td><a href="/essays/research-cell-animal-human-software-simulation-speed-up-experimentation">Research in cell, animal, and human software simulation can speed up experimentation</a></td>
+</tr>
+<tr>
+<td class="essay-date">November 27, 2018</td>
+<td><a href="/essays/in-defense-of-design-documents">In defense of design documents</a></td>
+</tr>
+<tr>
+<td class="essay-date">November 19, 2018</td>
+<td><a href="/essays/minimum-viable-infrastructure">Minimum viable infrastructure</a></td>
+</tr>
+<tr>
+<td class="essay-date">November 12, 2018</td>
+<td><a href="/essays/dont-tell-people-what-to-do-ask-them-how-to-do-it">Don’t tell people what to do, ask them how to do it</a></td>
+</tr>
+<tr>
+<td class="essay-date">November 5, 2018</td>
+<td><a href="/essays/kafka-change-data-capture-breaks-database-encapsulation">Kafka change data capture breaks database encapsulation</a></td>
+</tr>
+<tr>
+<td class="essay-date">October 29, 2018</td>
+<td><a href="/essays/models-microservices-should-be-using-same-continuous-delivery-stack">Models and microservices should be running on the same continuous delivery stack</a></td>
+</tr>
+<tr>
+<td class="essay-date">October 23, 2018</td>
+<td><a href="/essays/your-first-technical-presentation">Your First Technical Presentation</a></td>
+</tr>
+<tr>
+<td class="essay-date">November 11, 2017</td>
+<td><a href="/essays/trust-but-automate">Trust, but automate</a></td>
+</tr>
+<tr>
+<td class="essay-date">August 29, 2017</td>
+<td><a href="/essays/how-paint-bike-shed-kafka-topic-naming-conventions">How to paint a bike shed: Kafka topic naming conventions</a></td>
+</tr>
+<tr>
+<td class="essay-date">August 21, 2017</td>
+<td><a href="/essays/choosing-where-to-work">Choosing Where to Work</a></td>
+</tr>
+<tr>
+<td class="essay-date">August 14, 2017</td>
+<td><a href="/essays/one-big-cluster-many-small-ones">One big cluster, or many small ones?</a></td>
+</tr>
+<tr>
+<td class="essay-date">August 7, 2017</td>
+<td><a href="/essays/build-kafka-connector-source">So, you want to build a Kafka Connector? Source edition.</a></td>
+</tr>
+<tr>
+<td class="essay-date">June 14, 2013</td>
+<td><a href="/essays/yarn-with-cgroups">Using YARN with Cgroups</a></td>
+</tr>
+<tr>
+<td class="essay-date">October 22, 2012</td>
+<td><a href="/essays/tech-exits">Tech exits</a></td>
+</tr>
+<tr>
+<td class="essay-date">October 5, 2012</td>
+<td><a href="/essays/kafka-consumer-memory-tuning">Kafka Consumer Memory Tuning</a></td>
+</tr>
+<tr>
+<td class="essay-date">September 29, 2012</td>
+<td><a href="/essays/streaming-live-sports-schedule-scores-stats-api">Schedules &amp; Scores API for Streaming Live Sports Stats</a></td>
+</tr>
+<tr>
+<td class="essay-date">September 25, 2012</td>
+<td><a href="/essays/kill-subprocesses-linux-bash">Killing Subprocesses in Linux/Bash</a></td>
+</tr>
+<tr>
+<td class="essay-date">November 13, 2009</td>
+<td><a href="/essays/sort-reducer-input-value-hadoop">Sorting Reducer Input Values in Hadoop</a></td>
+</tr>
+</table>
 </div>
 </div>
 </body>

@@ -3,43 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="date" content='2019-07-29'>
-<title>The Future of Data Engineering | Chris Riccomini</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"><title>The Future of Data Engineering | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
-body {margin: 0px;}
-h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0px;}
-h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0px; line-height: 1;}
+body {padding: 1.5em 0em; margin: 0em;}
+h1 {font-family: 'Roboto Condensed', sans-serif; font-size: 30pt; margin: 0em;}
+h2 {font-family: 'Roboto Condensed', sans-serif; font-size: 20pt; margin: 0em; line-height: 1;}
 img {width: 100%;}
 a {color: #ff0080; text-decoration: none; font-weight: bold;}
-div.home {position: fixed; font-size: 15pt; padding: 10px; background-color: #333;}
-div.social {position: fixed; right: 25px; padding: 10px; font-size: 15pt;;}
+div.home {position: fixed; font-size: 15pt; padding: .5em; background-color: #333;}
+div.social {position: fixed; font-size: 15pt; padding: .5em; right: 1.5em;}
 div.title {text-align: center;}
-/* TODO responsive width */
-div.main {width: 600px; margin: 25px auto;}
+div.main {width: 38em; margin: 0em auto;}
 span.by {font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+div.intro {width: 30em; margin: 0em auto; line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
 div.article {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
 div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
-i.social {margin-left: 10px; color: #ccc;}
+div.essays {line-height: 1.75; font-family: 'Lora', serif; font-size: 14pt;}
+div.essays table {border-spacing: 0em 1em;}
+div.essays td.essay-date {text-align: right; width: 10em; padding-right: .5em; vertical-align: top;}
+i.social {color: #ccc;}
 i.home {color: white;}
-</style>
+div.intro p:first-of-type {font-size: 22pt;}
+div.article p:first-of-type {font-size: 18pt;}
+@media screen and (min-width : 768px) and (max-width : 1023px){}
+@media screen and (min-width : 0px) and (max-width : 767px){
+body {padding: 0em;}
+div.main {width: auto; padding: 4em 2em;}
+div.intro {width: auto; padding: 0em 3em;}
+div.home {position: absolute;}
+div.social {display: none;}
+div.article {padding-top: 2em;}
+}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-3R91BN0RW0');
-</script>
-</head>
+</script></head>
 <body>
 <div class="home">
 <a href="/"><i class="home fas fa-home"></i></a>
 </div>
 <div class="social">
 <a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
-</div>
-<div class="main">
+</div><div class="main">
 <div class="title">
 <h1>The Future of Data Engineering</h1>
 <span class="by">Chris Riccomini on July 29, 2019</span>
