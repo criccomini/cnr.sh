@@ -3,9 +3,9 @@
 - [ ] Custom 404
 - [ ] Header/footer includes
 - [ ] Migrate mailing list subscribers from mail chimp to tinyletter
-- [ ] Add Google analytics
 - [ ] Add newsletter signup at bottom of essay page
 - [ ] Add social card headers
+- [x] Add Google analytics
 - [x] Import old posts
 - [x] Add essays index page
 - [x] Add README.md
