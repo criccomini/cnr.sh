@@ -20,7 +20,10 @@ ${ nav.html() }
 $for(essay)$
 <tr>
 <td class="essay-date">$essay.date$</td>
-<td><a href="/essays/$essay.dir$">$essay.title$</a></td>
+<td>
+<a href="/essays/$essay.dir$">$essay.title$</a>
+<span class="essay-date">$essay.date$</span>
+</td>
 </tr>
 $endfor$
 </table>
