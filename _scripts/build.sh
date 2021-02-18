@@ -20,4 +20,4 @@ for ESSAY_MD in $(ls -r _essays); do
 done
 
 # Render essays index page
-pandoc -f markdown-implicit_figures --template _templates/essays.html -Mtitle=Essays --metadata-file=_build/essays.yaml -o essays.html < /dev/null
+pandoc -f markdown-implicit_figures --template _templates/essays.html -Mtitle=Essays --metadata-file=_build/essays.yaml -o essays/index.html < /dev/null
