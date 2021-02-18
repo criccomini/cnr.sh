@@ -1,6 +1,6 @@
 ---
 title: Choosing Where to Work
-date: Aug 21, 2017
+date: August 21, 2017
 ---
 
 Making the right decision about where to work can have a profound effect on one’s life. A company needs to want you to join, but you also need to want to join. I’ve had a few people ask for advice on taking a new job recently, so I thought it might be useful to others to write down my thoughts.
