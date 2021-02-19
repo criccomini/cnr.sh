@@ -90,6 +90,13 @@ FetcherRunnable [ERROR] error in FetcherRunnable</code></pre>
 <h2 id="what-happened-to-my-process">What happened to my process?</h2>
 <p>The number of threads in my process was dependent on how many partitions the topic had that I was consuming from. When I moved from staging to production, the Kafka cluster I was consuming from had far more brokers, and far more partitions per topic. As a result, the memory footprint of my process drastically changed. I went from 22 threads to 32, which changed my heap usage from 264 megabytes to 384 megabytes. This was enough to set my process’ total memory usage over 512 megabytes, which caused the out of memory exceptions.</p>
 </div>
-</div>
+<form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+<h1><label for="tlemail">Never Miss a Post</label></h1>
+<span class="by">Subscribe to my newsletter!</span>
+<p>
+<input type="text" style="width:140px" name="email" id="tlemail" placeholder="your@email.com" />
+<input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" />
+</p>
+</form></div>
 </body>
 </html>
