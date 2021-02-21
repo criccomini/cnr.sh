@@ -20,7 +20,7 @@ for ESSAY_MD in $( ls -r _essays ); do
   echo "    date: $DATE" >> $ESSAYS_YAML
   echo "    dir: $ESSAY" >> $ESSAYS_YAML
 
-  echo "http://cnr.sh/essays/$ESSAY" >> $SITEMAP_TXT
+  echo "https://cnr.sh/essays/$ESSAY" >> $SITEMAP_TXT
 
   pandoc --standalone -f markdown-implicit_figures --template _templates/essay.html -Mdescription="$DESCRIPTION" _essays/$ESSAY_MD -o essays/$ESSAY_HTML
 done
