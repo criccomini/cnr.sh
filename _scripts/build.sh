@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#pandoc --standalone -f markdown-implicit_figures --template _templates/essay.html _markdown/2019-07-29-future-data-engineering.md -o essays/future-data-engineering.html
 ESSAYS_YAML=_build/essays.yaml
 SITEMAP_TXT=sitemap.txt
 echo "essay:" > $ESSAYS_YAML
