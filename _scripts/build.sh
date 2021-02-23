@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-ESSAYS_YAML=_build/essays.yaml
+ESSAYS_YAML=_yaml/essays.yml
 SITEMAP_TXT=sitemap.txt
-echo "essay:" > $ESSAYS_YAML
+echo "links:" > $ESSAYS_YAML
 rm $SITEMAP_TXT
 
 # Render essays
@@ -17,7 +17,7 @@ for ESSAY_MD in $( ls -r _essays ); do
 
   echo "  - title: $TITLE" >> $ESSAYS_YAML
   echo "    date: $DATE" >> $ESSAYS_YAML
-  echo "    dir: $ESSAY" >> $ESSAYS_YAML
+  echo "    url: /essays/$ESSAY" >> $ESSAYS_YAML
 
   echo "https://cnr.sh/essays/$ESSAY" >> $SITEMAP_TXT
 
@@ -25,7 +25,7 @@ for ESSAY_MD in $( ls -r _essays ); do
 done
 
 # Render essays index page
-pandoc -f markdown-implicit_figures --template _templates/essays.html -Mtitle=Essays --metadata-file=_build/essays.yaml -o essays/index.html < /dev/null
+pandoc -f markdown-implicit_figures --template _templates/links.html -Mtitle=Essays --metadata-file=$ESSAYS_YAML -o essays/index.html < /dev/null
 
 # Render index page
 pandoc -f markdown-implicit_figures --template _templates/index.html index.md -o index.html
