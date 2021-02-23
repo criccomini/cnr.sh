@@ -4,7 +4,8 @@ ESSAYS_YAML=_yaml/essays.yml
 TALKS_YAML=_yaml/talks.yml
 SITEMAP_TXT=sitemap.txt
 echo "links:" > $ESSAYS_YAML
-rm $SITEMAP_TXT
+echo "https://cnr.sh/essays" > $SITEMAP_TXT
+echo "https://cnr.sh/talks" >> $SITEMAP_TXT
 
 # Render essays
 for ESSAY_MD in $( ls -r _essays ); do
