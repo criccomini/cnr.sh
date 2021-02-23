@@ -2,16 +2,16 @@ links:
   - title: The Future of Data Engineering
     date: December 4, 2019
     url: https://www.infoq.com/presentations/data-engineering-pipelines-warehouses/
-  - title: Chris Riccomini on the History of Apache Kafka and Stream Processin‪g‬
+  - title: The History of Apache Kafka and Stream Processin‪g‬
     date: May 16, 2019
     url: https://developer.confluent.io/podcast/chris-riccomini-on-the-history-of-apache-kafka-and-stream-processing?utm_source=buzzsprout&utm_medium=podcast&utm_campaign=ch.episode_type.community_content.share
-  - title: The Airflow Podcast: Best Practices
+  - title: "The Airflow Podcast: Best Practices"
     date: March 21, 2018
     url: https://soundcloud.com/the-airflow-podcast/best-practices
-  - title Airflow at WePay
+  - title: Airflow at WePay
     date: June 14, 2016
     url: https://wepayinc.app.box.com/s/hf1chwmthuet29ux2a83f5quc8o5q18k
-  - title: Samza: Real-time Stream Processing at LinkedIn
+  - title: "Samza: Real-time Stream Processing at LinkedIn"
     date: November 28, 2013
     url: https://www.infoq.com/presentations/samza-linkedin/
   - title: Building Applications on YARN

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ESSAYS_YAML=_yaml/essays.yml
+TALKS_YAML=_yaml/talks.yml
 SITEMAP_TXT=sitemap.txt
 echo "links:" > $ESSAYS_YAML
 rm $SITEMAP_TXT
@@ -26,6 +27,9 @@ done
 
 # Render essays index page
 pandoc -f markdown-implicit_figures --template _templates/links.html -Mtitle=Essays --metadata-file=$ESSAYS_YAML -o essays/index.html < /dev/null
+
+# Render talks index page
+pandoc -f markdown-implicit_figures --template _templates/links.html -Mtitle=Talks --metadata-file=$TALKS_YAML -o talks/index.html < /dev/null
 
 # Render index page
 pandoc -f markdown-implicit_figures --template _templates/index.html index.md -o index.html
