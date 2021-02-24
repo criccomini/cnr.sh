@@ -1,0 +1,28 @@
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url><loc>https://cnr.sh/essays</loc></url>
+<url><loc>https://cnr.sh/talks</loc></url>
+<url><loc>https://cnr.sh/essays/future-data-engineering</loc></url>
+<url><loc>https://cnr.sh/essays/yes-you-still-need-qa-team-not-for-writing-tests</loc></url>
+<url><loc>https://cnr.sh/essays/managing-kafka-topic-configuration</loc></url>
+<url><loc>https://cnr.sh/essays/kafka-escape-hatch</loc></url>
+<url><loc>https://cnr.sh/essays/research-cell-animal-human-software-simulation-speed-up-experimentation</loc></url>
+<url><loc>https://cnr.sh/essays/in-defense-of-design-documents</loc></url>
+<url><loc>https://cnr.sh/essays/minimum-viable-infrastructure</loc></url>
+<url><loc>https://cnr.sh/essays/dont-tell-people-what-to-do-ask-them-how-to-do-it</loc></url>
+<url><loc>https://cnr.sh/essays/kafka-change-data-capture-breaks-database-encapsulation</loc></url>
+<url><loc>https://cnr.sh/essays/models-microservices-should-be-using-same-continuous-delivery-stack</loc></url>
+<url><loc>https://cnr.sh/essays/your-first-technical-presentation</loc></url>
+<url><loc>https://cnr.sh/essays/trust-but-automate</loc></url>
+<url><loc>https://cnr.sh/essays/how-paint-bike-shed-kafka-topic-naming-conventions</loc></url>
+<url><loc>https://cnr.sh/essays/choosing-where-to-work</loc></url>
+<url><loc>https://cnr.sh/essays/one-big-cluster-many-small-ones</loc></url>
+<url><loc>https://cnr.sh/essays/build-kafka-connector-source</loc></url>
+<url><loc>https://cnr.sh/essays/yarn-with-cgroups</loc></url>
+<url><loc>https://cnr.sh/essays/tech-exits</loc></url>
+<url><loc>https://cnr.sh/essays/kafka-consumer-memory-tuning</loc></url>
+<url><loc>https://cnr.sh/essays/streaming-live-sports-schedule-scores-stats-api</loc></url>
+<url><loc>https://cnr.sh/essays/kill-subprocesses-linux-bash</loc></url>
+<url><loc>https://cnr.sh/essays/sort-reducer-input-value-hadoop</loc></url>
+</urlset>
