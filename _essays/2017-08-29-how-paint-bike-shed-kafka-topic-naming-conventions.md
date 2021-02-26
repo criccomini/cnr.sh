@@ -123,5 +123,5 @@ If users are allowed to create their own topics, then a script that monitors whe
 
 ## Conclusion
 
-That's all I've got for now. I'm interested in knowing how other people format their topic names. Please leave a comment below, or mention me on twitter [@criccomini](https://twitter.com/criccomini).
+That's all I've got for now. I'm interested in knowing how other people format their topic names. Please leave a comment below, or mention me on twitter [\@criccomini](https://twitter.com/criccomini).
 

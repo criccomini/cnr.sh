@@ -29,6 +29,7 @@ i.social {color: #ccc;}
 i.home {color: white;}
 div.intro p:first-of-type {font-size: 22pt;}
 div.article p:first-of-type {font-size: 18pt;}
+div.article blockquote > p:first-of-type {font-size: 14pt;}
 div.article img {width: 100%;}
 @media screen and (min-width : 0px) and (max-width : 767px){
 body {padding: 0em;}
@@ -152,7 +153,7 @@ For user-specific data such as scratch and test topics.</li>
 <p>The most obvious way to enforce a naming convention is to disable <a href="https://kafka.apache.org/documentation/#brokerconfigs">auto.create.topics.enable</a>, and limit who can create topics. Those who create topics are responsible for enforcing the rules, though an automated process for topic creation that forces users to define the various fields as part of a topic’s creation is preferred.</p>
 <p>If users are allowed to create their own topics, then a script that monitors whether topics conform to expected conventions would at least raise an alert after a violation has already occurred. Unfortunately, this is probably too late.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>That’s all I’ve got for now. I’m interested in knowing how other people format their topic names. Please leave a comment below, or mention me on twitter <span class="citation" data-cites="criccomini">[@criccomini]</span>(https://twitter.com/criccomini).</p>
+<p>That’s all I’ve got for now. I’m interested in knowing how other people format their topic names. Please leave a comment below, or mention me on twitter <a href="https://twitter.com/criccomini">@criccomini</a>.</p>
 </div>
 <form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 <h1><label for="tlemail">Never Miss a Post</label></h1>

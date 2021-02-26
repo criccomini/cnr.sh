@@ -17,6 +17,7 @@ i.social {color: #ccc;}
 i.home {color: white;}
 div.intro p:first-of-type {font-size: 22pt;}
 div.article p:first-of-type {font-size: 18pt;}
+div.article blockquote > p:first-of-type {font-size: 14pt;}
 div.article img {width: 100%;}
 @media screen and (min-width : 0px) and (max-width : 767px){
 body {padding: 0em;}
