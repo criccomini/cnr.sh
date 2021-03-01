@@ -3,6 +3,7 @@ body {padding: 1.25em 0em; margin: 0em; font-family: 'Lora', serif; font-size: 1
 h1, h2, h3, h4 {font-family: 'Roboto Condensed', sans-serif; margin: 0em; line-height: 1.25;}
 h1 {font-size: 30pt;}
 a {color: #ff0080; text-decoration: none; font-weight: bold;}
+pre > code {overflow-x: auto; width: 100%; display: inline-block;}
 div.home {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; background-color: #333;}
 div.social {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; right: 1.5em;}
 div.title {text-align: center;}
