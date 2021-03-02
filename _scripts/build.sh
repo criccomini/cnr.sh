@@ -7,8 +7,8 @@ SITEMAP_YML=_yaml/sitemap.yml
 echo "links:" > $ESSAYS_YML
 
 echo "links:" > $SITEMAP_YML
-echo "  - https://cnr.sh/essays" >> $SITEMAP_YML
-echo "  - https://cnr.sh/talks" >> $SITEMAP_YML
+echo "  - https://cnr.sh/essays/" >> $SITEMAP_YML
+echo "  - https://cnr.sh/talks/" >> $SITEMAP_YML
 
 # Render essays
 for ESSAY_MD in $( ls -r _essays ); do
