@@ -1,5 +1,5 @@
 ---
-title: "How to paint a bike shed: Kafka topic naming conventions"
+title: "Kafka Topic Naming Conventions"
 date: August 29, 2017
 ---
 
