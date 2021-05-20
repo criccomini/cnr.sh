@@ -8,6 +8,8 @@ I like writing [Essays](/essays) and giving [Talks](/talks). Subscribe to my [Ti
 
 I've worked at WePay, LinkedIn, and PayPal. [LinkedIn](https://www.linkedin.com/in/riccomini/) <i class="fab fa-linkedin"></i> has my complete work history.
 
+My first book is out! [The Missing README](https://nostarch.com/missing-readme) is a guide for new software engineers. You can get it on [Amazon](https://www.amazon.com/Missing-README-Guide-Software-Engineer/dp/1718501838) <i class="fab fa-amazon"></i>.
+
 I'm into open source. I wrote [Apache Samza](https://samza.apache.org) and I'm on [Apache Airflow](https://airflow.apache.org)'s PMC. I don't write code as I used to, but my contributions are on [Github](https://github.com/criccomini) <i class="fab fa-github"></i>.
 
 I'm an investor and advisor in a few startups. You can find them on my [AngelList](https://angel.co/u/criccomini) <i class="fab fa-angellist"></i> profile.
