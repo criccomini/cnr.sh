@@ -3,6 +3,7 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url><loc>https://cnr.sh/essays/</loc></url>
 <url><loc>https://cnr.sh/talks/</loc></url>
+<url><loc>https://cnr.sh/essays/what-the-heck-data-mesh</loc></url>
 <url><loc>https://cnr.sh/essays/future-data-engineering</loc></url>
 <url><loc>https://cnr.sh/essays/yes-you-still-need-qa-team-not-for-writing-tests</loc></url>
 <url><loc>https://cnr.sh/essays/managing-kafka-topic-configuration</loc></url>
