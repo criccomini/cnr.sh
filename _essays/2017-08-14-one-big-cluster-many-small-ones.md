@@ -57,7 +57,7 @@ How easy is it to migrate from a single cluster to many, or vice-versa. Is it ea
 
 If it’s difficult to automate the deployment and operation of a system, the fewer the better. Deploying a separate cluster manually can be a painstaking process, and is probably going to be unacceptable. If it’s going to be difficult to automate, the fewer clusters the better, usually.
 
-Early on in Kafka’s development, deployment automation was quite complicated. Scripts had to execute a “clean shutdown” for a broker, and coordinate deployments so that only one or two nodes were offline at a time. Partition location also had to be taken into account to prevent partitions from going offline. This is heavy duty stuff, and needs to be fully automated. Doing this kind of work manually, or on dozens of different clusters is usually not acceptable.
+Early on in Kafka’s development, deployment automation was quite complicated. Scripts had to execute a "clean shutdown" for a broker, and coordinate deployments so that only one or two nodes were offline at a time. Partition location also had to be taken into account to prevent partitions from going offline. This is heavy duty stuff, and needs to be fully automated. Doing this kind of work manually, or on dozens of different clusters is usually not acceptable.
 
 ## SLAs
 
