@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Preventing Technology Turf Wars" />
-<meta property="og:description" content="# Preventing Technology Turf Wars" />
+<meta property="og:description" content="The new SaaS Slack (it’s awesome; you should totally join it) had a good question on technical decision processes:" />
 <meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"><title>Preventing Technology Turf Wars | Chris Riccomini</title>
 <style>
@@ -67,10 +67,10 @@ My book, <a href="https://www.amazon.com/Missing-README-Guide-Software-Engineer/
 <span class="by">Chris Riccomini on June 21, 2021</span>
 </div>
 <div class="article">
-<h1 id="preventing-technology-turf-wars">Preventing Technology Turf Wars</h1>
 <p>The new <a href="https://join.slack.com/t/saas-hgv7803/shared_invite/zt-qwvrywyr-8DmSpEzBiSWD2WQuB9r9pw">SaaS Slack</a> (it’s awesome; you should totally join it) had a good question on technical decision processes:</p>
 <blockquote>
-<p>How is technical decision making structured in your organization? Even more interesting, in a way, how has that evolved over time (e.g. as a function of headcount)? Decisions around topics like programming languages, API standards, architectural patterns, etc. Especially when there is previous art around and converging on a standard requires backfilling/migrating existing systems.</p>
+<p>How is technical decision making structured in your organization? Even more interesting, in a way, how has that evolved over time (e.g. as a function of headcount)?</p>
+<p>Decisions around topics like programming languages, API standards, architectural patterns, etc. Especially when there is previous art around and converging on a standard requires backfilling/migrating existing systems.</p>
 </blockquote>
 <p>There are many things to consider when adding a new technology to a stack: cost, existing technologies, security and compliance features, team ownership and support, and more. We engineers like to argue about technology merits, but many conflicts that I see stem from turf wars over domain and technology ownership.</p>
 <p>The problem looks like this: Team A wants to use a new “build system” (substitute build system for any technology). There are usually three versions of such a scenario:</p>
@@ -79,12 +79,10 @@ My book, <a href="https://www.amazon.com/Missing-README-Guide-Software-Engineer/
 <li>Team B is responsible for build systems, but they don’t support one yet.</li>
 <li>No team is currently responsible for build systems.</li>
 </ol>
-<ol type="a">
-<li>and (b) are more common than (c), but all three patterns lead to disputes. Ownership fights are toxic and can have a lasting negative impact on team culture, engagement, and ultimately attrition. Proactively managing team dynamics when adding new technology can save you a lot of heartache down the road. Let’s dig into these three scenarios.</li>
-</ol>
+<p>(a) and (b) are more common than (c), but all three patterns lead to disputes. Ownership fights are toxic and can have a lasting negative impact on team culture, engagement, and ultimately attrition. Proactively managing team dynamics when adding new technology can save you a lot of heartache down the road. Let’s dig into these three scenarios.</p>
 <h1 id="team-b-owns-the-problem-space-and-has-a-solution">Team B “Owns” the Problem Space and Has a Solution</h1>
 <p>In scenario (a), an existing team already owns the problem space (build systems) and has an existing solution (“We use Bazel! Just use it!”). Discussions focus on the tradeoffs between existing solutions and the newly proposed technology, and on team ownership if the newly proposed technology is adopted.</p>
-<p>Follow <a href="http://boringtechnology.club/">boring technology practices</a> and <a href="https://a16z.com/2012/12/18/programming-your-culture/">a16z-style</a> , “the new product must be 10x better,” policies. If a new technology is marginally better than the existing one, go with the existing one. Look for complementary technologies. Python and Java work well together because they are opposites across a number of dimensions: virtual machine-based vs. interpreted, typed vs. not typed, good for services vs. good for tools, and so on.</p>
+<p>Follow <a href="http://boringtechnology.club/">boring technology practices</a> and <a href="https://a16z.com/2012/12/18/programming-your-culture/">a16z-style</a>, “the new product must be 10x better,” policies. If a new technology is marginally better than the existing one, go with the existing one. Look for complementary technologies. Python and Java work well together because they are opposites across a number of dimensions: virtual machine-based vs. interpreted, typed vs. not typed, good for services vs. good for tools, and so on.</p>
 <p>The <a href="https://wecode.wepay.com/posts/effective-software-design-documents">WePay design review process</a> has been effective at managing tradeoff discussions and keeping teams in sync. Development teams sometimes complain that design reviews take too much time. We instituted two policies to help: design reviews are time boxed and reviews are optional when existing technologies (and architectures) are used.</p>
 <p>If new technology is adopted, you face an ownership question: is it Team A’s or Team B’s responsibility to own the new thing? Many factors such as resourcing, skill set, and team roadmaps must be considered. I like an approver-based handoff model, which I discuss in scenario (b), below.</p>
 <h1 id="team-b-owns-the-problem-space-but-has-no-solution">Team B “Owns” the Problem Space but has No Solution</h1>
@@ -94,7 +92,7 @@ My book, <a href="https://www.amazon.com/Missing-README-Guide-Software-Engineer/
 <li>Trying to take control of Team A’s proposal and roll out the proposed build system company-wide, thereby slowing Team A’s velocity and ownership.</li>
 </ul>
 <p>I prefer a partnership approach. Team A is fully responsible for rolling out their solution, but Team B acts as an advisor. Team B normally has experience that Team A lacks in the build system area, so they can eliminate gotchas. Having an advisory role also means that Team B knows what’s going on if they eventually inherit the solution.</p>
-<p>Advisory styles vary. Sometimes an advising team functions as an /approver/ (in the <a href="https://www.atlassian.com/team-playbook/plays/daci">DACI</a> management-speak sense). Other times, advisors are simply kept /informed/ of progress and plans so they can give suggestions. Advisor teams might/contribute/ some engineering time, too. The right pattern depends on the context. My favorite approach is to keep advisors informed so they can give hints and suggestions.</p>
+<p>Advisory styles vary. Sometimes an advising team functions as an <em>approver</em> (in the <a href="https://www.atlassian.com/team-playbook/plays/daci">DACI</a> management-speak sense). Other times, advisors are simply kept <em>informed</em> of progress and plans so they can give suggestions. Advisor teams might <em>contribute</em> some engineering time, too. The right pattern depends on the context. My favorite approach is to keep advisors informed so they can give hints and suggestions.</p>
 <p>When other teams discover Team A’s solution and want to use it, ownership and handoff discussions between Team A and Team B can occur. Team A usually doesn’t want to support their solution for other teams, so the relationship inverts. Team B takes ownership of the solution and Team A acts as an advisor.</p>
 <p>If, on the other hand, no one ends up caring about Team A’s fancy new build system, no harm done. Team A can run their solution in isolation and Team B doesn’t have to invest in generalizing it and supporting it company-wide.</p>
 <p>If another team wants to add yet another build system (this is actually most likely, sadly), we loop to pattern (a), above.</p>

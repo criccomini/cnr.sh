@@ -3,9 +3,10 @@ title: Preventing Technology Turf Wars
 date: June 21, 2021
 ---
 
-The new  [SaaS Slack](https://join.slack.com/t/saas-hgv7803/shared_invite/zt-qwvrywyr-8DmSpEzBiSWD2WQuB9r9pw)  (it’s awesome; you should totally join it) had a good question on technical decision processes:
+The new [SaaS Slack](https://join.slack.com/t/saas-hgv7803/shared_invite/zt-qwvrywyr-8DmSpEzBiSWD2WQuB9r9pw) (it’s awesome; you should totally join it) had a good question on technical decision processes:
 
 > How is technical decision making structured in your organization? Even more interesting, in a way, how has that evolved over time (e.g. as a function of headcount)?
+> 
 > Decisions around topics like programming languages, API standards, architectural patterns, etc. Especially when there is previous art around and converging on a standard requires backfilling/migrating existing systems. 
 
 There are many things to consider when adding a new technology to a stack: cost, existing technologies, security and compliance features, team ownership and support, and more. We engineers like to argue about technology merits, but many conflicts that I see stem from turf wars over domain and technology ownership.
@@ -16,14 +17,14 @@ The problem looks like this: Team A wants to use a new "build system" (substitut
 2. Team B is responsible for build systems, but they don’t support one yet.
 3. No team is currently responsible for build systems.
 
-(a) and (b) are more common than (c), but all three patterns lead to disputes. Ownership fights are toxic and can have a lasting negative impact on team culture, engagement, and ultimately attrition. Proactively managing team dynamics when adding new technology can save you a lot of heartache down the road. Let’s dig into these three scenarios.
+\(a\) and (b) are more common than (c), but all three patterns lead to disputes. Ownership fights are toxic and can have a lasting negative impact on team culture, engagement, and ultimately attrition. Proactively managing team dynamics when adding new technology can save you a lot of heartache down the road. Let’s dig into these three scenarios.
 
 # Team B "Owns" the Problem Space and Has a Solution
 In scenario (a), an existing team already owns the problem space (build systems) and has an existing solution ("We use Bazel! Just use it!"). Discussions focus on the tradeoffs between existing solutions and the newly proposed technology, and on team ownership if the newly proposed technology is adopted.
 
-Follow  [boring technology practices](http://boringtechnology.club/)  and  [a16z-style](https://a16z.com/2012/12/18/programming-your-culture/) , "the new product must be 10x better," policies. If a new technology is marginally better than the existing one, go with the existing one. Look for complementary technologies. Python and Java work well together because they are opposites across a number of dimensions: virtual machine-based vs. interpreted, typed vs. not typed, good for services vs. good for tools, and so on.
+Follow [boring technology practices](http://boringtechnology.club/) and [a16z-style](https://a16z.com/2012/12/18/programming-your-culture/), "the new product must be 10x better," policies. If a new technology is marginally better than the existing one, go with the existing one. Look for complementary technologies. Python and Java work well together because they are opposites across a number of dimensions: virtual machine-based vs. interpreted, typed vs. not typed, good for services vs. good for tools, and so on.
 
-The  [WePay design review process](https://wecode.wepay.com/posts/effective-software-design-documents)  has been effective at managing tradeoff discussions and keeping teams in sync. Development teams sometimes complain that design reviews take too much time. We instituted two policies to help: design reviews are time boxed and reviews are optional when existing technologies (and architectures) are used.
+The [WePay design review process](https://wecode.wepay.com/posts/effective-software-design-documents) has been effective at managing tradeoff discussions and keeping teams in sync. Development teams sometimes complain that design reviews take too much time. We instituted two policies to help: design reviews are time boxed and reviews are optional when existing technologies (and architectures) are used.
 
 If new technology is adopted, you face an ownership question: is it Team A’s or Team B’s responsibility to own the new thing? Many factors such as resourcing, skill set, and team roadmaps must be considered. I like an approver-based handoff model, which I discuss in scenario (b), below.
 
@@ -35,7 +36,7 @@ Scenario (b) is where things normally get messiest. Team B owns the problem spac
 
 I prefer a partnership approach. Team A is fully responsible for rolling out their solution, but Team B acts as an advisor. Team B normally has experience that Team A lacks in the build system area, so they can eliminate gotchas. Having an advisory role also means that Team B knows what’s going on if they eventually inherit the solution.
 
-Advisory styles vary. Sometimes an advising team functions as an /approver/ (in the  [DACI](https://www.atlassian.com/team-playbook/plays/daci)  management-speak sense). Other times, advisors are simply kept /informed/ of progress and plans so they can give suggestions. Advisor teams might/contribute/ some engineering time, too. The right pattern depends on the context. My favorite approach is to keep advisors informed so they can give hints and suggestions.
+Advisory styles vary. Sometimes an advising team functions as an _approver_ (in the [DACI](https://www.atlassian.com/team-playbook/plays/daci) management-speak sense). Other times, advisors are simply kept _informed_ of progress and plans so they can give suggestions. Advisor teams might _contribute_ some engineering time, too. The right pattern depends on the context. My favorite approach is to keep advisors informed so they can give hints and suggestions.
 
 When other teams discover Team A’s solution and want to use it, ownership and handoff discussions between Team A and Team B can occur. Team A usually doesn’t want to support their solution for other teams, so the relationship inverts. Team B takes ownership of the solution and Team A acts as an advisor. 
 
@@ -43,7 +44,7 @@ If, on the other hand, no one ends up caring about Team A’s fancy new build sy
 
 If another team wants to add yet another build system (this is actually most likely, sadly), we loop to pattern (a), above.
 
-The advisor approach stands as an alternative to  [Letting 1,000 Flowers Bloom](https://gigamonkeys.com/flowers/) , and hopefully eschews having to, "rip 999 [technologies] out by the roots," later on. Anyone who’s slogged through a multi-year migration knows how difficult it is to "rip out" even a single technology.
+The advisor approach stands as an alternative to [Letting 1,000 Flowers Bloom](https://gigamonkeys.com/flowers/) , and hopefully eschews having to, "rip 999 [technologies] out by the roots," later on. Anyone who’s slogged through a multi-year migration knows how difficult it is to "rip out" even a single technology.
 
 # No Team is Responsible for the Problem Space
 In scenario (3), no team is responsible for the problem space. Problem space owners are normally vigilant and protective of teams encroaching on their domain. Without an owner, the most likely outcome is that teams will silently ship whatever they want. Consequently, the main problem when no owner exists is that of discovery: finding out that a new technology is being introduced.
@@ -60,10 +61,10 @@ Discovery is harder at large and fast-growing (chaotic) companies. It’s imposs
 
 A tight-knit group of good technical leads will discover new ownership and technology issues on their own (and often resolve them on their own, too). Make sure you have tech leads in place.
 
-A semi-centralized design review process such as  [WePay’s design review blog post](https://wecode.wepay.com/posts/effective-software-design-documents)  also exposes ownership gaps and new technologies creeping into a company’s tech stack. Take a look at the  [architectural decision records (ADR)](https://adr.github.io/)  website, too.
+A semi-centralized design review process such as [WePay’s design review blog post](https://wecode.wepay.com/posts/effective-software-design-documents) also exposes ownership gaps and new technologies creeping into a company’s tech stack. Take a look at the [architectural decision records (ADR)](https://adr.github.io/) website, too.
 
-Build and deployment controls prevent a single team from shipping new technology without telling anyone. The  [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  (PoLP) can be used to limit what engineers can do on their own. Control policies should be automated and not get in the way as long as engineers "color within the lines". Only when an engineering team is trying to deviate from approved technology should they be impeded. Pre-approved Docker images,  [Black Duck](https://www.blackducksoftware.com/)  scans on 3rd party libraries, limited internet access on CI machines, git repository scans and monitoring, and restricted access to cloud control panels all prevent engineers from going too far off the rails.
+Build and deployment controls prevent a single team from shipping new technology without telling anyone. The [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) (PoLP) can be used to limit what engineers can do on their own. Control policies should be automated and not get in the way as long as engineers "color within the lines". Only when an engineering team is trying to deviate from approved technology should they be impeded. Pre-approved Docker images, [Black Duck](https://www.blackducksoftware.com/) scans on 3rd party libraries, limited internet access on CI machines, git repository scans and monitoring, and restricted access to cloud control panels all prevent engineers from going too far off the rails.
 
 # Notes
-* Thanks to Gwen Shapira and Luca Palmieri for feedback on early drafts. Thanks to  Sriram Subramanian for feedback and for clarifying my thoughts around discovery at large organizations.
+* Thanks to Gwen Shapira and Luca Palmieri for feedback on early drafts. Thanks to Sriram Subramanian for feedback and for clarifying my thoughts around discovery at large organizations.
 * This post does not cover everything needed to add a new technology to an engineering organization. I’m focusing on discovery, ownership, and technology processes.
