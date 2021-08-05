@@ -32,7 +32,7 @@ c. Federated service governance
 
 These characteristics map to data mesh principles (1), (3), and (4).
 
-It should surprise no one that a modern service stack is decentralized (a). Such stacks typically have hundreds or thousands of different services owned by dozens or hundreds of teams (a). Each team is left to define, build, and own its APIs.
+It should surprise no one that a modern service stack is decentralized (a). Such stacks typically have hundreds or thousands of different services owned by dozens or hundreds of teams. Each team is left to define, build, and own its APIs.
 
 Teams also deploy and monitor their own services (b). Self-deployment increases feature delivery velocity: developers aren’t stuck waiting on a separate team of button-pushers to deploy changes. And a centralized team isn’t left deploying software that they don’t understand (sound familiar?).
 
