@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2021-10-11'>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="OAuth “Sign In With Google” in a WkWebView" />
+<meta property="og:description" content="When I built WANT, I avoided adding OAuth2 sign-ins at first; I knew it'd be a headache. Instead, I used Devise, Rails's standard authentication framework, to handle email-based sign-ins." />
+<meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"><title>OAuth “Sign In With Google” in a WkWebView | Chris Riccomini</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+h1, h2, h3, h4 {font-family: 'Roboto Condensed', sans-serif; margin: 0em; line-height: 1.25;}
+h1 {font-size: 30pt;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+pre > code {overflow-x: auto; width: 100%; display: inline-block;}
+div.home {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; background-color: #333;}
+div.social {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; right: 1.5em;}
+div.title {text-align: center;}
+div.main {width: 32em; margin: 0em auto;}
+div.intro {width: 30em; margin: 0em auto;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+div.links {width: 40em; margin: 0em auto;}
+div.links table {border-spacing: 0em 0em; margin: 1em 0em;}
+div.links td.link-date {text-align: right; width: 10em; padding-right: .5em; vertical-align: top;}
+div.links span.link-date {display: none;}
+i.social {color: #ccc;}
+i.home {color: white;}
+div.intro p:first-of-type {font-size: 22pt;}
+div.article p:first-of-type {font-size: 18pt;}
+div.article blockquote > p:first-of-type {font-size: 14pt;}
+div.article img {width: 100%;}
+div.promo {margin: 0rem auto 1.25rem auto; width: 50rem; font-family: helvetica; text-align: center; top: 0px; left: 0px; background-color: rgb(4, 164, 220); color: white; font-size: .925rem; letter-spacing: .075rem; padding: .5em;}
+@media screen and (min-width : 0px) and (max-width : 767px){
+body {padding: 0em;}
+div.main {width: auto; padding: 4em 2em;}
+div.intro {width: auto; padding: 0em 3em;}
+div.home {position: absolute;}
+div.social {display: none;}
+span.by {display: block; margin-top: .5em;}
+div.links {padding-top: 1em; width: auto; padding: 4em 2em;}
+div.links td.link-date {display: none;}
+div.links span.link-date {display: block;}
+div.links table {border-spacing: 0em 1em; margin: 0em;}
+div.promo {width: auto; padding: 1rem 4rem; }
+}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3R91BN0RW0');
+</script></head>
+<body>
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div><div class="promo">
+My book, <a href="https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca" style="color: white; text-decoration: underline;">The Missing README: A Guide for the New Software Engineer</a>, is available on Amazon!
+</div><div class="main">
+<div class="title">
+<h1>OAuth “Sign In With Google” in a WkWebView</h1>
+<span class="by">Chris Riccomini on October 11, 2021</span>
+</div>
+<div class="article">
+<p>When I built <a href="https://want.app">WANT</a>, I avoided adding OAuth2 sign-ins at first; I knew it’d be a headache. Instead, I used <a href="https://github.com/heartcombo/devise">Devise</a>, <a href="https://rubyonrails.org/">Rails</a>’s standard authentication framework, to handle email-based sign-ins.</p>
+<p>Some users want to sign in using Google or Apple, though. I eventually added <a href="https://github.com/omniauth/omniauth">OmniAuth</a> to <a href="https://want.app">WANT</a> with the <a href="https://github.com/zquestz/omniauth-google-oauth2">omniauth-google-oauth2</a> and <a href="https://github.com/nhosoya/omniauth-apple">omniauth-apple</a> providers.</p>
+<p>Then I built an iOS mobile app in Swift with Swift UI. The app was a <a href="https://developer.apple.com/documentation/webkit/wkwebview">WkWebView</a> that loaded <a href="https://want.app">https://want.app</a>. This is where my authentication problems with Google started.</p>
+<p>I was seeing this error message when I tried to authenticate with Google in the iOS app:</p>
+<blockquote>
+<p><strong>Error: disallowed_useragent</strong></p>
+<p>This user-agent is not permitted to make OAuth authorisation request to Google as it is classified as an embedded user-agent (also known as a web-view). Per our policy, only browsers are permitted to make authorisation requests to Google. We offer several libraries and samples for native apps to perform authorisation request in browser.</p>
+</blockquote>
+<p>Google doesn’t want users authenticating inside embedded browsers like WkWebView. WkWebView allows developers to inject Javascript, read cookies, and otherwise manipulate the browser contents. Such power could enable a nefarious developer to read usernames and passwords as they’re entered into <a href="https://accounts.google.com">https://accounts.google.com</a> for the OAuth flow.</p>
+<p><a href="https://stackoverflow.com/questions/53135551/google-disallowed-useragent-in-wkwebview">Most Stack Overflow answers</a> tell you to programmatically change the WkWebView user-agent, which Google is using to detect embedded browsers.</p>
+<pre class="swift"><code>webView.customUserAgent = &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1&quot;;</code></pre>
+<p>This works, but is a violation of Google’s terms of service.</p>
+<p>Auth0 documents better alternatives in their post, <a href="https://auth0.com/blog/google-blocks-oauth-requests-from-embedded-browsers/">Google Blocks OAuth Requests Made Via Embedded Browsers</a>. But all listed solutions all involve an SDK.</p>
+<p>I’m not a mobile developer by trade, and I didn’t want to deal with the complexity of a mobile OAuth2 implementation. I already had OAuth working on my website, and I wanted to use it.</p>
+<p>I figured out that you can simply redirect users to Safari for authentication, and use <a href="https://developer.apple.com/ios/universal-links/">universal links</a> to redirect users back to your app (and WkWebView) once they’ve authenticated. This is how the flow looks:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5gaVvWc6zyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>This can be done with just a few links of Swift! And it doesn’t violate Google’s terms of service, since the Google authentication takes place in a standard Safari browser.</p>
+<p>The tap to log into Google redirects users to Safari. This can be done in a <a href="https://developer.apple.com/documentation/webkit/wknavigationdelegate/1455627-webview">WkNavigationDelegate</a> method</p>
+<pre class="swift"><code>func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+  if let url = webView.url, url.absoluteString.starts(with: &quot;https://accounts.google.com&quot;) {
+    UIApplication.shared.open(url, options: [:])
+  }
+}</code></pre>
+<p>The <code>webView</code> method is invoked when the WkWebView receives a redirect. If the URL points to <a href="https://accounts.google.com">https://accounts.google.com</a>, the link is opened in the phone’s default browser.</p>
+<p>Once in the default browser, the user can authenticate using their Google account. Best of all, if the user is already logged into Google (as in the video above), the user simply taps the account they wish to log in with.</p>
+<p>From here, Google redirects the user back to your callback. This is where universal linking comes in. In my case, the callback URL is under the <a href="https://want.app">https://want.app</a> domain–the callback that OmniAuth needs.</p>
+<p>Using <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html">universal links</a>, we can open the redirected callback URL back in the app. Follow the instructions in the previous link to set up universal links for your app. Once that’s done, you need to write some code to open the redirected URL in your app’s WkWebView.</p>
+<p>First, receive the URL and send a notification.</p>
+<pre class="swift"><code>ContentView()
+  .onOpenURL { (url) in
+    NotificationCenter
+      .default
+      .post(name: NSNotification.Name(&quot;com.app.ios.application.url.opened&quot;), object: nil, userInfo: [&quot;url&quot;: url])
+}</code></pre>
+<p>My app uses <a href="https://developer.apple.com/xcode/swiftui/">Swift UI</a>, so it’s using <code>onOpenURL</code>. You’ll have to Google around if you’re using <a href="https://developer.apple.com/documentation/uikit/">UIKit</a>, but it’s straight forward.</p>
+<p>Elsewhere in your app (probably in the controller with the WkWebView), receive the URL notification.</p>
+<pre class="swift"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.urlLoaded(notification:)), name: Notification.Name(&quot;com.app.ios.application.url.opened&quot;), object: nil)</code></pre>
+<p>And load the new URL.</p>
+<pre class="swift"><code>@objc func urlLoaded(notification: Notification) {
+  let url = notification.userInfo![&quot;url&quot;]! as! URL
+  self.webView.load(URLRequest(url: url))
+}</code></pre>
+<p>Now, any URL that your app receives will load into the WkWebView. If you only want to handle callback URLs, not all URLs, you can modify the code to filter out URLs that don’t match.</p>
+<p>This approach works because Google’s OAuth implementation redirects back to your server using a simple <code>GET</code> request. Forwarding this <code>GET</code> request on to your WkWebView via universal linking means that the OAuth2 callback is loaded in your WkWebView. Loading the callback in your WkWebView means your websites session and cookie data will be stored in the web view, not in Safari’s cookie space.</p>
+<p>(NOTE: <a href="https://stackoverflow.com/questions/45098927/how-to-implement-google-login-in-a-wkwebview-switching-to-sfsafariviewcontroller">This Stack Overflow post</a> served as inspiration for my solution.)</p>
+</div>
+<form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+<h1><label for="tlemail">Never Miss a Post</label></h1>
+<span class="by">Subscribe to my newsletter!</span>
+<p style="margin-bottom: .35em;">
+<input type="text" style="width:140px" name="email" id="tlemail" placeholder="your@email.com" />
+<input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" />
+</p>
+</form></div>
+</body>
+</html>
