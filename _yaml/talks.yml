@@ -1,13 +1,20 @@
 links:
+
+  - title: "Modern Data Architectures, Pipelines, & Streams QCon 2021 Panel"
+    date: November 8, 2021
+    url: https://plus.qconferences.com/plus2021/track/modern-data-architectures-pipelines-streams
   - title: "Software Engineering Daily: The Missing README"
     date: September 1, 2021
     url: https://softwareengineeringdaily.com/2021/09/01/the-missing-readme-with-chris-riccomini-and-dmitriy-ryaboy/
+  - title: Modern Data Engineering QCon 2020 Panel
+    date: November 17, 2020
+    url: https://plus.qconferences.com/plus2020/presentation/modern-data-engineering-panel
   - title: The Future of Data Engineering
     date: December 4, 2019
     url: https://www.infoq.com/presentations/data-engineering-pipelines-warehouses/
-  - title: The History of Apache Kafka and Stream Processin‪g‬
+  - title: The History of Apache Kafka and Stream Processing
     date: May 16, 2019
-    url: https://developer.confluent.io/podcast/chris-riccomini-on-the-history-of-apache-kafka-and-stream-processing?utm_source=buzzsprout&utm_medium=podcast&utm_campaign=ch.episode_type.community_content.share
+    url: https://developer.confluent.io/podcast/chris-riccomini-on-the-history-of-apache-kafka-and-stream-processing
   - title: "The Airflow Podcast: Best Practices"
     date: March 21, 2018
     url: https://soundcloud.com/the-airflow-podcast/best-practices
