@@ -1,5 +1,5 @@
 ---
-title: Don't tell people what to do, ask them how to do it
+title: Don't tell people what to do, ask them how to do it
 date: November 12, 2018
 ---
 

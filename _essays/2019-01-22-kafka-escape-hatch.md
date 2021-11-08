@@ -1,5 +1,5 @@
 ---
-title: Kafka is your escape hatch
+title: Kafka is your escape hatch
 date: January 22, 2019
 ---
 

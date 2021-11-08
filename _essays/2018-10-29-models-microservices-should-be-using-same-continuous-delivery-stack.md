@@ -1,5 +1,5 @@
 ---
-title: Models and microservices should be running on the same continuous delivery stack
+title: Models and microservices should be running on the same continuous delivery stack
 date: October 29, 2018
 ---
 

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>cnr.sh</title>
+    <link>https://cnr.sh/rss.xml</link>
+    <description>Chris Riccomini's RSS Feed</description>
+    <item>
+      <title>Work for Two Companies</title>
+      <link>https://cnr.sh/essays/work-for-two-companies</link>
+      <guid>https://cnr.sh/essays/work-for-two-companies</guid>
+      <description></description>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Missing README Software Engineering Links &amp; Resources</title>
+      <link>https://cnr.sh/essays/missing-readme-books-and-links</link>
+      <guid>https://cnr.sh/essays/missing-readme-books-and-links</guid>
+      <description></description>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>OAuth “Sign In With Google” in a WkWebView</title>
+      <link>https://cnr.sh/essays/google-oauth-wkwebview</link>
+      <guid>https://cnr.sh/essays/google-oauth-wkwebview</guid>
+      <description></description>
+      <pubDate>Mon, 11 Oct 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Preventing Technology Turf Wars</title>
+      <link>https://cnr.sh/essays/preventing-technology-turf-wars</link>
+      <guid>https://cnr.sh/essays/preventing-technology-turf-wars</guid>
+      <description></description>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>What the Heck is a Data Mesh?!</title>
+      <link>https://cnr.sh/essays/what-the-heck-data-mesh</link>
+      <guid>https://cnr.sh/essays/what-the-heck-data-mesh</guid>
+      <description></description>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Future of Data Engineering</title>
+      <link>https://cnr.sh/essays/future-data-engineering</link>
+      <guid>https://cnr.sh/essays/future-data-engineering</guid>
+      <description></description>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Yes, you still need a QA team (but not for writing your tests)</title>
+      <link>https://cnr.sh/essays/yes-you-still-need-qa-team-not-for-writing-tests</link>
+      <guid>https://cnr.sh/essays/yes-you-still-need-qa-team-not-for-writing-tests</guid>
+      <description></description>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Managing Kafka topic configuration</title>
+      <link>https://cnr.sh/essays/managing-kafka-topic-configuration</link>
+      <guid>https://cnr.sh/essays/managing-kafka-topic-configuration</guid>
+      <description></description>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Kafka is your escape hatch</title>
+      <link>https://cnr.sh/essays/kafka-escape-hatch</link>
+      <guid>https://cnr.sh/essays/kafka-escape-hatch</guid>
+      <description></description>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Research in cell, animal, and human software simulation can speed up experimentation</title>
+      <link>https://cnr.sh/essays/research-cell-animal-human-software-simulation-speed-up-experimentation</link>
+      <guid>https://cnr.sh/essays/research-cell-animal-human-software-simulation-speed-up-experimentation</guid>
+      <description></description>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>In defense of design documents</title>
+      <link>https://cnr.sh/essays/in-defense-of-design-documents</link>
+      <guid>https://cnr.sh/essays/in-defense-of-design-documents</guid>
+      <description></description>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Minimum viable infrastructure</title>
+      <link>https://cnr.sh/essays/minimum-viable-infrastructure</link>
+      <guid>https://cnr.sh/essays/minimum-viable-infrastructure</guid>
+      <description></description>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Don’t tell people what to do, ask them how to do it</title>
+      <link>https://cnr.sh/essays/dont-tell-people-what-to-do-ask-them-how-to-do-it</link>
+      <guid>https://cnr.sh/essays/dont-tell-people-what-to-do-ask-them-how-to-do-it</guid>
+      <description></description>
+      <pubDate>Mon, 12 Nov 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Kafka change data capture breaks database encapsulation</title>
+      <link>https://cnr.sh/essays/kafka-change-data-capture-breaks-database-encapsulation</link>
+      <guid>https://cnr.sh/essays/kafka-change-data-capture-breaks-database-encapsulation</guid>
+      <description></description>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Models and microservices should be running on the same continuous delivery stack</title>
+      <link>https://cnr.sh/essays/models-microservices-should-be-using-same-continuous-delivery-stack</link>
+      <guid>https://cnr.sh/essays/models-microservices-should-be-using-same-continuous-delivery-stack</guid>
+      <description></description>
+      <pubDate>Mon, 29 Oct 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Your First Technical Presentation</title>
+      <link>https://cnr.sh/essays/your-first-technical-presentation</link>
+      <guid>https://cnr.sh/essays/your-first-technical-presentation</guid>
+      <description></description>
+      <pubDate>Tue, 23 Oct 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Trust, but automate</title>
+      <link>https://cnr.sh/essays/trust-but-automate</link>
+      <guid>https://cnr.sh/essays/trust-but-automate</guid>
+      <description></description>
+      <pubDate>Sat, 11 Nov 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Kafka Topic Naming Conventions</title>
+      <link>https://cnr.sh/essays/how-paint-bike-shed-kafka-topic-naming-conventions</link>
+      <guid>https://cnr.sh/essays/how-paint-bike-shed-kafka-topic-naming-conventions</guid>
+      <description></description>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Choosing Where to Work</title>
+      <link>https://cnr.sh/essays/choosing-where-to-work</link>
+      <guid>https://cnr.sh/essays/choosing-where-to-work</guid>
+      <description></description>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>One big cluster, or many small ones?</title>
+      <link>https://cnr.sh/essays/one-big-cluster-many-small-ones</link>
+      <guid>https://cnr.sh/essays/one-big-cluster-many-small-ones</guid>
+      <description></description>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>So, you want to build a Kafka Connector? Source edition.</title>
+      <link>https://cnr.sh/essays/build-kafka-connector-source</link>
+      <guid>https://cnr.sh/essays/build-kafka-connector-source</guid>
+      <description></description>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Using YARN with Cgroups</title>
+      <link>https://cnr.sh/essays/yarn-with-cgroups</link>
+      <guid>https://cnr.sh/essays/yarn-with-cgroups</guid>
+      <description></description>
+      <pubDate>Fri, 14 Jun 2013 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Tech exits</title>
+      <link>https://cnr.sh/essays/tech-exits</link>
+      <guid>https://cnr.sh/essays/tech-exits</guid>
+      <description></description>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Kafka Consumer Memory Tuning</title>
+      <link>https://cnr.sh/essays/kafka-consumer-memory-tuning</link>
+      <guid>https://cnr.sh/essays/kafka-consumer-memory-tuning</guid>
+      <description></description>
+      <pubDate>Fri, 05 Oct 2012 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Schedules &amp; Scores API for Streaming Live Sports Stats</title>
+      <link>https://cnr.sh/essays/streaming-live-sports-schedule-scores-stats-api</link>
+      <guid>https://cnr.sh/essays/streaming-live-sports-schedule-scores-stats-api</guid>
+      <description></description>
+      <pubDate>Sat, 29 Sep 2012 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Killing Subprocesses in Linux/Bash</title>
+      <link>https://cnr.sh/essays/kill-subprocesses-linux-bash</link>
+      <guid>https://cnr.sh/essays/kill-subprocesses-linux-bash</guid>
+      <description></description>
+      <pubDate>Tue, 25 Sep 2012 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Sorting Reducer Input Values in Hadoop</title>
+      <link>https://cnr.sh/essays/sort-reducer-input-value-hadoop</link>
+      <guid>https://cnr.sh/essays/sort-reducer-input-value-hadoop</guid>
+      <description></description>
+      <pubDate>Fri, 13 Nov 2009 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

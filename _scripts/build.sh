@@ -3,12 +3,15 @@
 ESSAYS_YML=_yaml/essays.yml
 TALKS_YML=_yaml/talks.yml
 SITEMAP_YML=_yaml/sitemap.yml
+RSS_YML=_yaml/rss.yml
 
 echo "links:" > $ESSAYS_YML
 
 echo "links:" > $SITEMAP_YML
 echo "  - https://cnr.sh/essays/" >> $SITEMAP_YML
 echo "  - https://cnr.sh/talks/" >> $SITEMAP_YML
+
+echo "links:" > $RSS_YML
 
 # Render essays
 for ESSAY_MD in $( ls -r _essays ); do
@@ -17,12 +20,18 @@ for ESSAY_MD in $( ls -r _essays ); do
   ESSAY_HTML="$ESSAY.html"
   TITLE=$( sed -n '/title:/p' _essays/$ESSAY_MD  | head -n 1 | cut -c 8- )
   DATE=$( sed -n '/date:/p' _essays/$ESSAY_MD | head -n 1 | cut -c 7- )
+
+  RSS_DATE=$( date -j -f "%B %d, %Y" "$DATE" +'%a, %d %b %Y 00:00:00 GMT' )
   # That gnarly sed is to remove markdown links. Yeah.
   DESCRIPTION=$( sed -n '6 p' _essays/$ESSAY_MD | sed "s|\[\([^]]*\)\](\([^)]*\))|\1|g" | tr -d '"' | cut -c-200)
 
   echo "  - title: $TITLE" >> $ESSAYS_YML
   echo "    date: $DATE" >> $ESSAYS_YML
   echo "    url: /essays/$ESSAY" >> $ESSAYS_YML
+
+  echo "  - title: $TITLE" >> $RSS_YML
+  echo "    date: $RSS_DATE" >> $RSS_YML
+  echo "    url: https://cnr.sh/essays/$ESSAY" >> $RSS_YML
 
   echo "  - https://cnr.sh/essays/$ESSAY" >> $SITEMAP_YML
 
@@ -40,6 +49,9 @@ pandoc -f markdown-implicit_figures --template _templates/index.html index.md -o
 
 # Render sitemap
 pandoc -f markdown-implicit_figures --template _templates/sitemap.xml --metadata-file=$SITEMAP_YML -t plain -o sitemap.xml < /dev/null
+
+# Render RSS
+pandoc -f markdown-implicit_figures --template _templates/rss.xml --metadata-file=$RSS_YML -t html --metadata title="Chris Riccomini's RSS Feed" -o rss.xml < /dev/null
 
 # Render 404
 pandoc -f markdown-implicit_figures --template _templates/404.html 404.md -o 404.html

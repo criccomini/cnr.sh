@@ -1,5 +1,5 @@
 ---
-title: Yes, you still need a QA team (but not for writing your tests)
+title: Yes, you still need a QA team (but not for writing your tests)
 date: February 19, 2019
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Work for Two Companies"
+title: Work for Two Companies
 date: November 8, 2021
 ---
 
