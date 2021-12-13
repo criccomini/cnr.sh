@@ -5,9 +5,7 @@ date: December 13, 2021
 
 How do you begin writing a book and what is the process like? I've been asked these questions several times since  [The Missing README](https://themissingreadme.com/)  came out in August. This post is my attempt at an answer. If you've ever thought about writing a book (or are just curious), read on.
 
-_NOTE: This post is about my experience writing a non-fiction book in the software engineering space. Not all of my notes will translate to other genres._
-
-# Know Why You're Writing
+## Know Why You're Writing
 
 Writing a book is a long journey. You need to be clear about your motivation. I tell people, "Don't write a book because you can. Write a book because you can't not." Your motivation should be intrinsic. If you don't have a very strong and enduring drive, you will fail.
 
@@ -15,7 +13,7 @@ A desire to learn, to help, to teach, to clarify or share an idea, to address a 
 
 [Dmitry Ryaboy](https://twitter.com/squarecog)  (my co-author) and I have found joy in the feedback and reviews we receive. It's nice to know we've helped people. This, alone, can go a long way in justifying why you write.
 
-# Assess the Market
+## Assess the Market
 
 An intrinsic and enduring motivation to write isn't enough. You need to answer two more questions: why does your book need to be written, and why does it need to be written by you? These are the two questions that publishers want answered. The following templates will help you find your answers:
 
@@ -30,13 +28,13 @@ You might not be an expert on everything you want to write about; this is fine. 
 
 Everything else you do will derive from what differentiates your book, so figure this out early. What sections you write about, what your table of contents looks like, the style of prose, how you market the book, the book's cover, and so on.
 
-# Start a Blog
+## Start a Blog
 
 Start a blog to test your determination and to assess the market. Put out a post every week or two for a sustained period–at least 3 months. If you can keep up this pace, it's a sign you can sustain the pace needed to write a book.
 
 The traffic to your blog will also signal whether there's a market for your writing. If you're putting out content and no one is reading it, your book is going to be harder to sell. It's possible that no one is reading your posts because you don't have distribution–Twitter followers, LinkedIn followers, Hacker News upvotes, Reddit posts, and so on. This is still a valuable signal; you need to build these distribution channels while you write.
 
-# Find a Publisher
+## Find a Publisher
 
 Find a publisher while blogging and writing your first few chapters. You can self-publish or go with a traditional publisher like O'Reilly or No Starch. Consider both paths before making a decision.
 
@@ -54,13 +52,13 @@ If you want to focus on writing, a traditional publisher is probably better. The
 
 Whether you self-publish or go with a traditional publisher, you can't avoid marketing. Technical publishers just aren't good at it. You'll have to leverage your network, social media, blog posts, presentations, and conferences to get the word out (assuming you want to drive sales up; not all authors care to).
 
-# Don't Fixate on Writing Tools
+## Don't Fixate on Writing Tools
 
 Dmitriy and I wasted a month fiddling with writing tools; don't do this. Git, Google Docs, Markdown, AsciiDoc, Word, whatever. Pick one and get writing.
 
 Most publishers tell you which tool they want you to use. O'Reilly has authors use their  [Atlas](https://atlas.oreilly.com/)  tool. No Starch insists on Word or OpenDoc, and give you a template to use. If your publishers don't have a preferred tool or you're self-publishing,  [pick something](https://leanpub.medium.com/walkthrough-for-self-published-authors-how-to-write-and-publish-a-book-using-leanpubs-git-and-5473a3be56ea)   [off the shelf](https://gatekeeperpress.com/most-useful-self-publishing-software-for-authors/)  and use it.
 
-# Establish a Cadence
+## Establish a Cadence
 
 Writing a book takes a long time. Dmitriy and I naively thought we would write the book in a few months. The first few chapters flowed easily, "At this pace, we'll have a draft in three months!" But writing a book was a lot like shipping software: the last 20% took 80% of the time (two years, in our case).
 
@@ -74,7 +72,7 @@ Speaking of co-authors, conventional wisdom cautions against having a co-author,
 
 One caveat: Dmitriy and I both had extensive experience with open source, so it felt natural to collaborate remotely (we've still never met in person!). Getting to a single voice was fine--we edited each other relentlessly. I can't speak to co-authors in general, but Dmitriy and I clicked nicely. You should definitely have Dmitriy as your co-author. ;)
 
-# Get Feedback
+## Get Feedback
 
 As you finish draft chapters, get feedback. Feedback always came to us from the editor first. Our editor was technical enough to give good writing and high-level technical feedback. 
 
@@ -82,7 +80,7 @@ Secondary feedback came from a pool of past and current colleagues and friends. 
 
 The last layer of feedback came from No Starch's book reviewers. The reviewers were surprisingly thoughtful and gave a lot of criticism. Many of the reviewers had strong points of view that we didn't always agree with. We set a lot of this feedback aside, but there were still points that caused us to tweak a few sections.
 
-# Learn to Write
+## Learn to Write
 
 I thought I knew how to write, then we got our first chapter back from the editor. I was taken aback by the amount of red ink on the chapter, and felt the edits made the writing dry.
 
@@ -94,10 +92,10 @@ You absolutely must read _On Writing Well_. Zinsser's book changed the way I wri
 
 Stephen King's _On Writing_ is a nice-to-have. It's split into two sections: an autobiography and random writing tips. The autobiography is fun; King has had an interesting life. I didn't read the second part because it looked like a worse version of _On Writing Well_.
 
-# Wrap Up
+## Wrap Up
 
 This post should get you to the point where you've got a book that's ready to publish. There's a lot more to talk about–fonts, layouts, diagrams, covers, marketing, sales–but those are best left to another post. Happy writing!
 
-# Notes
+## Notes
 
 * Thanks to Dmitriy Ryaboy, Johnny Kinder, and Tom Hanley for feedback on early drafts.

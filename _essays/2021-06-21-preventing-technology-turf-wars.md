@@ -19,7 +19,8 @@ The problem looks like this: Team A wants to use a new "build system" (substitut
 
 \(a\) and (b) are more common than (c), but all three patterns lead to disputes. Ownership fights are toxic and can have a lasting negative impact on team culture, engagement, and ultimately attrition. Proactively managing team dynamics when adding new technology can save you a lot of heartache down the road. Let’s dig into these three scenarios.
 
-# Team B "Owns" the Problem Space and Has a Solution
+## Team B "Owns" the Problem Space and Has a Solution
+
 In scenario (a), an existing team already owns the problem space (build systems) and has an existing solution ("We use Bazel! Just use it!"). Discussions focus on the tradeoffs between existing solutions and the newly proposed technology, and on team ownership if the newly proposed technology is adopted.
 
 Follow [boring technology practices](http://boringtechnology.club/) and [a16z-style](https://a16z.com/2012/12/18/programming-your-culture/), "the new product must be 10x better," policies. If a new technology is marginally better than the existing one, go with the existing one. Look for complementary technologies. Python and Java work well together because they are opposites across a number of dimensions: virtual machine-based vs. interpreted, typed vs. not typed, good for services vs. good for tools, and so on.
@@ -28,7 +29,8 @@ The [WePay design review process](https://wecode.wepay.com/posts/effective-softw
 
 If new technology is adopted, you face an ownership question: is it Team A’s or Team B’s responsibility to own the new thing? Many factors such as resourcing, skill set, and team roadmaps must be considered. I like an approver-based handoff model, which I discuss in scenario (b), below.
 
-# Team B "Owns" the Problem Space but has No Solution
+## Team B "Owns" the Problem Space but has No Solution
+
 Scenario (b) is where things normally get messiest. Team B owns the problem space (build systems), but doesn’t yet have a solution available. Team B normally responds by: 
 
 * Trying to kill Team A’s proposal because they have some vaporware on the roadmap about how they’re going to roll out a build system in 18 months.
@@ -46,7 +48,8 @@ If another team wants to add yet another build system (this is actually most lik
 
 The advisor approach stands as an alternative to [Letting 1,000 Flowers Bloom](https://gigamonkeys.com/flowers/) , and hopefully eschews having to, "rip 999 [technologies] out by the roots," later on. Anyone who’s slogged through a multi-year migration knows how difficult it is to "rip out" even a single technology.
 
-# No Team is Responsible for the Problem Space
+## No Team is Responsible for the Problem Space
+
 In scenario (3), no team is responsible for the problem space. Problem space owners are normally vigilant and protective of teams encroaching on their domain. Without an owner, the most likely outcome is that teams will silently ship whatever they want. Consequently, the main problem when no owner exists is that of discovery: finding out that a new technology is being introduced.
 
 Lack of domain ownership is most common at smaller or hyper-growth companies and startups. In my build system example, it’s unlikely that a startup has a team responsible for builds. Luckily, it’s easier to know what everyone is doing at small companies because everyone is usually sitting in the same area (or Slack channel), talking, and reviewing each other’s work (right?).
@@ -65,6 +68,7 @@ A semi-centralized design review process such as [WePay’s design review blog p
 
 Build and deployment controls prevent a single team from shipping new technology without telling anyone. The [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) (PoLP) can be used to limit what engineers can do on their own. Control policies should be automated and not get in the way as long as engineers "color within the lines". Only when an engineering team is trying to deviate from approved technology should they be impeded. Pre-approved Docker images, [Black Duck](https://www.blackducksoftware.com/) scans on 3rd party libraries, limited internet access on CI machines, git repository scans and monitoring, and restricted access to cloud control panels all prevent engineers from going too far off the rails.
 
-# Notes
+## Notes
+
 * Thanks to Gwen Shapira and Luca Palmieri for feedback on early drafts. Thanks to Sriram Subramanian for feedback and for clarifying my thoughts around discovery at large organizations.
 * This post does not cover everything needed to add a new technology to an engineering organization. I’m focusing on discovery, ownership, and technology processes.
