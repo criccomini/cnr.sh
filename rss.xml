@@ -5,6 +5,13 @@
     <link>https://cnr.sh/rss.xml</link>
     <description>Chris Riccomini's RSS Feed</description>
     <item>
+      <title>How to Write a Technical Book</title>
+      <link>https://cnr.sh/essays/how-to-write-a-technical-book</link>
+      <guid>https://cnr.sh/essays/how-to-write-a-technical-book</guid>
+      <description></description>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>Work for Two Companies</title>
       <link>https://cnr.sh/essays/work-for-two-companies</link>
       <guid>https://cnr.sh/essays/work-for-two-companies</guid>

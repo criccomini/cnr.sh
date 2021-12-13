@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2021-12-13'>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="How to Write a Technical Book" />
+<meta property="og:description" content="How do you begin writing a book and what is the process like? I've been asked these questions several times since The Missing README came out in August. This post is my attempt at an answer. If you'" />
+<meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>How to Write a Technical Book | Chris Riccomini</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+h1, h2, h3, h4 {font-family: 'Roboto Condensed', sans-serif; margin: 0em; line-height: 1.25;}
+h1 {font-size: 30pt;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+pre > code {overflow-x: auto; width: 100%; display: inline-block;}
+div.home {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; background-color: #333;}
+div.social {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; right: 1.5em;}
+div.title {text-align: center;}
+div.main {width: 32em; margin: 0em auto;}
+div.intro {width: 30em; margin: 0em auto;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+div.links {width: 40em; margin: 0em auto;}
+div.links table {border-spacing: 0em 0em; margin: 1em 0em;}
+div.links td.link-date {text-align: right; width: 10em; padding-right: .5em; vertical-align: top;}
+div.links span.link-date {display: none;}
+i.social {color: #ccc;}
+i.home {color: white;}
+div.intro p:first-of-type {font-size: 22pt;}
+div.article p:first-of-type {font-size: 18pt;}
+div.article blockquote > p:first-of-type {font-size: 14pt;}
+div.article img {width: 100%;}
+div.promo {margin: 0rem auto 1.25rem auto; width: 50rem; font-family: helvetica; text-align: center; top: 0px; left: 0px; background-color: rgb(4, 164, 220); color: white; font-size: .925rem; letter-spacing: .075rem; padding: .5em;}
+@media screen and (min-width : 0px) and (max-width : 767px){
+body {padding: 0em;}
+div.main {width: auto; padding: 4em 2em;}
+div.intro {width: auto; padding: 0em 3em;}
+div.home {position: absolute;}
+div.social {display: none;}
+span.by {display: block; margin-top: .5em;}
+div.links {padding-top: 1em; width: auto; padding: 4em 2em;}
+div.links td.link-date {display: none;}
+div.links span.link-date {display: block;}
+div.links table {border-spacing: 0em 1em; margin: 0em;}
+div.promo {width: auto; padding: 1rem 4rem; }
+}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3R91BN0RW0');
+</script></head>
+<body>
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div><div class="promo">
+My book, <a href="https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca" style="color: white; text-decoration: underline;">The Missing README: A Guide for the New Software Engineer</a>, is available on Amazon!
+</div><div class="main">
+<div class="title">
+<h1>How to Write a Technical Book</h1>
+<span class="by">Chris Riccomini on December 13, 2021</span>
+</div>
+<div class="article">
+<p>How do you begin writing a book and what is the process like? I’ve been asked these questions several times since <a href="https://themissingreadme.com/">The Missing README</a> came out in August. This post is my attempt at an answer. If you’ve ever thought about writing a book (or are just curious), read on.</p>
+<p><em>NOTE: This post is about my experience writing a non-fiction book in the software engineering space. Not all of my notes will translate to other genres.</em></p>
+<h1 id="know-why-youre-writing">Know Why You’re Writing</h1>
+<p>Writing a book is a long journey. You need to be clear about your motivation. I tell people, “Don’t write a book because you can. Write a book because you can’t not.” Your motivation should be intrinsic. If you don’t have a very strong and enduring drive, you will fail.</p>
+<p>A desire to learn, to help, to teach, to clarify or share an idea, to address a gap in the market; these are good motivations. Money and prestige are not good motivations. You’re <a href="https://martin.kleppmann.com/2020/09/29/is-book-writing-worth-it.html">not going to get rich</a> <a href="https://rothgar.medium.com/the-economics-of-writing-a-technical-book-689d0c12fe39">writing a technical book</a> .</p>
+<p><a href="https://twitter.com/squarecog">Dmitry Ryaboy</a> (my co-author) and I have found joy in the feedback and reviews we receive. It’s nice to know we’ve helped people. This, alone, can go a long way in justifying why you write.</p>
+<h1 id="assess-the-market">Assess the Market</h1>
+<p>An intrinsic and enduring motivation to write isn’t enough. You need to answer two more questions: why does your book need to be written, and why does it need to be written by you? These are the two questions that publishers want answered. The following templates will help you find your answers:</p>
+<ul>
+<li><a href="https://docs.google.com/document/d/16B8ZmpEj-DULGNb8X2NjpQPUnZMWUn5kM1ZBaN7pSUs/copy">O’Reilly Media’s Book Proposal Template</a></li>
+<li><a href="https://nostarch.com/writeforus">No Starch’s Book Proposal Template</a></li>
+</ul>
+<p>Fill one of these templates out, even if you’re not planning to use O’Reilly or No Starch as your publisher.</p>
+<p>It’s fine if there are books similar to yours; in fact, that’s a good signal that there’s a market. Your book does, however, need to differentiate itself in some way. You can differentiate by length, audience, author, style of prose, and so on. Maybe other books are academic and yours is applied. Perhaps other books are written by lamen and you’ve got 20 years of experience. There are many ways to cut it, but you need to be clear about how your book will stand out.</p>
+<p>You might not be an expert on everything you want to write about; this is fine. Dmitriy and I found ourselves doing research on some topics while we wrote. The book was better for it.</p>
+<p>Everything else you do will derive from what differentiates your book, so figure this out early. What sections you write about, what your table of contents looks like, the style of prose, how you market the book, the book’s cover, and so on.</p>
+<h1 id="start-a-blog">Start a Blog</h1>
+<p>Start a blog to test your determination and to assess the market. Put out a post every week or two for a sustained period–at least 3 months. If you can keep up this pace, it’s a sign you can sustain the pace needed to write a book.</p>
+<p>The traffic to your blog will also signal whether there’s a market for your writing. If you’re putting out content and no one is reading it, your book is going to be harder to sell. It’s possible that no one is reading your posts because you don’t have distribution–Twitter followers, LinkedIn followers, Hacker News upvotes, Reddit posts, and so on. This is still a valuable signal; you need to build these distribution channels while you write.</p>
+<h1 id="find-a-publisher">Find a Publisher</h1>
+<p>Find a publisher while blogging and writing your first few chapters. You can self-publish or go with a traditional publisher like O’Reilly or No Starch. Consider both paths before making a decision.</p>
+<p>I have zero experience with self-publication, so my best advice is to talk to the community at <a href="https://techwriters.dev/">techwriters.dev</a> . The <em>TechWriters</em> Discord, founded by the inimitable Will Larson (a.k.a. <a href="https://lethain.com/">Lethain</a> , author of <a href="https://staffeng.com/book">Staff Engineer</a> and <a href="https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186">An Elegant Puzzle</a> ). The community is a collection of both independent writers and bloggers, as well as traditionally published authors. You’ll find a wealth of knowledge in this community.</p>
+<p><em>NOTE: I post stats and other findings on #book-missingreadme, if you find the content in this post interesting.</em></p>
+<p>Talk to more than one traditional publisher to get a feel for how they work. Pay close attention to the editing experience. A good editor will make your book much better. Send each publisher a sample chapter and ask them to edit it. Evaluate both the editing process and the feedback you get.</p>
+<p>Ask about distribution, too. Some publishers, like O’Reilly, are their own distributor; they manage relationships directly with retail book stores and Amazon. No Starch, by contrast, uses Penguin Random House as their distributor. If you think your audience wants ebooks, self-publication or O’Reilly might be better. Consider traditional distributors if you care more about print copies. (I was surprised to find that print copies of <em>The Missing README</em> outsell our ebooks 2 to 1.)</p>
+<p>If you’re willing to hustle, self-publication might be for you. You get more money per-book self-publishing, but you’ll have to figure out the Amazon marketplace, Gumroad, ebooks, print publication, editing, sales, taxes, and much more. Publishers handle all of this for you.</p>
+<p>If you want to focus on writing, a traditional publisher is probably better. They’ll give you an editor, help with design and layout, and manage distribution. They’ll take more of a cut, though. Take a look at No Starch’s royalty agreement <a href="https://nostarch.com/download/nspagreement-boilerplate-11-12-2020.pdf">here</a> : 15 percent royalty with no advance, 12 percent royalty with a $5,000 advance, or 10 percent royalty with an $8,000 advance.</p>
+<p>Whether you self-publish or go with a traditional publisher, you can’t avoid marketing. Technical publishers just aren’t good at it. You’ll have to leverage your network, social media, blog posts, presentations, and conferences to get the word out (assuming you want to drive sales up; not all authors care to).</p>
+<h1 id="dont-fixate-on-writing-tools">Don’t Fixate on Writing Tools</h1>
+<p>Dmitriy and I wasted a month fiddling with writing tools; don’t do this. Git, Google Docs, Markdown, AsciiDoc, Word, whatever. Pick one and get writing.</p>
+<p>Most publishers tell you which tool they want you to use. O’Reilly has authors use their <a href="https://atlas.oreilly.com/">Atlas</a> tool. No Starch insists on Word or OpenDoc, and give you a template to use. If your publishers don’t have a preferred tool or you’re self-publishing, <a href="https://leanpub.medium.com/walkthrough-for-self-published-authors-how-to-write-and-publish-a-book-using-leanpubs-git-and-5473a3be56ea">pick something</a> <a href="https://gatekeeperpress.com/most-useful-self-publishing-software-for-authors/">off the shelf</a> and use it.</p>
+<h1 id="establish-a-cadence">Establish a Cadence</h1>
+<p>Writing a book takes a long time. Dmitriy and I naively thought we would write the book in a few months. The first few chapters flowed easily, “At this pace, we’ll have a draft in three months!” But writing a book was a lot like shipping software: the last 20% took 80% of the time (two years, in our case).</p>
+<p>To get across the finish line, you need to establish a cadence. Force yourself to write every (week)day, no matter what. Writing a book is a daily endeavor. Don’t fool yourself into thinking you’re going to write in spurts (during vacation, on a specific month, and so on).</p>
+<p>I wrote first thing in the morning with a big cup of coffee. The pandemic also helped–it completely eliminated my commute. I shuffled into my garage every morning and got straight to work. I tried to write at least half a page no matter what, even if it was junk. Some days I got a page or two, other days almost nothing.</p>
+<p>My co-author, Dmitriy Ryaboy, and I wrote greedily at first. We grabbed whichever section inspired us the most. Our publisher encouraged us to write front to back, so we wrote in chapter batches (1-3, 4-7, etc). Batching chapters let us write one chapter while we edited a separate one.</p>
+<p>Speaking of co-authors, conventional wisdom cautions against having a co-author, but collaborating with Dmitriy was fantastic. We cleared each other’s writer’s block, fed each other ideas, and edited each other’s work. Having someone to talk through problems and spitball ideas with is invaluable.</p>
+<p>One caveat: Dmitriy and I both had extensive experience with open source, so it felt natural to collaborate remotely (we’ve still never met in person!). Getting to a single voice was fine–we edited each other relentlessly. I can’t speak to co-authors in general, but Dmitriy and I clicked nicely. You should definitely have Dmitriy as your co-author. ;)</p>
+<h1 id="get-feedback">Get Feedback</h1>
+<p>As you finish draft chapters, get feedback. Feedback always came to us from the editor first. Our editor was technical enough to give good writing and high-level technical feedback.</p>
+<p>Secondary feedback came from a pool of past and current colleagues and friends. We sent our reviewers chapters after we’d done several rounds of editing with No Starch. Most of our reviewers would take a few weeks to get back to us, but it was great feedback.</p>
+<p>The last layer of feedback came from No Starch’s book reviewers. The reviewers were surprisingly thoughtful and gave a lot of criticism. Many of the reviewers had strong points of view that we didn’t always agree with. We set a lot of this feedback aside, but there were still points that caused us to tweak a few sections.</p>
+<h1 id="learn-to-write">Learn to Write</h1>
+<p>I thought I knew how to write, then we got our first chapter back from the editor. I was taken aback by the amount of red ink on the chapter, and felt the edits made the writing dry.</p>
+<p>After some reflection, I decided to give an honest effort to improving my writing. Three books were recommended to me: Strunk and White’s <a href="https://www.amazon.com/Elements-Style-Fourth-William-Strunk/dp/020530902X">Elements of Style</a> , Zinsser’s <a href="https://www.amazon.com/Writing-Well-Classic-Guide-Nonfiction/dp/0060891548">On Writing Well</a> , and Stephen King’s <a href="https://www.amazon.com/Writing-Memoir-Craft-Stephen-King-ebook/dp/B000FC0SIM">On Writing</a> . Yes, two books have (basically) the same name; yes, it’s confusing.</p>
+<p>You absolutely must read <em>On Writing Well</em>. Zinsser’s book changed the way I write. <em>On Writing Well</em> gives practical tips, and also discusses higher-level concepts. Again, <em>read this book</em>.</p>
+<p>/Elements of Style/ is the canonical book everyone recommends, but I found it mediocre, dated. and scattershot. Given its short length, it’s still worth a skim, though.</p>
+<p>Stephen King’s <em>On Writing</em> is a nice-to-have. It’s split into two sections: an autobiography and random writing tips. The autobiography is fun; King has had an interesting life. I didn’t read the second part because it looked like a worse version of <em>On Writing Well</em>.</p>
+<h1 id="wrap-up">Wrap Up</h1>
+<p>This post should get you to the point where you’ve got a book that’s ready to publish. There’s a lot more to talk about–fonts, layouts, diagrams, covers, marketing, sales–but those are best left to another post. Happy writing!</p>
+<h1 id="notes">Notes</h1>
+<ul>
+<li>Thanks to Dmitriy Ryaboy, Johnny Kinder, and Tom Hanley for feedback on early drafts.</li>
+</ul>
+</div>
+<form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+<h1><label for="tlemail">Never Miss a Post</label></h1>
+<span class="by">Subscribe to my newsletter!</span>
+<p style="margin-bottom: .35em;">
+<input type="text" style="width:140px" name="email" id="tlemail" placeholder="your@email.com" />
+<input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" />
+</p>
+</form></div>
+</body>
+</html>
