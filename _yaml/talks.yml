@@ -1,4 +1,7 @@
 links:
+  - title: "Beyond SELECT *: Unpacking the Complexity of Database Snapshots"
+    date: December 16, 2021
+    url: https://www.youtube.com/watch?v=opBSNm7rR1k
   - title: "Data Warehousing Trends"
     date: December 9, 2021
     url: https://www.slideshare.net/criccomini/data-warehousing-trends
