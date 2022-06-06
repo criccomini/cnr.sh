@@ -6,10 +6,13 @@
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Trust, but automate" />
-<meta property="og:description" content="If you want to enforce a technical guideline or rule, you must automate the enforcement mechanism. Relying on human beings to do the enforcement is too error prone, yet this is exactly the pattern tha" />
-<meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
-<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>Trust, but automate | Chris Riccomini</title>
+<meta property="og:description" content="If you want to enforce a
+technical guideline or rule, you must automate the enforcement
+mechanism. Relying on human beings to do the enforcement is too error
+prone, yet this is exactly the pattern tha" />
+<meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>Trust,
+but automate | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
 body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
@@ -33,7 +36,7 @@ div.intro p:first-of-type {font-size: 22pt;}
 div.article p:first-of-type {font-size: 18pt;}
 div.article blockquote > p:first-of-type {font-size: 14pt;}
 div.article img {width: 100%;}
-div.promo {margin: 0rem auto 1.25rem auto; width: 50rem; font-family: helvetica; text-align: center; top: 0px; left: 0px; background-color: rgb(4, 164, 220); color: white; font-size: .925rem; letter-spacing: .075rem; padding: .5em;}
+div.promo {margin: 0rem auto 1.25rem auto; width: 50rem; font-family: helvetica; text-align: center; top: 0px; left: 0px; background-color: black; color: white; font-size: .925rem; letter-spacing: .075rem; padding: .5em;}
 @media screen and (min-width : 0px) and (max-width : 767px){
 body {padding: 0em;}
 div.main {width: auto; padding: 4em 2em;}
@@ -47,6 +50,7 @@ div.links span.link-date {display: block;}
 div.links table {border-spacing: 0em 1em; margin: 0em;}
 div.promo {width: auto; padding: 1rem 4rem; }
 }</style>
+<script src="https://kit.fontawesome.com/72c21ff1f4.js" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -61,32 +65,96 @@ gtag('config', 'G-3R91BN0RW0');
 <div class="social">
 <a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
 </div><div class="promo">
-My book, <a href="https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca" style="color: white; text-decoration: underline;">The Missing README: A Guide for the New Software Engineer</a>, is available on Amazon!
+<a href="https://highwire.ai" style="color: #fff; font-weight: normal;">
+My latest project, <span style="font-weight: bold; text-decoration: underline;">Highwire</span>, is up! Connect your brokerage, set asset targets, and get portfolio alerts.
+</a>
 </div><div class="main">
 <div class="title">
 <h1>Trust, but automate</h1>
 <span class="by">Chris Riccomini on November 11, 2017</span>
 </div>
 <div class="article">
-<p>If you want to enforce a technical guideline or rule, you must automate the enforcement mechanism. Relying on human beings to do the enforcement is too error prone, yet this is exactly the pattern that I see pop up again and again.</p>
-<p>Suppose a team wants to define database schema rules. Things like banning the use of BINARY in MySQL in favor of VARBINARY, or the requirement for create and modify time columns in every table. It’s surprising how a group of otherwise intelligent engineers will sit in a room and agree that these are the required rules, and then go and publish them on a page somewhere. “There, done,” they say. Wrong.</p>
+<p>If you want to enforce a technical guideline or rule, you must
+automate the enforcement mechanism. Relying on human beings to do the
+enforcement is too error prone, yet this is exactly the pattern that I
+see pop up again and again.</p>
+<p>Suppose a team wants to define database schema rules. Things like
+banning the use of BINARY in MySQL in favor of VARBINARY, or the
+requirement for create and modify time columns in every table. It’s
+surprising how a group of otherwise intelligent engineers will sit in a
+room and agree that these are the required rules, and then go and
+publish them on a page somewhere. “There, done,” they say. Wrong.</p>
 <h2 id="humans-arent-good-at-this">Humans aren’t good at this</h2>
-<p>People aren’t perfect. Rules are circumvented, mistakenly or otherwise. You need something to enforce the rules. Here again, humans are poor performers. They get bored. They are biased. They can be persuaded. They forget things. Computers don’t do this. It should go without saying, but if the way you plan to enforce your rules is via a human, it’s probably going to fall apart. Even if you documented the rules. Even if the document has animated gifs, bold letters, and threats. It just doesn’t work well.</p>
-<p>The solution is to seek out what can be automated, and spend the time to automate it. Ultimately, it’s the responsibility of the person (or group) that defined the rules to make sure that the rules are enforced. This means it’s their job to automate the enforcement, whether that’s writing scripts, turning on commit hooks, or enabling lint checks.</p>
+<p>People aren’t perfect. Rules are circumvented, mistakenly or
+otherwise. You need something to enforce the rules. Here again, humans
+are poor performers. They get bored. They are biased. They can be
+persuaded. They forget things. Computers don’t do this. It should go
+without saying, but if the way you plan to enforce your rules is via a
+human, it’s probably going to fall apart. Even if you documented the
+rules. Even if the document has animated gifs, bold letters, and
+threats. It just doesn’t work well.</p>
+<p>The solution is to seek out what can be automated, and spend the time
+to automate it. Ultimately, it’s the responsibility of the person (or
+group) that defined the rules to make sure that the rules are enforced.
+This means it’s their job to automate the enforcement, whether that’s
+writing scripts, turning on commit hooks, or enabling lint checks.</p>
 <h2 id="what-about-exceptions">What about exceptions?</h2>
-<p>The problem with rules is that there are always exceptions. When the rubber meets the road, when it’s 3 a.m. and the site is down and you just need to get something fixed. You need to <em>consciously</em> and <em>intentionally</em> circumvent the rules. But you’ve just gone and automated everything! You need to bake the exception flow into the automation process.</p>
-<p>At LinkedIn, we had the concept of an “<a href="https://en.wikipedia.org/wiki/Access_control_list">ACL</a> override”. You could execute an ACL override when committing code to a repository that you didn’t normally have access to. After approval from another engineer, the override was logged, and an email was sent to the entire engineering organization to alert everyone that an override had occurred. The tool was seldom used, but it was there in case it was needed.</p>
-<p>Make sure that automation allows for its circumvention, but does so in a way that makes it clear that this is not normal. Causing the user a little pain is fine, and arguably a good thing. Log and alert when a circumvention occurs, and make it clear to the user what they’re trading off by breaking the rules.</p>
+<p>The problem with rules is that there are always exceptions. When the
+rubber meets the road, when it’s 3 a.m. and the site is down and you
+just need to get something fixed. You need to <em>consciously</em> and
+<em>intentionally</em> circumvent the rules. But you’ve just gone and
+automated everything! You need to bake the exception flow into the
+automation process.</p>
+<p>At LinkedIn, we had the concept of an “<a
+href="https://en.wikipedia.org/wiki/Access_control_list">ACL</a>
+override”. You could execute an ACL override when committing code to a
+repository that you didn’t normally have access to. After approval from
+another engineer, the override was logged, and an email was sent to the
+entire engineering organization to alert everyone that an override had
+occurred. The tool was seldom used, but it was there in case it was
+needed.</p>
+<p>Make sure that automation allows for its circumvention, but does so
+in a way that makes it clear that this is not normal. Causing the user a
+little pain is fine, and arguably a good thing. Log and alert when a
+circumvention occurs, and make it clear to the user what they’re trading
+off by breaking the rules.</p>
 <h2 id="limitations">Limitations</h2>
-<p>Sadly, not all rule enforcement can be automated all the time. Whenever a human being is required to make a qualitative judgement, automation bumps up against its limits.</p>
-<p>Let’s take <a href="http://semver.org/">Semantic Versioning</a> as an example. Take a moment to review the website if you’re unfamiliar with it. One of the rules from the website reads:</p>
+<p>Sadly, not all rule enforcement can be automated all the time.
+Whenever a human being is required to make a qualitative judgement,
+automation bumps up against its limits.</p>
+<p>Let’s take <a href="http://semver.org/">Semantic Versioning</a> as an
+example. Take a moment to review the website if you’re unfamiliar with
+it. One of the rules from the website reads:</p>
 <blockquote>
-<p>Patch version Z (x.y.Z | x &gt; 0) MUST be incremented if only backwards compatible bug fixes are introduced. A bug fix is defined as an internal change that fixes incorrect behavior.</p>
+<p>Patch version Z (x.y.Z | x &gt; 0) MUST be incremented if only
+backwards compatible bug fixes are introduced. A bug fix is defined as
+an internal change that fixes incorrect behavior.</p>
 </blockquote>
-<p>Backwards compatibility is something that can be (<a href="http://hisham.hm/2016/03/24/you-cant-automate-semver-or-there-is-no-way-around-rices-theorem/">kind of</a>) automated and tested via a script (assuming there’s a rigorous way to define a public API), so that’s good news. But what about this claim about a bug fix being something that fixes incorrect behavior. Who determines what a bug fix is versus what a feature is? One could try to define a “feature” and “bug fix” issue type in an issue tracker, and link the issues to the commits. Transitively, this would connect the issue type to the version bump, and automated checks could then verify that “feature” issues are only resolved when a minor version bump occurs, not a patch version. Still, who defines whether an issue is a feature or a bug? Things get a bit wishy-washy.</p>
-<p>Ultimately, some processes are just going to boil down to humans making judgement calls. In these cases, automate what you can, but be aware that you no longer have a rule — you have a guideline. You can still derive useful information, but it’s dependent on the quality of the human judgements being made. This is where culture becomes important. If people care about the output of the automation, they’ll be more likely to think about their decisions, and input things that make sense.</p>
+<p>Backwards compatibility is something that can be (<a
+href="http://hisham.hm/2016/03/24/you-cant-automate-semver-or-there-is-no-way-around-rices-theorem/">kind
+of</a>) automated and tested via a script (assuming there’s a rigorous
+way to define a public API), so that’s good news. But what about this
+claim about a bug fix being something that fixes incorrect behavior. Who
+determines what a bug fix is versus what a feature is? One could try to
+define a “feature” and “bug fix” issue type in an issue tracker, and
+link the issues to the commits. Transitively, this would connect the
+issue type to the version bump, and automated checks could then verify
+that “feature” issues are only resolved when a minor version bump
+occurs, not a patch version. Still, who defines whether an issue is a
+feature or a bug? Things get a bit wishy-washy.</p>
+<p>Ultimately, some processes are just going to boil down to humans
+making judgement calls. In these cases, automate what you can, but be
+aware that you no longer have a rule — you have a guideline. You can
+still derive useful information, but it’s dependent on the quality of
+the human judgements being made. This is where culture becomes
+important. If people care about the output of the automation, they’ll be
+more likely to think about their decisions, and input things that make
+sense.</p>
 <h2 id="in-summary">In summary</h2>
-<p>Keep your eye out when engaged in conversations surrounding guidelines in rules. If you’re in a meeting where people define the end-point as documenting the rules, push back. Tell them to trust users to read the rules, but automate the enforcement.</p>
+<p>Keep your eye out when engaged in conversations surrounding
+guidelines in rules. If you’re in a meeting where people define the
+end-point as documenting the rules, push back. Tell them to trust users
+to read the rules, but automate the enforcement.</p>
 </div>
 <form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 <h1><label for="tlemail">Never Miss a Post</label></h1>
