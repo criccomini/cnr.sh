@@ -5,6 +5,13 @@
     <link>https://cnr.sh/rss.xml</link>
     <description>Chris Riccomini's RSS Feed</description>
     <item>
+      <title>How to Plan Work for an Infrastructure Team</title>
+      <link>https://cnr.sh/essays/how-to-plan-work-for-infrastructure-team</link>
+      <guid>https://cnr.sh/essays/how-to-plan-work-for-infrastructure-team</guid>
+      <description></description>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>How to Write a Technical Book</title>
       <link>https://cnr.sh/essays/how-to-write-a-technical-book</link>
       <guid>https://cnr.sh/essays/how-to-write-a-technical-book</guid>
