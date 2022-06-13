@@ -3,13 +3,15 @@ title: How to Plan Work for an Infrastructure Team
 date: June 13, 2022
 ---
 
-Infrastructure teams have several traits that make project planning difficult.
+Building tooling and systems for other engineers at a company can be tough. Project planning, in particular, presents a challenge. Infrastructure teams have several unique traits that hinder predictable planning.
 
-Infrastructure teams are less likely to have product managers to help with planning. Infrastructure engineering managers left to do prioritization, requirements gathering, and quarterly/yearly planning on their own. Managers might not know how to do this.
+Infrastructure teams are less likely to have product managers to help with planning. Infrastructure engineering managers are left to do prioritization, requirements gathering, and quarterly/yearly planning on their own. Managers don't always know how to do this effectively.
 
-Infrastructure teams also sit directly next to their customers--a double edged sword. Teams are able to gather feedback rapidly and have close daily contact with their users (the other engineers in the company). But infrastructure teams are so easy to access that they are interrupted frequently. Imagine if customers could walk directly to an application engineer and demand a product change. Infrastructure engineers live this experience. Managing these interruptions is challenging.
+Such teams also sit directly next to their customers (or at least they used to before the pandemic). Close proximity to the customer is a double edged sword. Teams are able to gather feedback rapidly and have close daily contact with their users (the other engineers in the company).
 
-Despite close contact to their customers, infrastructure teams are often disconnected from product planning itself. Upstream teams don't remember to inform infrastructure teams that their new feature depends on infrastructure teams until it's too late. Engineers are left scrambling and frustrated.
+But infrastructure teams are so easy to access that they are interrupted frequently. Imagine if customers could walk directly up to an application engineer and demand a product change. Infrastructure engineers live this experience. Managing these interruptions is challenging.
+
+Despite close customer contact, infrastructure teams are often disconnected from product planning itself. Other teams don't inform the infrastructure team that a new feature depends on the infrastructure teams until it's too late. Engineers are left scrambling and frustrated.
 
 A few years ago, an infrastructure team at WePay was having trouble planning their work. The team was handling constant interrupts--both operational issues and urgent requests--from other teams. The manager threw up their hands and declared it impossible to reliably plan and deliver projects of their own; the team was purely reactive.
 
@@ -17,7 +19,7 @@ At the time, I was running WePay's data infrastructure team. I heard the manager
 
 The rest of this post is the (edited) email that I sent the manager. Everything here can (and should) be adjusted, but the structure presented below is a reasonable starting point. If it resonates with you and you want more, I highly recommend [Will Larson](https://lethain.com/)'s book, [_An Elegant Puzzle_](https://www.amazon.com/dp/B07QYCHJ7V).
 
-_Context: My data infrastructure team was about 6 people (including 2 site reliability engineers (SREs)) at the time. Total company size was probably 300 people or so. We were using JIRA as our ticketing system and a loose Agile/Scrum planning methodology. We had 2-week sprints and both quarterly and yearly planning._
+_Context: My data infrastructure team was about 6 people (including 2 site reliability engineers (SREs)). The company had roughly 300 people. We were using JIRA as our ticketing system and a loose Agile/Scrum planning methodology. We had 2-week sprints and both quarterly and yearly planning._
 
 ---
 
