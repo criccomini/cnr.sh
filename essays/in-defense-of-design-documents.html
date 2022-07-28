@@ -6,9 +6,13 @@
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <meta property="og:type" content="website" />
 <meta property="og:title" content="In defense of design documents" />
-<meta property="og:description" content="Design documents aren't just a chore; something that you begrudgingly slog through before getting to the fun work of writing code. Writing a design document might be challenging, but it should be a pr" />
+<meta property="og:description" content="Design documents aren't just a
+chore; something that you begrudgingly slog through before getting to
+the fun work of writing code. Writing a design document might be
+challenging, but it should be a pr" />
 <meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
-<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>In defense of design documents | Chris Riccomini</title>
+<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>In
+defense of design documents | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
 body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
@@ -66,37 +70,96 @@ gtag('config', 'G-3R91BN0RW0');
 <span class="by">Chris Riccomini on November 27, 2018</span>
 </div>
 <div class="article">
-<p>Design documents aren’t just a chore; something that you begrudgingly slog through before getting to the fun work of writing code. Writing a design document might be challenging, but it should be a productive exercise that gets everyone on the same page. Let’s start with what a design document is.</p>
-<p>Design documents come in all sorts of flavors. Some of them are tens or even hundreds of pages long, while others might be a few paragraphs. Some are very formal or academic, while others are quite casual. One important area of distinction is whether a design document is being written before the code has been implemented, or whether it’s being written for an existing piece of software. Documents written before implementation tend to be more exploratory and persuasive, while documents written after tend to be more about description. This document focuses on design documents that have not yet been implemented, though a lot of the content here applies just as much to design documents for existing code.</p>
+<p>Design documents aren’t just a chore; something that you begrudgingly
+slog through before getting to the fun work of writing code. Writing a
+design document might be challenging, but it should be a productive
+exercise that gets everyone on the same page. Let’s start with what a
+design document is.</p>
+<p>Design documents come in all sorts of flavors. Some of them are tens
+or even hundreds of pages long, while others might be a few paragraphs.
+Some are very formal or academic, while others are quite casual. One
+important area of distinction is whether a design document is being
+written before the code has been implemented, or whether it’s being
+written for an existing piece of software. Documents written before
+implementation tend to be more exploratory and persuasive, while
+documents written after tend to be more about description. This document
+focuses on design documents that have not yet been implemented, though a
+lot of the content here applies just as much to design documents for
+existing code.</p>
 <h2 id="the-document">The document</h2>
-<p>There isn’t a one-size-fits-all template for design documents, but most include a combination of sections such as:</p>
+<p>There isn’t a one-size-fits-all template for design documents, but
+most include a combination of sections such as:</p>
 <ul>
-<li>Introduction, problem statement, justification for changes, goal, interested parties</li>
-<li>Review of existing implementation, surrounding ecosystem, related work</li>
-<li>High-level/architectural design, discussion of other potential designs, tradeoffs</li>
-<li>Lower-level implementation details, security, high availability, scalability, durability</li>
+<li>Introduction, problem statement, justification for changes, goal,
+interested parties</li>
+<li>Review of existing implementation, surrounding ecosystem, related
+work</li>
+<li>High-level/architectural design, discussion of other potential
+designs, tradeoffs</li>
+<li>Lower-level implementation details, security, high availability,
+scalability, durability</li>
 </ul>
-<p>Most large open source projects have some semi-formal process for design documents, and they can be a good place to look for inspiration and examples.</p>
+<p>Most large open source projects have some semi-formal process for
+design documents, and they can be a good place to look for inspiration
+and examples.</p>
 <ul>
-<li><a href="https://www.python.org/dev/peps/">PEPs</a> (Python enhancement proposals)</li>
-<li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Improvement+Proposals">KIPs</a> (Kafka improvement proposals)</li>
-<li><a href="https://jcp.org/en/jsr/all">JSRs</a> (Java specification requests)</li>
+<li><a href="https://www.python.org/dev/peps/">PEPs</a> (Python
+enhancement proposals)</li>
+<li><a
+href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Improvement+Proposals">KIPs</a>
+(Kafka improvement proposals)</li>
+<li><a href="https://jcp.org/en/jsr/all">JSRs</a> (Java specification
+requests)</li>
 </ul>
-<p>This should give a flavor for what design documents and specifications can look like. But why write one?</p>
+<p>This should give a flavor for what design documents and
+specifications can look like. But why write one?</p>
 <ul>
-<li>To force the designer to think rigorously about what they’re building</li>
-<li>To help others understand what is to be built, why it should be built, and how it will work.</li>
+<li>To force the designer to think rigorously about what they’re
+building</li>
+<li>To help others understand what is to be built, why it should be
+built, and how it will work.</li>
 </ul>
 <h2 id="the-designer">The designer</h2>
-<p>The designer can sometimes be an overlooked party in design documents. First-level thinking will view the design document as expressing what the designer already knows. This should not be the case. The design document should be used as a tool by the designer to think rigorously about what it is that they’re proposing to build. The writer should do a brain dump of what they think should be built, why, and how. Then, they should attack their own proposal. What are the alternatives? What business processes have been overlooked? An honest exploration will lead to a more robust document.</p>
+<p>The designer can sometimes be an overlooked party in design
+documents. First-level thinking will view the design document as
+expressing what the designer already knows. This should not be the case.
+The design document should be used as a tool by the designer to think
+rigorously about what it is that they’re proposing to build. The writer
+should do a brain dump of what they think should be built, why, and how.
+Then, they should attack their own proposal. What are the alternatives?
+What business processes have been overlooked? An honest exploration will
+lead to a more robust document.</p>
 <h2 id="the-developers">The developers</h2>
-<p>Other developers involved in the project need to know about changes being made. Obviously, if the designer is enlisting others help implement the proposed changes, the developers are going to need to know what to build. But even if developers are not going to be involved in the changes, they will be valuable to the process. They each have a different perspective, which is extremely valuable. Not only does each developer have a different understanding of a system, they also have different knowledge about the surrounding ecosystem, and a different thought process. Including developers can lead to alternative proposals, exposure of gaps in the design, or improvements to the existing design. All of this is invaluable.</p>
+<p>Other developers involved in the project need to know about changes
+being made. Obviously, if the designer is enlisting others help
+implement the proposed changes, the developers are going to need to know
+what to build. But even if developers are not going to be involved in
+the changes, they will be valuable to the process. They each have a
+different perspective, which is extremely valuable. Not only does each
+developer have a different understanding of a system, they also have
+different knowledge about the surrounding ecosystem, and a different
+thought process. Including developers can lead to alternative proposals,
+exposure of gaps in the design, or improvements to the existing design.
+All of this is invaluable.</p>
 <h2 id="the-users">The users</h2>
-<p>Users also bring a unique perspective, and should be included when writing a design document. It’s not worth belaboring the point of unique perspectives, but suffice it to say that users often have a very different view of the system from developers. Their involvement is key.</p>
-<p>Note that, for some designs, there may be different classes of users. For example, a user for a database might be a developer writing a service that interacts with a database, or it might be an operator that runs the database. Each type of user, again, comes to the table with different needs and thoughts.</p>
+<p>Users also bring a unique perspective, and should be included when
+writing a design document. It’s not worth belaboring the point of unique
+perspectives, but suffice it to say that users often have a very
+different view of the system from developers. Their involvement is
+key.</p>
+<p>Note that, for some designs, there may be different classes of users.
+For example, a user for a database might be a developer writing a
+service that interacts with a database, or it might be an operator that
+runs the database. Each type of user, again, comes to the table with
+different needs and thoughts.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The list of parties above is not exhaustive. Others, such as managers, might also need to be involved. Still, this only further underscores the importance of good design documentation.</p>
-<p>At its core, design documents are about managing change. Expressing what’s being done, why, and how are all important. Even more important is getting all interested parties on board and in sync. All of this will reduce risk and help others be productive.</p>
+<p>The list of parties above is not exhaustive. Others, such as
+managers, might also need to be involved. Still, this only further
+underscores the importance of good design documentation.</p>
+<p>At its core, design documents are about managing change. Expressing
+what’s being done, why, and how are all important. Even more important
+is getting all interested parties on board and in sync. All of this will
+reduce risk and help others be productive.</p>
 </div>
 <form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 <h1><label for="tlemail">Never Miss a Post</label></h1>

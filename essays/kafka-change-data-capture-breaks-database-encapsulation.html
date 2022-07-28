@@ -5,10 +5,16 @@
 <meta name="date" content='2018-11-05'>
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Kafka change data capture breaks database encapsulation" />
-<meta property="og:description" content="Realtime change data capture (CDC) is becoming a popular architecture for data integration and data pipelines). The rise of Kafka connect, in particular, has triggered a lot of interest in the subject" />
+<meta property="og:title" content="Kafka change data capture breaks
+database encapsulation" />
+<meta property="og:description" content="Realtime change data capture
+(CDC) is becoming a popular architecture for data integration and data
+pipelines). The rise of Kafka connect, in particular, has triggered a
+lot of interest in the subject" />
 <meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
-<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>Kafka change data capture breaks database encapsulation | Chris Riccomini</title>
+<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>Kafka
+change data capture breaks database
+encapsulation | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
 body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
@@ -66,75 +72,259 @@ gtag('config', 'G-3R91BN0RW0');
 <span class="by">Chris Riccomini on November 5, 2018</span>
 </div>
 <div class="article">
-<p>Realtime <a href="https://en.wikipedia.org/wiki/Change_data_capture">change data capture</a> (CDC) is becoming a popular architecture for <a href="https://en.wikipedia.org/wiki/Data_integration">data integration</a> and <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">data pipelines</a>. The rise of <a href="https://docs.confluent.io/current/connect/index.html">Kafka connect</a>, in particular, has triggered a lot of interest in the subject. In realtime CDC, a database’s changes (inserts, updates, and deletes) are available as a stream of mutations for downstream consumers to tail. This architecture is showing up a lot in modern ETL and data integration implementations, and it has a number of advantages:</p>
+<p>Realtime <a
+href="https://en.wikipedia.org/wiki/Change_data_capture">change data
+capture</a> (CDC) is becoming a popular architecture for <a
+href="https://en.wikipedia.org/wiki/Data_integration">data
+integration</a> and <a
+href="https://en.wikipedia.org/wiki/Pipeline_(computing)">data
+pipelines</a>. The rise of <a
+href="https://docs.confluent.io/current/connect/index.html">Kafka
+connect</a>, in particular, has triggered a lot of interest in the
+subject. In realtime CDC, a database’s changes (inserts, updates, and
+deletes) are available as a stream of mutations for downstream consumers
+to tail. This architecture is showing up a lot in modern ETL and data
+integration implementations, and it has a number of advantages:</p>
 <ul>
-<li><strong>It’s lower latency.</strong> Unlike periodic pulls, which can range from minutes to days between loads, CDC typically has a latency on the order of seconds.</li>
-<li><strong>You get intermediate data.</strong> CDC also usually exposes all intermediate mutations as well. If you have an insert, update, and delete, and batch loads execute only before the update and after the delete, you’ll never see the data in the downstream system at all. CDC can expose all three operations to downstream consumers.</li>
-<li><strong>You can run stream processing on the feed.</strong> CDC systems also open the door up to running stream processing on database changes. You can do realtime aggregation, monitoring, and more.</li>
+<li><strong>It’s lower latency.</strong> Unlike periodic pulls, which
+can range from minutes to days between loads, CDC typically has a
+latency on the order of seconds.</li>
+<li><strong>You get intermediate data.</strong> CDC also usually exposes
+all intermediate mutations as well. If you have an insert, update, and
+delete, and batch loads execute only before the update and after the
+delete, you’ll never see the data in the downstream system at all. CDC
+can expose all three operations to downstream consumers.</li>
+<li><strong>You can run stream processing on the feed.</strong> CDC
+systems also open the door up to running stream processing on database
+changes. You can do realtime aggregation, monitoring, and more.</li>
 </ul>
-<p>There are a bunch of other advantages, as well. Suffice it to say, realtime DB change data capture is a really great way to do data integration in your organization.</p>
+<p>There are a bunch of other advantages, as well. Suffice it to say,
+realtime DB change data capture is a really great way to do data
+integration in your organization.</p>
 <h2 id="schema-evolution">Schema evolution</h2>
-<p>Problems begin to arise when schema evolution enters the picture. Developers are used to thinking of their databases as nicely encapsulated private data stores. If they want to evolve a schema, they should be able to. Typical use cases involve renaming a field, adding a new field, removing an old field, or changing data types. All of these can pose problems for the Kafka ecosystem. Removing required fields, for example, is a forwards incompatible change. Downstream consumers expect the field to be there. Similarly, changing a field from an integer to a string will also break downstream code that’s expecting to get integers values.</p>
-<p><a href="https://www.confluent.io/">Confluent</a> offers a nice <a href="https://www.confluent.io/confluent-schema-registry/">schema registry</a> that helps to protect against this. The registry offers <a href="https://docs.confluent.io/current/avro.html#forward-compatibility">backwards, forwards, and full compatibility checks</a>. If a producer violates the schema rules, for example dropping a required field, the schema registry will reject the change, which will cause the producer to fail producing its messages.</p>
-<p>But where does this leave us? Telling a developer, “you’re not allowed to change your database schema,” isn’t good enough. Even worse, the schema registry is disconnected from the source database schema, so the developer will likely be able to evolve the schema anyway. This will cause the pipeline to break, since the source Kafka connector will not be able to produce the new messages. We need a way to manage schema evolution, even when changes are incompatible.</p>
+<p>Problems begin to arise when schema evolution enters the picture.
+Developers are used to thinking of their databases as nicely
+encapsulated private data stores. If they want to evolve a schema, they
+should be able to. Typical use cases involve renaming a field, adding a
+new field, removing an old field, or changing data types. All of these
+can pose problems for the Kafka ecosystem. Removing required fields, for
+example, is a forwards incompatible change. Downstream consumers expect
+the field to be there. Similarly, changing a field from an integer to a
+string will also break downstream code that’s expecting to get integers
+values.</p>
+<p><a href="https://www.confluent.io/">Confluent</a> offers a nice <a
+href="https://www.confluent.io/confluent-schema-registry/">schema
+registry</a> that helps to protect against this. The registry offers <a
+href="https://docs.confluent.io/current/avro.html#forward-compatibility">backwards,
+forwards, and full compatibility checks</a>. If a producer violates the
+schema rules, for example dropping a required field, the schema registry
+will reject the change, which will cause the producer to fail producing
+its messages.</p>
+<p>But where does this leave us? Telling a developer, “you’re not
+allowed to change your database schema,” isn’t good enough. Even worse,
+the schema registry is disconnected from the source database schema, so
+the developer will likely be able to evolve the schema anyway. This will
+cause the pipeline to break, since the source Kafka connector will not
+be able to produce the new messages. We need a way to manage schema
+evolution, even when changes are incompatible.</p>
 <h3 id="library-api-migrations">Library API migrations</h3>
-<p>At LinkedIn, we had a tool that allowed us to manage library migrations. The premise was much the same as what I’ve outlined above. A library owner makes a change, and wants to migrate all the users of the library to the new version. The tool would allow us to:</p>
+<p>At LinkedIn, we had a tool that allowed us to manage library
+migrations. The premise was much the same as what I’ve outlined above. A
+library owner makes a change, and wants to migrate all the users of the
+library to the new version. The tool would allow us to:</p>
 <ul>
 <li>Find all of the library users.</li>
 <li>Determine which versions each user was on.</li>
-<li>Automatically trigger a pull request with the library version upgrade.</li>
+<li>Automatically trigger a pull request with the library version
+upgrade.</li>
 <li>Run CI tests with the upgraded library.</li>
 <li>Nag service owners to upgrade the library.</li>
 <li>Track upgrade progress.</li>
 </ul>
-<p>Obviously, if the library change resulted in an incompatible API change, the various services using the library would fail to compile, and their CI tests would fail. The tool helped track this as well.</p>
-<p>The library migration pattern outlined above is appealing because it allows developers the flexibility to evolve their library while not breaking downstream users. Unfortunately, things aren’t quite as straight forward in the streaming world. With libraries, a developer can make changes and commit them to the library while services continue to use older versions of the library. The two can co-exist at the same time. This is not the case with streaming. The second a producer decides to send data to a new topic, or stop sending certain fields, downstream consumers will be affected, and potentially break.</p>
+<p>Obviously, if the library change resulted in an incompatible API
+change, the various services using the library would fail to compile,
+and their CI tests would fail. The tool helped track this as well.</p>
+<p>The library migration pattern outlined above is appealing because it
+allows developers the flexibility to evolve their library while not
+breaking downstream users. Unfortunately, things aren’t quite as
+straight forward in the streaming world. With libraries, a developer can
+make changes and commit them to the library while services continue to
+use older versions of the library. The two can co-exist at the same
+time. This is not the case with streaming. The second a producer decides
+to send data to a new topic, or stop sending certain fields, downstream
+consumers will be affected, and potentially break.</p>
 <h3 id="service-api-migrations">Service API migrations</h3>
-<p>There’s another place where this problem appears. Developers managing web service APIs also have to solve this problem. The web services have the same problem as the Kafka pipeline, though. If a web service decides to alter its API in an incompatible way, all of the invoking services must be upgraded. This can’t be done in lock-step, though, due to the nature of distributed systems. Either the client or the server must go first (if you want to avoid downtime). If the client goes first, it will break since the new API is not yet available on the server. If the server goes first, the client will break since the old API is no longer available. Instead, a web service must expose both the old and new API for some period of time, until all of the legacy systems can be migrated to the new API. This is typically managed through some combination of API versioning, request re-writing, and proxies. This is what the Kafka ecosystem needs.</p>
+<p>There’s another place where this problem appears. Developers managing
+web service APIs also have to solve this problem. The web services have
+the same problem as the Kafka pipeline, though. If a web service decides
+to alter its API in an incompatible way, all of the invoking services
+must be upgraded. This can’t be done in lock-step, though, due to the
+nature of distributed systems. Either the client or the server must go
+first (if you want to avoid downtime). If the client goes first, it will
+break since the new API is not yet available on the server. If the
+server goes first, the client will break since the old API is no longer
+available. Instead, a web service must expose both the old and new API
+for some period of time, until all of the legacy systems can be migrated
+to the new API. This is typically managed through some combination of
+API versioning, request re-writing, and proxies. This is what the Kafka
+ecosystem needs.</p>
 <h2 id="your-data-model-is-an-api">Your data model is an API</h2>
-<p>The service API use case can be loosely mapped to Kafka by thinking of the source DB’s data model as a versioned API. In fact, the Confluent schema registry already versions APIs on a per-topic basis. Most DB schema management systems (<a href="https://www.liquibase.org/">Liquibase</a>, <a href="https://flywaydb.org/">Flyway</a>, <a href="https://bitbucket.org/zzzeek/alembic">Alembic</a>) also version DB schemas. When the source DB decides that it wants to evolve its schema, it’s akin to a version change in a web service’s API. If the version change is forwards incompatible (a major version change in <em>semantic versioning</em> terms), a migration needs to occur.</p>
+<p>The service API use case can be loosely mapped to Kafka by thinking
+of the source DB’s data model as a versioned API. In fact, the Confluent
+schema registry already versions APIs on a per-topic basis. Most DB
+schema management systems (<a
+href="https://www.liquibase.org/">Liquibase</a>, <a
+href="https://flywaydb.org/">Flyway</a>, <a
+href="https://bitbucket.org/zzzeek/alembic">Alembic</a>) also version DB
+schemas. When the source DB decides that it wants to evolve its schema,
+it’s akin to a version change in a web service’s API. If the version
+change is forwards incompatible (a major version change in <em>semantic
+versioning</em> terms), a migration needs to occur.</p>
 <center>
 <blockquote class="twitter-tweet" data-lang="en">
 <p lang="en" dir="ltr">
-Using <a href="https://twitter.com/apachekafka?ref_src=twsrc%5Etfw"><span class="citation" data-cites="apachekafka">@apachekafka</span></a> connect makes developers think about data models as an API. Although it can be uncomfortable, it's just exposing what's always been the case: downstream consumers of the data depend on your data model. You need to think about how it evolves over time.
+Using
+<a href="https://twitter.com/apachekafka?ref_src=twsrc%5Etfw"><span
+class="citation" data-cites="apachekafka">@apachekafka</span></a>
+connect makes developers think about data models as an API. Although it
+can be uncomfortable, it's just exposing what's always been the case:
+downstream consumers of the data depend on your data model. You need to
+think about how it evolves over time.
 </p>
-— Chris Riccomini (<span class="citation" data-cites="criccomini">@criccomini</span>) <a href="https://twitter.com/criccomini/status/953354007912898560?ref_src=twsrc%5Etfw">January 16, 2018</a>
+— Chris Riccomini (<span class="citation"
+data-cites="criccomini">@criccomini</span>)
+<a href="https://twitter.com/criccomini/status/953354007912898560?ref_src=twsrc%5Etfw">January
+16, 2018</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
-<p>In the web service model, the migration would probably consist of deploying the new version of the web service along side the old version and routing API calls through a proxy. Based on the calls, the proxy could then route legacy calls to the old service instances, and new calls to the new service instances. Once all services are migrated, the old services could be deprecated and torn down.</p>
-<p>A similar solution can be implemented by transforming data in the CDC pipeline. The high-level approach is to emit the new data to a new topic in Kafka, and then use a transformation to consume the new data, and emit it to the old topic so that legacy consumers will continue to receive updates until they’re migrated.</p>
+<p>In the web service model, the migration would probably consist of
+deploying the new version of the web service along side the old version
+and routing API calls through a proxy. Based on the calls, the proxy
+could then route legacy calls to the old service instances, and new
+calls to the new service instances. Once all services are migrated, the
+old services could be deprecated and torn down.</p>
+<p>A similar solution can be implemented by transforming data in the CDC
+pipeline. The high-level approach is to emit the new data to a new topic
+in Kafka, and then use a transformation to consume the new data, and
+emit it to the old topic so that legacy consumers will continue to
+receive updates until they’re migrated.</p>
 <h2 id="managing-schema-migrations">Managing schema migrations</h2>
 <p>An example data warehousing pipeline follows.</p>
-<p><img src="/img/essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation/example-data-warehousing.png" title="CDC example: data warehousing" alt="source db, kafka, destination db" /></p>
-<p>A mutation in a source DB is consumed by a Kafka source connector. It’s then emitted to Kafka as a fully schema’d Avro message. A Kafka sink connector then consumes the message and inserts it into the destination data warehouse DB. Transformations can be placed at any point in this flow.</p>
+<p><img
+src="/img/essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation/example-data-warehousing.png"
+title="CDC example: data warehousing"
+alt="source db, kafka, destination db" /></p>
+<p>A mutation in a source DB is consumed by a Kafka source connector.
+It’s then emitted to Kafka as a fully schema’d Avro message. A Kafka
+sink connector then consumes the message and inserts it into the
+destination data warehouse DB. Transformations can be placed at any
+point in this flow.</p>
 <ul>
-<li>Transformations can reside in the source DB through the use of triggers and materialized views.</li>
-<li><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-66%3A+Single+Message+Transforms+for+Kafka+Connect">Single message transforms</a> allow transformations to be placed in Kafka connect on either the ingest or egress side of the flow.</li>
-<li>A stream processing system such as <a href="https://flink.apache.org/">Flink</a>, <a href="https://spark.apache.org/">Spark streaming</a>, <a href="https://kafka.apache.org/documentation/streams/">Kafka streams</a>/<a href="https://www.confluent.io/product/ksql/">KSQL</a>, or <a href="https://samza.apache.org/">Samza</a> can be used to implement transformations inside Kafka.</li>
-<li>Transformations can be placed in the destination database, itself.</li>
+<li>Transformations can reside in the source DB through the use of
+triggers and materialized views.</li>
+<li><a
+href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-66%3A+Single+Message+Transforms+for+Kafka+Connect">Single
+message transforms</a> allow transformations to be placed in Kafka
+connect on either the ingest or egress side of the flow.</li>
+<li>A stream processing system such as <a
+href="https://flink.apache.org/">Flink</a>, <a
+href="https://spark.apache.org/">Spark streaming</a>, <a
+href="https://kafka.apache.org/documentation/streams/">Kafka
+streams</a>/<a href="https://www.confluent.io/product/ksql/">KSQL</a>,
+or <a href="https://samza.apache.org/">Samza</a> can be used to
+implement transformations inside Kafka.</li>
+<li>Transformations can be placed in the destination database,
+itself.</li>
 </ul>
 <h3 id="source-db-transformations">Source DB transformations</h3>
-<p>The system persisting data in the source DB can choose to write to a new table in addition to the legacy table. Triggers or transactional INSERTs can be used to keep the two tables in sync.</p>
-<h3 id="kafka-source-connector-transformations">Kafka source connector transformations</h3>
-<p>Multiple source connectors can be run. The legacy source connector can be deployed to include a <em>single message transform</em> that alters the new schema back into the legacy format. A second source connector can run and emit to a new topic. Once consumers are migrated from the old topic to the new topic, the legacy connector can be shut down.</p>
+<p>The system persisting data in the source DB can choose to write to a
+new table in addition to the legacy table. Triggers or transactional
+INSERTs can be used to keep the two tables in sync.</p>
+<h3 id="kafka-source-connector-transformations">Kafka source connector
+transformations</h3>
+<p>Multiple source connectors can be run. The legacy source connector
+can be deployed to include a <em>single message transform</em> that
+alters the new schema back into the legacy format. A second source
+connector can run and emit to a new topic. Once consumers are migrated
+from the old topic to the new topic, the legacy connector can be shut
+down.</p>
 <h3 id="kafka-transformations">Kafka transformations</h3>
-<p>Much like the pattern above, when data evolves in a non-compatible way, it can be emitted to a new topic. A stream processor can then be deployed to consume the new data, transform it into a format that’s forwards compatible, and emit the messages to the old topic.</p>
-<h3 id="kafka-sink-connector-transformations">Kafka sink connector transformations</h3>
-<p>Sink connectors can be deployed much the same way as source connectors. When a data model is evolved, a second sink connector can be deployed pointing to the new topic. A transformation can be set in either the new sink connector or the legacy sink connector. If the transformation is set in the new sink connector, it can emit its records to the same destination as the legacy connector, and the legacy connector can simply be shut down. If the transformation is set in the legacy sink connector, it can continue to emit to the legacy destination, while the new connector emits to a new destination (for example, a new table in the data warehouse). </p>
-<h3 id="destination-db-transformations">Destination DB transformations</h3>
-<p>Lastly, transformations can be done in the destination DB. This is the standard ELT approach to the problem. Views can be created in the destination database to modify the data as is required to make legacy requests continue to execute properly.</p>
+<p>Much like the pattern above, when data evolves in a non-compatible
+way, it can be emitted to a new topic. A stream processor can then be
+deployed to consume the new data, transform it into a format that’s
+forwards compatible, and emit the messages to the old topic.</p>
+<h3 id="kafka-sink-connector-transformations">Kafka sink connector
+transformations</h3>
+<p>Sink connectors can be deployed much the same way as source
+connectors. When a data model is evolved, a second sink connector can be
+deployed pointing to the new topic. A transformation can be set in
+either the new sink connector or the legacy sink connector. If the
+transformation is set in the new sink connector, it can emit its records
+to the same destination as the legacy connector, and the legacy
+connector can simply be shut down. If the transformation is set in the
+legacy sink connector, it can continue to emit to the legacy
+destination, while the new connector emits to a new destination (for
+example, a new table in the data warehouse). </p>
+<h3 id="destination-db-transformations">Destination DB
+transformations</h3>
+<p>Lastly, transformations can be done in the destination DB. This is
+the standard ELT approach to the problem. Views can be created in the
+destination database to modify the data as is required to make legacy
+requests continue to execute properly.</p>
 <h3 id="private-topics">Private topics</h3>
-<p>A variation on the theme above is to think of a source DB’s topics as private topics. Compatibility checks could be completely disabled. Only transformers would be allowed to consume from the private topics. These transformers could then emit data to “public” topics. As the schemas changed in the private topic, the transformers could be updated to munge data into formats that were compatible with the legacy public topics.</p>
+<p>A variation on the theme above is to think of a source DB’s topics as
+private topics. Compatibility checks could be completely disabled. Only
+transformers would be allowed to consume from the private topics. These
+transformers could then emit data to “public” topics. As the schemas
+changed in the private topic, the transformers could be updated to munge
+data into formats that were compatible with the legacy public
+topics.</p>
 <h2 id="truly-incompatible-changes">Truly incompatible changes</h2>
-<p>This approach is not perfect, though. If data has truly been dropped, for example, there’s likely nothing that the transformation will be able to do to add it back in. It might be possible for the transformation logic to fetch data from a third party (such as another database or web service), but in some cases, the data is simply not available anywhere else. In cases like this, it seems that the best that can be done is to put a tombstone value into the field, and determine which consumers will be affected. Still, forcing developers to think about these issues is important, even if it means the extra overhead of having to coordinate with downstream consumers.</p>
+<p>This approach is not perfect, though. If data has truly been dropped,
+for example, there’s likely nothing that the transformation will be able
+to do to add it back in. It might be possible for the transformation
+logic to fetch data from a third party (such as another database or web
+service), but in some cases, the data is simply not available anywhere
+else. In cases like this, it seems that the best that can be done is to
+put a tombstone value into the field, and determine which consumers will
+be affected. Still, forcing developers to think about these issues is
+important, even if it means the extra overhead of having to coordinate
+with downstream consumers.</p>
 <h2 id="beyond-cdc">Beyond CDC</h2>
-<p>Thus far, the focus has been exclusively on CDC use cases where the upstream message producer is a database of some sort. The scope of this problem can be expanded, though, to any producer, not just databases. In such a case, the solutions look largely the same.</p>
-<p>The producer can decide to double write to both an old and new topic, in which case the transformation would be applied in the source producer. The consumer can decide to apply the transformations on the client side, by double-deploying the consumer to have one group read from only the legacy topic, and the other group reading from only the new topic. Lastly, transformations can be applied in Kafka, again with a stream processing framework of some sort. Some of these solutions, such as consumer-side transformations, will involve more coordination than others, but they’re all doable.</p>
+<p>Thus far, the focus has been exclusively on CDC use cases where the
+upstream message producer is a database of some sort. The scope of this
+problem can be expanded, though, to any producer, not just databases. In
+such a case, the solutions look largely the same.</p>
+<p>The producer can decide to double write to both an old and new topic,
+in which case the transformation would be applied in the source
+producer. The consumer can decide to apply the transformations on the
+client side, by double-deploying the consumer to have one group read
+from only the legacy topic, and the other group reading from only the
+new topic. Lastly, transformations can be applied in Kafka, again with a
+stream processing framework of some sort. Some of these solutions, such
+as consumer-side transformations, will involve more coordination than
+others, but they’re all doable.</p>
 <h2 id="tools-in-this-area">Tools in this area</h2>
-<p>There have been some developments in this area. We hosted a <a href="https://www.meetup.com/WePay-Engineering-Meetup/events/248205670/">meetup</a> at <a href="https://wepay.com">WePay</a> earlier this year, where <a href="https://twitter.com/cwsteinbach">Carl Steinbach</a> discussed <a href="https://engineering.linkedin.com/blog/topic/dali">Dali</a> (see <a href="https://www.youtube.com/watch?v=-xIai_FvcSk&amp;t=15s">video</a>), an abstraction for managing data views in both offline and streaming environments.</p>
-<p>I’ve also begun to see some discussions pop up around <a href="https://multithreaded.stitchfix.com/blog/2018/09/05/datahighway/">dynamic data pipelines on top of Kafka connect</a>. Systems like this could be expanded to model transformations and schema migrations as part of the pipeline as well.</p>
-<p>The bad news is that there don’t seem to be any existing platforms or frameworks to manage this problem easily. The good news is that all of the building blocks that we need are widely available. DB schema management frameworks, single message transforms, stream processing frameworks, and schema registries all help. They just need to be integrated to solve this problem.</p>
+<p>There have been some developments in this area. We hosted a <a
+href="https://www.meetup.com/WePay-Engineering-Meetup/events/248205670/">meetup</a>
+at <a href="https://wepay.com">WePay</a> earlier this year, where <a
+href="https://twitter.com/cwsteinbach">Carl Steinbach</a> discussed <a
+href="https://engineering.linkedin.com/blog/topic/dali">Dali</a> (see <a
+href="https://www.youtube.com/watch?v=-xIai_FvcSk&amp;t=15s">video</a>),
+an abstraction for managing data views in both offline and streaming
+environments.</p>
+<p>I’ve also begun to see some discussions pop up around <a
+href="https://multithreaded.stitchfix.com/blog/2018/09/05/datahighway/">dynamic
+data pipelines on top of Kafka connect</a>. Systems like this could be
+expanded to model transformations and schema migrations as part of the
+pipeline as well.</p>
+<p>The bad news is that there don’t seem to be any existing platforms or
+frameworks to manage this problem easily. The good news is that all of
+the building blocks that we need are widely available. DB schema
+management frameworks, single message transforms, stream processing
+frameworks, and schema registries all help. They just need to be
+integrated to solve this problem.</p>
 </div>
 <form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 <h1><label for="tlemail">Never Miss a Post</label></h1>

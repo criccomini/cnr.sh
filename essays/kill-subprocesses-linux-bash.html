@@ -5,10 +5,15 @@
 <meta name="date" content='2012-09-25'>
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Killing Subprocesses in Linux/Bash" />
-<meta property="og:description" content="Lately, I've been working with YARN at LinkedIn. This framework allows you to execute Bash scripts on one or more machines. It's used primarily for Hadoop. When using YARN, you often end up with neste" />
+<meta property="og:title" content="Killing Subprocesses in
+Linux/Bash" />
+<meta property="og:description" content="Lately, I've been working with
+YARN at LinkedIn. This framework allows you to execute Bash scripts on
+one or more machines. It's used primarily for Hadoop. When using YARN,
+you often end up with neste" />
 <meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
-<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>Killing Subprocesses in Linux/Bash | Chris Riccomini</title>
+<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>Killing
+Subprocesses in Linux/Bash | Chris Riccomini</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
 body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
@@ -66,28 +71,44 @@ gtag('config', 'G-3R91BN0RW0');
 <span class="by">Chris Riccomini on September 25, 2012</span>
 </div>
 <div class="article">
-<p>Lately, I’ve been working with <a href="http://hadoop.apache.org/docs/r0.23.0/hadoop-yarn/hadoop-yarn-site/YARN.html">YARN</a> at LinkedIn. This framework allows you to execute Bash scripts on one or more machines. It’s used primarily for Hadoop. When using YARN, you often end up with nested Bash scripts with no parent process ID (PPID) when the NodeManager launches the Bash script. This can be pretty problematic when the NodeManager is shut down, since you must make sure to clean up all child subprocesses via your parent Bash script.</p>
-<h2 id="understanding-linux-subprocesses">Understanding Linux subprocesses</h2>
-<p>Let’s start with an example. We’ll have two shell scripts: a parent, and a child:</p>
+<p>Lately, I’ve been working with <a
+href="http://hadoop.apache.org/docs/r0.23.0/hadoop-yarn/hadoop-yarn-site/YARN.html">YARN</a>
+at LinkedIn. This framework allows you to execute Bash scripts on one or
+more machines. It’s used primarily for Hadoop. When using YARN, you
+often end up with nested Bash scripts with no parent process ID (PPID)
+when the NodeManager launches the Bash script. This can be pretty
+problematic when the NodeManager is shut down, since you must make sure
+to clean up all child subprocesses via your parent Bash script.</p>
+<h2 id="understanding-linux-subprocesses">Understanding Linux
+subprocesses</h2>
+<p>Let’s start with an example. We’ll have two shell scripts: a parent,
+and a child:</p>
 <pre><code>$ cat parent.sh 
 #!/bin/bash
 ./child.sh
 $ cat child.sh 
 #!/bin/bash
 sleep 1000</code></pre>
-<p>Normally, when you launch nested processes from a terminal, you’ll see a process tree that looks something like this:</p>
+<p>Normally, when you launch nested processes from a terminal, you’ll
+see a process tree that looks something like this:</p>
 <pre><code>UID        PID  PPID  C STIME  TTY         TIME CMD
 ubuntu   10911 10701  0 05:07 pts/1    00:00:00 /bin/bash ./parent.sh
 ubuntu   10912 10911  0 05:07 pts/1    00:00:00 /bin/bash ./child.sh
 ubuntu   10913 10912  0 05:07 pts/1    00:00:00 sleep 1000</code></pre>
-<p>In this example, a terminal (PID 10701) calls parent.sh, which calls child.sh, which calls sleep 1000. With YARN, you end up with a process tree that looks more like this:</p>
+<p>In this example, a terminal (PID 10701) calls parent.sh, which calls
+child.sh, which calls sleep 1000. With YARN, you end up with a process
+tree that looks more like this:</p>
 <pre><code>UID        PID  PPID  C STIME  TTY         TIME CMD
 ubuntu   10966     1  0 05:14 pts/1    00:00:00 /bin/bash ./parent.sh
 ubuntu   10967 10966  0 05:14 pts/1    00:00:00 /bin/bash ./child.sh
 ubuntu   10968 10967  0 05:14 pts/1    00:00:00 sleep 1000</code></pre>
-<p>Notice that the PPID of parent.sh is now 1. This is essentially a top-level process that has no parent.</p>
+<p>Notice that the PPID of parent.sh is now 1. This is essentially a
+top-level process that has no parent.</p>
 <h2 id="unexpected-behavior">Unexpected behavior</h2>
-<p>In both of these examples, it seems intuitive that killing the top level parent would result in all of the children being cleaned up. There are a <a href="http://en.wikipedia.org/wiki/Kill_(command)">number of ways to kill a process</a>, so let’s start with:</p>
+<p>In both of these examples, it seems intuitive that killing the top
+level parent would result in all of the children being cleaned up. There
+are a <a href="http://en.wikipedia.org/wiki/Kill_(command)">number of
+ways to kill a process</a>, so let’s start with:</p>
 <pre><code>$ kill -9 10966
 
 UID        PID  PPID  C STIME  TTY         TIME CMD
@@ -98,7 +119,8 @@ ubuntu   10968 10967  0 05:14 pts/1    00:00:00 sleep 1000</code></pre>
 <pre><code>UID        PID  PPID  C STIME  TTY         TIME CMD
 ubuntu   10967     1  0 05:14 pts/1    00:00:00 /bin/bash ./child.sh
 ubuntu   10968 10967  0 05:14 pts/1    00:00:00 sleep 1000</code></pre>
-<p>Let’s try sending a kill signal that’s not quite as strong as kill -9. For a list of possible signals, try running:</p>
+<p>Let’s try sending a kill signal that’s not quite as strong as kill
+-9. For a list of possible signals, try running:</p>
 <pre><code>$ kill -l
  1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
  6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
@@ -113,17 +135,27 @@ ubuntu   10968 10967  0 05:14 pts/1    00:00:00 sleep 1000</code></pre>
 53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
 58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
 63) SIGRTMAX-1  64) SIGRTMAX</code></pre>
-<p>Now, let’s try this again with a normal <a href="http://en.wikipedia.org/wiki/SIGHUP">SIGHUP</a> kill. One might expect that sending such a soft kill signal should result in the child processes being cleaned up.</p>
+<p>Now, let’s try this again with a normal <a
+href="http://en.wikipedia.org/wiki/SIGHUP">SIGHUP</a> kill. One might
+expect that sending such a soft kill signal should result in the child
+processes being cleaned up.</p>
 <pre><code>$ kill -SIGHUP 10967
 
 UID        PID  PPID  C STIME  TTY         TIME CMD
 ubuntu   10968     1  0 05:14 pts/1    00:00:00 sleep 1000</code></pre>
-<p>As you can see, even SIGHUP does not kill the child processes; it leaves the sleep call orphaned with a PPID of 1.</p>
+<p>As you can see, even SIGHUP does not kill the child processes; it
+leaves the sleep call orphaned with a PPID of 1.</p>
 <p>So, how can we do this properly?</p>
 <h2 id="traps">Traps</h2>
-<p>One solution is to <a href="http://stackoverflow.com/questions/2525855/how-to-propagate-a-signal-through-an-arborescence-of-scripts-bash">use traps</a> in the Bash script. A trap is a way to say “do this before exiting” in a Bash script. For example, we might add the following line to parent.sh and child.sh:</p>
+<p>One solution is to <a
+href="http://stackoverflow.com/questions/2525855/how-to-propagate-a-signal-through-an-arborescence-of-scripts-bash">use
+traps</a> in the Bash script. A trap is a way to say “do this before
+exiting” in a Bash script. For example, we might add the following line
+to parent.sh and child.sh:</p>
 <pre><code>trap &#39;kill $(jobs -p)&#39; EXIT</code></pre>
-<p>Now, if we kill the parent, all children will be cleaned up! Obviously, this only works with softer kill signals, such as SIGHUP. For example, if we have this process tree:</p>
+<p>Now, if we kill the parent, all children will be cleaned up!
+Obviously, this only works with softer kill signals, such as SIGHUP. For
+example, if we have this process tree:</p>
 <pre><code>UID        PID  PPID  C STIME  TTY         TIME CMD
 ubuntu   11049 10758  0 05:31 pts/2    00:00:00 /bin/bash ./parent.sh
 ubuntu   11050 11049  0 05:31 pts/2    00:00:00 /bin/bash ./child.sh
@@ -133,11 +165,13 @@ ubuntu   11051 11050  0 05:31 pts/2    00:00:00 sleep 1000</code></pre>
 $ ps -ef | grep sleep</code></pre>
 <p>And you will see that sleep is no longer running!</p>
 <h2 id="top-level-trap">Top-level trap</h2>
-<p>A variation of having a trap in each Bash file is to have a single top-level trap that uses ‘ps’ to find children:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kill_child_processes()</span> <span class="kw">{</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">isTopmost=$1</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">curPid=$2</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">childPids=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> pid <span class="at">--no-headers</span> <span class="at">--ppid</span> <span class="va">${curPid}</span><span class="kw">`</span></span>
+<p>A variation of having a trap in each Bash file is to have a single
+top-level trap that uses ‘ps’ to find children:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kill_child_processes()</span> <span class="kw">{</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">isTopmost</span><span class="op">=</span><span class="va">$1</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">curPid</span><span class="op">=</span><span class="va">$2</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">childPids</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> pid <span class="at">--no-headers</span> <span class="at">--ppid</span> <span class="va">${curPid}</span><span class="kw">`</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> childPid <span class="kw">in</span> <span class="va">$childPids</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">kill_child_processes</span> 0 <span class="va">$childPid</span></span>
@@ -145,13 +179,19 @@ $ ps -ef | grep sleep</code></pre>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="va">$isTopmost</span> <span class="ot">-eq</span> 0 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">kill</span> <span class="at">-9</span> <span class="va">$curPid</span> <span class="dv">2</span><span class="op">&gt;</span> /dev/null</span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Ctrl-C trap. Catches INT signal</span></span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">trap</span> <span class="st">&quot;kill_child_processes 1 </span><span class="va">$$</span><span class="st">; exit 0&quot;</span> INT</span></code></pre></div>
-<p>This is a less than ideal solution, but it does work. For details, see <a href="http://stas-blogspot.blogspot.com/2010/02/kill-all-child-processes-from-shell.html">this page</a>.</p>
+<p>This is a less than ideal solution, but it does work. For details,
+see <a
+href="http://stas-blogspot.blogspot.com/2010/02/kill-all-child-processes-from-shell.html">this
+page</a>.</p>
 <h2 id="kill-ppids">Kill PPIDs</h2>
-<p>Running traps everywhere can be kind of clunky, and error prone. A cleaner approach is to use the kill command, and provide a parent process ID (PPID) instead of a process ID. To do this, the syntax gets funky. You use a negative of the parent process ID, like so:</p>
+<p>Running traps everywhere can be kind of clunky, and error prone. A
+cleaner approach is to use the kill command, and provide a parent
+process ID (PPID) instead of a process ID. To do this, the syntax gets
+funky. You use a negative of the parent process ID, like so:</p>
 <pre><code>$ kill -- -&lt;PPID&gt;</code></pre>
 <p>For example, with this process tree:</p>
 <pre><code>UID        PID  PPID  C STIME  TTY         TIME CMD
@@ -161,27 +201,49 @@ ubuntu   11098 11097  0 05:36 ?        00:00:00 sleep 1000</code></pre>
 <p>You would run:</p>
 <pre><code>$ kill -- -11096
 $ ps -ef | grep sleep</code></pre>
-<p>As you can see, killing with a PPID automatically cleans all subprocesses, including nested subprocesses!</p>
+<p>As you can see, killing with a PPID automatically cleans all
+subprocesses, including nested subprocesses!</p>
 <h2 id="exec">exec</h2>
-<p>Another handy trick is to use <a href="http://linux.die.net/man/3/exec">exec</a> when nesting Bash calls. Exec replaces the “current” process with the “child” process. This doesn’t always work, but for our example (parent, child, sleep), it certainly does. Let’s make parent and child look like this, respectively:</p>
+<p>Another handy trick is to use <a
+href="http://linux.die.net/man/3/exec">exec</a> when nesting Bash calls.
+Exec replaces the “current” process with the “child” process. This
+doesn’t always work, but for our example (parent, child, sleep), it
+certainly does. Let’s make parent and child look like this,
+respectively:</p>
 <pre><code>$ cat parent.sh
 #!/bin/bash
 exec ./child.sh
 $ cat child.sh
 #!/bin/bash
 exec sleep 1000</code></pre>
-<p>Notice the “exec” command preceding the child.sh and sleep calls. Let’s have a look at the process tree:</p>
+<p>Notice the “exec” command preceding the child.sh and sleep calls.
+Let’s have a look at the process tree:</p>
 <pre><code>$ ps -ef | grep parent
 $ ps -ef | grep child
 $ ps -ef | grep sleep
 ubuntu   11155 10758  0 05:41 pts/2    00:00:00 sleep 1000</code></pre>
-<p>As you can see, only a ‘sleep’ process exists. The parent.sh script “becomes” child.sh, and child.sh “becomes” sleep. This makes it very easy to clean up child processes, because there are none! To clean up, you simply kill the ‘sleep’ process. This is the method that I use with YARN, since I’m executing nested Bash calls that lead to a single Java process.</p>
+<p>As you can see, only a ‘sleep’ process exists. The parent.sh script
+“becomes” child.sh, and child.sh “becomes” sleep. This makes it very
+easy to clean up child processes, because there are none! To clean up,
+you simply kill the ‘sleep’ process. This is the method that I use with
+YARN, since I’m executing nested Bash calls that lead to a single Java
+process.</p>
 <h2 id="python">Python</h2>
-<p>If you’re not strictly tied to Bash, you might be interested in Python’s <a href="http://code.google.com/p/psutil/">psutil</a> library. It <a href="http://stackoverflow.com/questions/1230669/subprocess-deleting-child-processes-in-windows">can be used to kill all subprocess</a> for a given process ID.</p>
+<p>If you’re not strictly tied to Bash, you might be interested in
+Python’s <a href="http://code.google.com/p/psutil/">psutil</a> library.
+It <a
+href="http://stackoverflow.com/questions/1230669/subprocess-deleting-child-processes-in-windows">can
+be used to kill all subprocess</a> for a given process ID.</p>
 <h2 id="setsid">setsid</h2>
-<p>One other minor note. You might be wondering how you end up with a PPID of 1. Obviously, kill -9’ing will do it. You can also use a command called <a href="http://linux.die.net/man/2/setsid">setsid</a>. This is what YARN does when its NodeManager executes a child process. To try and execute parent.sh with a PPID of 1, execute:</p>
+<p>One other minor note. You might be wondering how you end up with a
+PPID of 1. Obviously, kill -9’ing will do it. You can also use a command
+called <a href="http://linux.die.net/man/2/setsid">setsid</a>. This is
+what YARN does when its NodeManager executes a child process. To try and
+execute parent.sh with a PPID of 1, execute:</p>
 <pre><code>setsid ./parent.sh</code></pre>
-<p>For further reading, check the <a href="http://en.wikipedia.org/wiki/Nohup">nohup</a> wiki, which can be used as an alternative to setsid.</p>
+<p>For further reading, check the <a
+href="http://en.wikipedia.org/wiki/Nohup">nohup</a> wiki, which can be
+used as an alternative to setsid.</p>
 </div>
 <form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 <h1><label for="tlemail">Never Miss a Post</label></h1>
