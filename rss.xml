@@ -5,6 +5,14 @@
     <link>https://cnr.sh/rss.xml</link>
     <description>Chris Riccomini's RSS Feed</description>
     <item>
+      <title>Recap: A Data Catalog for People Who Hate Data
+Catalogs</title>
+      <link>https://cnr.sh/essays/recap-for-people-who-hate-data-catalogs</link>
+      <guid>https://cnr.sh/essays/recap-for-people-who-hate-data-catalogs</guid>
+      <description></description>
+      <pubDate>Thu, 05 Jan 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>How to Plan Work for an Infrastructure Team</title>
       <link>https://cnr.sh/essays/how-to-plan-work-for-infrastructure-team</link>
       <guid>https://cnr.sh/essays/how-to-plan-work-for-infrastructure-team</guid>
