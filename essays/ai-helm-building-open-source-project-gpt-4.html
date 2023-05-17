@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="date" content='2023-05-18'>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AI at the Helm: Building an Entire
+Open Source Project With GPT-4" />
+<meta property="og:description" content="I've mostly been a LLM and GPT
+skeptic. Every so often I'd bang my head against ChatGPT, and it usually
+gave me junk. I'd wander off grumbling things jaded engineers
+grumble." />
+<meta property="og:image" content="https://cnr.sh/img/og-img.png" /><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+<link rel="alternate" type="application/rss+xml" href="https://cnr.sh/rss.xml" title="Chris Riccomini's RSS Feed"><title>AI
+at the Helm: Building an Entire Open Source Project With
+GPT-4 | Chris Riccomini</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
+body {padding: 1.25rem 0em; margin: 0em; font-family: 'Lora', serif; font-size: 14pt; line-height: 1.75;}
+h1, h2, h3, h4 {font-family: 'Roboto Condensed', sans-serif; margin: 0em; line-height: 1.25;}
+h1 {font-size: 30pt;}
+a {color: #ff0080; text-decoration: none; font-weight: bold;}
+pre > code {overflow-x: auto; width: 100%; display: inline-block;}
+div.home {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; background-color: #333;}
+div.social {position: fixed; font-size: 15pt; padding: .5em; line-height: 0em; right: 1.5em;}
+div.title {text-align: center;}
+div.main {width: 32em; margin: 0em auto;}
+div.intro {width: 30em; margin: 0em auto;}
+div.article:first-letter {float: left; margin: .125em .25em; font-size: 4em; line-height: 1;}
+div.links {width: 40em; margin: 0em auto;}
+div.links table {border-spacing: 0em 0em; margin: 1em 0em;}
+div.links td.link-date {text-align: right; width: 10em; padding-right: .5em; vertical-align: top;}
+div.links span.link-date {display: none;}
+i.social {color: #ccc;}
+i.home {color: white;}
+div.intro p:first-of-type {font-size: 22pt;}
+div.article p:first-of-type {font-size: 18pt;}
+div.article blockquote > p:first-of-type {font-size: 14pt;}
+div.article img {width: 100%;}
+div.promo {margin: 0rem auto 1.25rem auto; width: 50rem; font-family: helvetica; text-align: center; top: 0px; left: 0px; background-color: black; color: white; font-size: .925rem; letter-spacing: .075rem; padding: .5em;}
+@media screen and (min-width : 0px) and (max-width : 767px){
+body {padding: 0em;}
+div.main {width: auto; padding: 4em 2em;}
+div.intro {width: auto; padding: 0em 3em;}
+div.home {position: absolute;}
+div.social {display: none;}
+span.by {display: block; margin-top: .5em;}
+div.links {padding-top: 1em; width: auto; padding: 4em 2em;}
+div.links td.link-date {display: none;}
+div.links span.link-date {display: block;}
+div.links table {border-spacing: 0em 1em; margin: 0em;}
+div.promo {width: auto; padding: 1rem 4rem; }
+}</style>
+<script defer src="https://kit.fontawesome.com/72c21ff1f4.js" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3R91BN0RW0');
+</script></head>
+<body>
+<div class="home">
+<a href="/"><i class="home fas fa-home"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/criccomini"><i class="social fab fa-twitter"></i></a>
+</div><div class="main">
+<div class="title">
+<h1>AI at the Helm: Building an Entire Open Source Project With
+GPT-4</h1>
+<span class="by">Chris Riccomini on May 18, 2023</span>
+</div>
+<div class="article">
+<p>I’ve mostly been a <a
+href="https://en.wikipedia.org/wiki/Large_language_model">LLM</a> and <a
+href="https://en.wikipedia.org/wiki/Generative_pre-trained_transformer">GPT</a>
+skeptic. Every so often I’d bang my head against <a
+href="https://openai.com/blog/chatgpt">ChatGPT</a>, and it usually gave
+me junk. I’d wander off grumbling things jaded engineers grumble.</p>
+<p>Then I payed for OpenAI’s <a
+href="https://openai.com/research/gpt-4">GPT-4</a> upgrade. GPT-4
+actually seemed to work, so I decided to see how far I could push it.
+Could I write an entire open source project with GPT-4? Turns out, I
+could.</p>
+<p>I had GPT-4 build me <a
+href="https://github.com/criccomini/twister">Twister</a>, a Java library
+that converts Avro and Protobuf data to and from Java POJOs. Nearly
+every element–code, docs, commit messages, tests, its README.md, even
+this blog post–was written by GPT-4.</p>
+<p>This post isn’t about Twister, though. It’s about how I learned to
+use ChatGPT effectively to write not just tests and documentation, but
+code.</p>
+<h2 id="key-lessons-from-building-with-gpt-4">Key Lessons from Building
+with GPT-4</h2>
+<p>Here’s what I learned:</p>
+<ul>
+<li><strong>Start Small</strong>: Don’t aim for complex features right
+away.</li>
+<li><strong>Code, Test, Repeat</strong>: Follow the same patterns you
+use to write code.</li>
+<li><strong>GPT-4 Forgets</strong>: Always re-paste the code you want to
+update.</li>
+<li><strong>Show Changes Only</strong>: Helps you get answers faster.
+GPT-4 can be slow.</li>
+<li><strong>Iterate</strong>: Don’t write GPT-4 off at first mistake.
+Keep asking it to correct.</li>
+<li><strong>Great for Grunt Work</strong>: GPT-4 shines with tests,
+docs, and commit messages.</li>
+<li><strong>Best for ‘Pure’ Projects</strong>: Less business logic, like
+Twister, suits GPT-4.</li>
+<li><strong>Keep GPT-3.5 Handy</strong>: Good for simpler tasks. Saves
+on GPT-4 quota.</li>
+</ul>
+<h3 id="start-small">Start Small</h3>
+<p>Break down tasks. Ask GPT-4 to build simple code changes at first.
+With Twister, I would have it build support for basic primitives (int,
+float, string, etc.) first. Once I got that working, I’d ask it to add
+support for complex types (maps, lists, enums, etc.).</p>
+<h3 id="code-test-repeat">Code, Test, Repeat</h3>
+<p>The best pattern I found was:</p>
+<ol type="1">
+<li>Ask GPT-4 to write code.</li>
+<li>Ask GPT-4 to write a test for the code it’d written.</li>
+<li>Ask GPT-4 to fix the failed test(s) if they don’t pass.</li>
+</ol>
+<p>Flipping 1 and 2 (<a
+href="https://en.wikipedia.org/wiki/Test-driven_development">TDD</a>)
+works, too</p>
+<p>If you spot bugs, ask it to write tests exposing the bug. Then ask it
+to fix the test. The template I used for this loop was:</p>
+<pre><code>Given this code:
+...
+
+And this test:
+...
+
+I get this error:
+...
+
+Can you fix this?</code></pre>
+<h3 id="gpt-4-forgets">GPT-4 Forgets</h3>
+<p>GPT-4 has a bad long-term memory. I found it did much better when I
+kept re-pasting my code into the prompt on ever iteration. There is a
+limit to the input size, so you have to get creative sometimes to fit
+relevant snippets in.</p>
+<h3 id="show-changes-only">Show Changes Only</h3>
+<p>GPT-4 can be slow. To speed it up, request that it shows you only the
+code that’s changed.</p>
+<h3 id="iterate">Iterate</h3>
+<p>Don’t dismiss GPT-4 at first error, even if it says silly things. Ask
+for corrections.</p>
+<h3 id="great-for-grunt-work">Great for Grunt Work</h3>
+<p>GPT-4 excels at mundane tasks. I’m convinced everyone should use it
+for tests, doc strings, and commit messages.</p>
+<h3 id="best-for-pure-projects">Best for ‘Pure’ Projects</h3>
+<p>Twister is a pretty pure computer science project; there isn’t any
+real “business logic”. I think GPT-4 does better at this kind of
+work.</p>
+<h3 id="keep-gpt-3.5-handy">Keep GPT-3.5 Handy</h3>
+<p>Use GPT-3.5 for simpler tasks. Saves you on your GPT-4 quota.</p>
+<h2 id="why-not-github-copilot">Why Not Github Copilot?</h2>
+<p>Copilot employs GPT-3.5. Compared to GPT-4, it is noticeably less
+effective. Copilot X offers improvements, yet it’s tied to VisualStudio
+and VSCode. However, IntelliJ IDE is way more pleasant for Java than
+VSCode. So I just used ChatGPT. In the long run, IDE integration will
+certainly improve. Yet, for now, GPT-4 offered the optimal solution for
+Twister.</p>
+<h2 id="future-work">Future work</h2>
+<p>The Twister library is a small project right now. I want to add:</p>
+<ul>
+<li>Avro default support</li>
+<li>Avro logical type support</li>
+<li>Protobuf WKT support</li>
+<li>Avro Record ➡️ Map wrapper</li>
+<li>Protobuf Message ➡️ Map wrapper</li>
+<li>.proto ➡️ Protobuf Descriptor converter</li>
+<li>JDBC row ➡️ Map wrapper</li>
+</ul>
+<p>I’ll continue having GPT write the code in this library. The
+experiment continues!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Though this post is about building with GPT-4, I want to re-iterate
+that <a href="https://github.com/criccomini/twister">Twister</a> is a
+real project that I actually want people to use. It’s a pretty cool
+library. If you’re a Java developer dealing with Protobuf or Avro, check
+it out! Contributions are welcome, too (whether from GPT-4 or
+humans).</p>
+<h2 id="addendum">Addendum</h2>
+<p>Here’s the prompt I used to generate this blog post:</p>
+<blockquote>
+<p>The blog post should focus on my experience using GPT-4 to write an
+entire library.</p>
+<p>The post should also talk about GPT-4 tricks I learned while building
+this project:</p>
+<ul>
+<li>Start small (don’t ask GPT-4 to write all features in a class at
+once)</li>
+<li>Ask GPT for a basic class, then ask it to write a test for the
+class. If the tests fail, tell GPT, and have it fix the tests. Then go
+back to the basic class and ask GPT-4 to add the next feature. Rinse and
+repeat.</li>
+<li>Always re-paste the code you want GPT-4 to update. It has bad
+long-term memory. I frequently use a 2 part template: “Given this code:
+… Can you update it to …”</li>
+<li>Tell it to just show changes, not the complete code. GPT-4 is slow,
+so telling it to skip unchanged code helps get you answers faster.</li>
+<li>Don’t be afraid to iterate. Many people get a response from GPT-4,
+and if it’s wrong, they declare that it sucks. Instead, keep asking it
+to fix things.</li>
+<li>GPT-4 is really good for grunt work (tests, docs, commit
+messages)</li>
+<li>GPT-4 is also really good for more “pure” projects like Twister,
+where it doesn’t have to understand a lot of business logic.</li>
+<li>Keep a GPT-4 and a GPT-3.5 window open, so you can bounce to the
+GPT-3.5 window for more simple work. This will save you on your GPT-4
+quota (currently 25 prompts per-3h window).</li>
+</ul>
+<p>The blog post style should be:</p>
+<ol type="1">
+<li>Matter-of-fact.</li>
+<li>No sentence should be more than 12 words.</li>
+<li>Include links to external sites where appropriate.</li>
+<li>Written in first-person.</li>
+<li>The post should include a bullet-point list of the tips near the
+introduction.</li>
+<li>The post should be written in markdown.</li>
+<li>The post should include a catchy title that will get attention on
+Hacker news.</li>
+<li>The post should include a section for each bullet point in the
+intro.</li>
+<li>The intro should say that the the code, docs, git commit messages,
+tests, README.md, and even this blog post were all written with
+GPT-4.</li>
+</ol>
+</blockquote>
+<p>I pasted in an rough outline with some notes before this prompt.</p>
+</div>
+<form style="background-color: #eee; padding:1em; text-align:center;" action="https://tinyletter.com/criccomini" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/criccomini', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+<h1><label for="tlemail">Never Miss a Post</label></h1>
+<span class="by">Subscribe to my newsletter!</span>
+<p style="margin-bottom: .35em;">
+<input type="text" style="width:140px" name="email" id="tlemail" placeholder="your@email.com" />
+<input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" />
+</p>
+</form></div>
+</body>
+</html>

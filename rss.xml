@@ -5,6 +5,14 @@
     <link>https://cnr.sh/rss.xml</link>
     <description>Chris Riccomini's RSS Feed</description>
     <item>
+      <title>AI at the Helm: Building an Entire Open Source Project With
+GPT-4</title>
+      <link>https://cnr.sh/essays/ai-helm-building-open-source-project-gpt-4</link>
+      <guid>https://cnr.sh/essays/ai-helm-building-open-source-project-gpt-4</guid>
+      <description></description>
+      <pubDate>Thu, 18 May 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>Recap: A Data Catalog for People Who Hate Data
 Catalogs</title>
       <link>https://cnr.sh/essays/recap-for-people-who-hate-data-catalogs</link>
