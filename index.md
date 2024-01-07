@@ -4,7 +4,7 @@ title: Home
 
 Hi! I'm Chris Riccomini, a software engineer, author, investor, and advisor.
 
-I like writing [Essays](/essays) and giving [Talks](/talks). Subscribe to my [TinyLetter](https://tinyletter.com/criccomini) <i class="fas fa-heart"></i> and follow me on [Twitter](https://twitter.com/criccomini) <i class="fab fa-twitter"></i> for updates!
+I like writing [Essays](/essays) and giving [Talks](/talks). Subscribe to my [Newsletter](https://materializedview.io) <i class="fas fa-heart"></i> and follow me on [Twitter](https://twitter.com/criccomini) <i class="fab fa-twitter"></i> for updates!
 
 I've worked at WePay, LinkedIn, and PayPal. [LinkedIn](https://www.linkedin.com/in/riccomini/) <i class="fab fa-linkedin"></i> has my complete work history.
 
