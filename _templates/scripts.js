@@ -1,4 +1,4 @@
-<script defer src="https://kit.fontawesome.com/72c21ff1f4.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/672d96e063.js" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R91BN0RW0"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
