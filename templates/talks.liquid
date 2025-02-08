@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "_head.liquid" -%}
+</head>
+<body>
+{% include "_header.liquid" -%}
+<main>
+{{ content }}
+<ul>
+{%- for talk in page.talks -%}
+<li>
+<a href="{{ talk.url }}">{{ talk.title }}</a><br/>
+<span style="font-size: 80%;">{{ talk.date }}</span>
+</li>
+{%- endfor -%}
+</ul>
+</main>
+{% include "_pages.liquid" -%}
+{%- include "_footer.liquid" -%}
+</body>
+</html>

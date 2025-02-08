@@ -1,5 +1,6 @@
 ---
-links:
+template: talks
+talks:
   - title: "Navigating the future of Modern Data Stack with Chris Riccomini"
     date: October 4, 2022
     url: https://www.youtube.com/watch?v=D--kcFdnAR8
@@ -58,3 +59,5 @@ links:
     date: October 12, 2012
     url: https://www.slideshare.net/criccomini/building-applications-on-yarn
 ---
+
+# Talks
