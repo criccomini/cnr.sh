@@ -1,0 +1,18 @@
+{%- comment %}
+- `title`: The title of the link. (required)
+- `url`: The URL of the link. (required)
+- `blurb`: A brief description of the link. (optional)
+- `created_at`: The date the link was created. (optional)
+- `tags`: A list of tags for the link. (optional)
+{% endcomment -%}
+{%- if links -%}
+<nav>
+<ul>
+{%- assign entries = links | sort: "created_at" | reverse -%}
+{%- for entry in entries -%}
+<li><a href="{{ entry.link }}">{{ entry.title }}</a></li>
+<span style="font-size: 80%;">{{ entry.created_at | date: '%B %-d, %Y' }}</span>
+{%- endfor -%}
+</ul>
+</nav>
+{%- endif -%}

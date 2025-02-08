@@ -7,14 +7,7 @@
 {% include "_header.liquid" -%}
 <main>
 {{ content }}
-<ul>
-{%- for talk in page.talks -%}
-<li>
-<a href="{{ talk.url }}">{{ talk.title }}</a><br/>
-<span style="font-size: 80%;">{{ talk.date }}</span>
-</li>
-{%- endfor -%}
-</ul>
+{% render '_links.liquid', links: page.talks %}
 </main>
 {%- include "_footer.liquid" -%}
 </body>

@@ -6,7 +6,11 @@
 <body>
 {% include "_header.liquid" -%}
 <main>
-{% include "_children.liquid" -%}
+{{ content }}
+{%- assign children = page.children | or_array -%}
+{%- assign siblings = page.siblings | or_array -%}
+{%- assign entries = children | concat:siblings | frontmatter -%}
+{% render '_links.liquid', links: entries %}
 </main>
 {%- include "_footer.liquid" -%}
 </body>

@@ -14,11 +14,14 @@ h1:not(header h1), h2, h3, h4, h5, h6 {
     margin: 1rem 0rem;
 }
 
-main, header, footer, nav:not(header nav), footer {
+main, header, footer, nav:not(header nav) {
     width: 100%;
     max-width: 36rem;
-    margin: 2.5rem auto;
     line-height: 150%;
+}
+
+main, header, footer {
+    margin: 2.5rem auto;
 }
 
 img {
