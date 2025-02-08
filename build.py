@@ -2,11 +2,7 @@
 from markupdown import *
 
 # Copy files to the site directory
-cp("assets/css/*.css", "site/css")
-cp("assets/js/*.js", "site/js")
-cp("assets/images/**/*.png", "site/images")
-cp("assets/*.ico", "site")
-cp("assets/*.txt", "site")
+cp("assets/**/*.*", "site")
 cp("content/**/*.md", "site")
 
 # Update markdown frontmatter
