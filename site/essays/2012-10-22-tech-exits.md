@@ -1,9 +1,16 @@
 ---
 blurb: What follows is a brain dump of some things that I've learned about the way
   that software companies are sold on the public and private market.
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: October 22, 2012
 link: /essays/2012-10-22-tech-exits
 title: Tech exits
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 What follows is a brain dump of some things that I've learned about the way that software companies are sold on the public and private market.

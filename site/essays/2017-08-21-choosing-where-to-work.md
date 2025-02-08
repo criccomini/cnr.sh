@@ -2,9 +2,16 @@
 blurb: Making the right decision about where to work can have a profound effect on
   one’s life. A company needs to want you to join, but you also need to want to join.
   I’ve had a few people ask for advice ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: August 21, 2017
 link: /essays/2017-08-21-choosing-where-to-work
 title: Choosing Where to Work
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Making the right decision about where to work can have a profound effect on one’s life. A company needs to want you to join, but you also need to want to join. I’ve had a few people ask for advice on taking a new job recently, so I thought it might be useful to others to write down my thoughts.

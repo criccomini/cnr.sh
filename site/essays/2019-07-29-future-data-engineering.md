@@ -2,9 +2,16 @@
 blurb: I have been thinking lately about where we’ve come in data engineering over
   the past few years, and about what the future holds for work in this area. Most
   of this thought has been framed in the ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: July 29, 2019
 link: /essays/2019-07-29-future-data-engineering
 title: The Future of Data Engineering
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I have been thinking lately about where we’ve come in data engineering over the past few years, and about what the future holds for work in this area. Most of this thought has been framed in the context of what some of our teams are doing at WePay, but I believe the framework below applies more broadly, and is worth sharing.

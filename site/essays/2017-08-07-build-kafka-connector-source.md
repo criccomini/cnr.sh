@@ -2,9 +2,16 @@
 blurb: I've been talking to some of the folks at Data Mountaineer about their new
   Cassandra CDC connector for Kafka connect, and I wanted to record some of the nuances
   that developers should consider ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: August 7, 2017
 link: /essays/2017-08-07-build-kafka-connector-source
 title: So, you want to build a Kafka Connector? Source edition.
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I've been [talking](https://github.com/datamountaineer/stream-reactor/issues/162) to some of the folks at [Data Mountaineer](https://datamountaineer.com/) about their new [Cassandra CDC connector](http://docs.datamountaineer.com/en/latest/cassandra-cdc.html) for [Kafka connect](http://docs.confluent.io/current/connect/intro.html), and I wanted to record some of the nuances that developers should consider when building out a new Kafka connect [source connector](http://docs.confluent.io/3.3.0/connect/javadocs/index.html?org/apache/kafka/connect/source/SourceConnector.html). I'm primarily focusing on source connectors where the upstream source is some kind of database.

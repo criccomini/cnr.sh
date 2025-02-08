@@ -2,8 +2,14 @@
 backreferences:
 - 404.md
 blurb: Hi! I'm Chris Riccomini, a software engineer, author, investor, and advisor.
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
 children:
 - essays/index.md
+created_at: '2025-02-08T09:43:29+08:00'
 link: /
 references:
 - essays/index.md
@@ -12,6 +18,7 @@ siblings:
 - 404.md
 - talks.md
 title: Home
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Hi! I'm Chris Riccomini, a software engineer, author, investor, and advisor.

@@ -2,9 +2,16 @@
 blurb: I've become much more comfortable with the idea of vendor lock-in. Or rather,
   I don't feel as locked in as I used to. The odd thing is, I'm using more proprietary
   systems than I ever have before ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: January 22, 2019
 link: /essays/2019-01-22-kafka-escape-hatch
 title: Kafka is your escape hatch
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I've become much more comfortable with the idea of vendor lock-in. Or rather, I don't feel as locked in as I used to. The odd thing is, I'm using more proprietary systems than I ever have before (thanks to the cloud). Apache Kafka is what's making me comfortable. Specifically, Kafka connect.

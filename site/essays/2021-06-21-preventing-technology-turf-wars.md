@@ -1,9 +1,16 @@
 ---
 blurb: 'The new SaaS Slack (it’s awesome; you should totally join it) had a good question
   on technical decision processes:'
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: June 21, 2021
 link: /essays/2021-06-21-preventing-technology-turf-wars
 title: Preventing Technology Turf Wars
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 The new [SaaS Slack](https://join.slack.com/t/saas-hgv7803/shared_invite/zt-qwvrywyr-8DmSpEzBiSWD2WQuB9r9pw) (it’s awesome; you should totally join it) had a good question on technical decision processes:

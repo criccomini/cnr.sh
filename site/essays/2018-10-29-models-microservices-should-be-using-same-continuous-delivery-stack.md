@@ -2,10 +2,17 @@
 blurb: I've been interested in data science platforms for a long time. My fascination
   began when I was at LinkedIn, and helped build out the first model building and
   deployment system for People You May ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: October 29, 2018
 link: /essays/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack
 title: Models and microservices should be running on the same continuous delivery
   stack
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I've been interested in data science platforms for a long time. My fascination began when I was at LinkedIn, and helped build out the first model building and deployment system for [People You May Know](https://engineering.linkedin.com/teams/data/projects/pymk). At the time, we did feature engineering and training on [Hadoop](https://hadoop.apache.org/), job scheduling on [Azkaban](https://azkaban.github.io/), and model deployment on [Voldemort](https://www.project-voldemort.com/voldemort/).

@@ -2,9 +2,16 @@
 blurb: We've been discussing building some new infrastructure at work. The project
   involves writing some fresh code and interfacing with some other systems that we've
   never used before. There are a lot ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 19, 2018
 link: /essays/2018-11-19-minimum-viable-infrastructure
 title: Minimum viable infrastructure
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 We've been discussing building some new infrastructure at work. The project involves writing some fresh code and interfacing with some other systems that we've never used before. There are a lot of unknowns. During a discussion about the project, I found myself making the statement, **"Your goal is to build the smallest amount of the system while still providing value to at least one user."**

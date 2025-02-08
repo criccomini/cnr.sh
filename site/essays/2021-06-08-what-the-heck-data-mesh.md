@@ -2,9 +2,16 @@
 blurb: I got sucked into a data mesh  Twitter thread  this weekend (it’s worth a read
   if you haven’t seen it). Data meshes have clearly struck a nerve. Some don’t understand
   them, while others believe ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: June 8, 2021
 link: /essays/2021-06-08-what-the-heck-data-mesh
 title: What the Heck is a Data Mesh?!
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I got sucked into a data mesh  [Twitter thread](https://twitter.com/fulhack/status/1400461693197570051)  this weekend (it’s worth a read if you haven’t seen it). Data meshes have clearly struck a nerve. Some don’t understand them, while others believe they’re a bad idea. Yet, "Demystifying Data Mesh" and "Putting Data Mesh to Work" articles abound.

@@ -1,9 +1,16 @@
 ---
 blurb: Congratulations! You've been picked you to give a technical presentation. People
   are interested in what you have to say, and you're excited and nervous. What now?
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: October 23, 2018
 link: /essays/2018-10-23-your-first-technical-presentation
 title: Your First Technical Presentation
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Congratulations! You've been picked you to give a technical presentation. People are interested in what you have to say, and you're excited and nervous. What now?

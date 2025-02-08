@@ -2,9 +2,16 @@
 blurb: I've been asked for advice about writing a book several times since  The Missing
   README  came out in August. This post is my attempt at an answer. If you've ever
   thought about writing a book (or ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: December 13, 2021
 link: /essays/2021-12-13-how-to-write-a-technical-book
 title: How to Write a Technical Book
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I've been asked for advice about writing a book several times since  [The Missing README](https://themissingreadme.com/)  came out in August. This post is my attempt at an answer. If you've ever thought about writing a book (or are just curious), read on.

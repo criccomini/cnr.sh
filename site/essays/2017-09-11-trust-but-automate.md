@@ -2,9 +2,16 @@
 blurb: If you want to enforce a technical guideline or rule, you must automate the
   enforcement mechanism. Relying on human beings to do the enforcement is too error
   prone, yet this is exactly the pattern ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 11, 2017
 link: /essays/2017-09-11-trust-but-automate
 title: Trust, but automate
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 If you want to enforce a technical guideline or rule, you must automate the enforcement mechanism. Relying on human beings to do the enforcement is too error prone, yet this is exactly the pattern that I see pop up again and again.

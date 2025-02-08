@@ -2,9 +2,16 @@
 blurb: I was having lunch with a friend of mine recently where we were talking about
   a discussion he'd been having with a QA manager that he was interviewing. The discussion
   was about the role of QA in a ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: February 19, 2019
 link: /essays/2019-02-19-yes-you-still-need-qa-team-not-for-writing-tests
 title: Yes, you still need a QA team (but not for writing your tests)
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I was having lunch with a friend of mine recently where we were talking about a discussion he'd been having with a [QA](https://en.wikipedia.org/wiki/Quality_assurance#Software_development) manager that he was interviewing. The discussion was about the role of QA in a modern engineering organization. The candidate had responded that they viewed their role like that of security. I found this really thought provoking, and I want to unpack it a little bit.

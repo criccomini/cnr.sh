@@ -2,9 +2,16 @@
 blurb: Realtime change data capture (CDC) is becoming a popular architecture for data
   integration and data pipelines). The rise of Kafka connect, in particular, has triggered
   a lot of interest in the ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 5, 2018
 link: /essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation
 title: Kafka change data capture breaks database encapsulation
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Realtime [change data capture](https://en.wikipedia.org/wiki/Change_data_capture) (CDC) is becoming a popular architecture for [data integration](https://en.wikipedia.org/wiki/Data_integration) and [data pipelines](https://en.wikipedia.org/wiki/Pipeline_(computing)). The rise of [Kafka connect](https://docs.confluent.io/current/connect/index.html), in particular, has triggered a lot of interest in the subject. In realtime CDC, a database's changes (inserts, updates, and deletes) are available as a stream of mutations for downstream consumers to tail. This architecture is showing up a lot in modern ETL and data integration implementations, and it has a number of advantages:

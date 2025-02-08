@@ -2,9 +2,16 @@
 blurb: 'This page contains all books, links, and resources referenced in The Missing
   README: A Guide for the New Software Engineer. If you find these resources useful,
   you might enjoy the book! You can ...'
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 1, 2021
 link: /essays/2021-11-01-missing-readme-books-and-links
 title: The Missing README Software Engineering Links & Resources
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 This page contains all books, links, and resources referenced in [The Missing README: A Guide for the New Software Engineer](https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca). If you find these resources useful, you might enjoy the book! You can [buy it on Amazon](https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca) or anywhere books are sold.

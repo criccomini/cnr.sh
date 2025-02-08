@@ -2,9 +2,16 @@
 blurb: Design documents aren't just a chore; something that you begrudgingly slog
   through before getting to the fun work of writing code. Writing a design document
   might be challenging, but it should be ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 27, 2018
 link: /essays/2018-11-27-in-defense-of-design-documents
 title: In defense of design documents
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Design documents aren't just a chore; something that you begrudgingly slog through before getting to the fun work of writing code. Writing a design document might be challenging, but it should be a productive exercise that gets everyone on the same page. Let's start with what a design document is.

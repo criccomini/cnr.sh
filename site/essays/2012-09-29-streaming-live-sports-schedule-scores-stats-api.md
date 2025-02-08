@@ -1,9 +1,16 @@
 ---
 blurb: 'Recently, I''ve been looking for an API that exposes schedules and scores
   for "the big four" American leagues. Here''s what I was looking for:'
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: September 29, 2012
 link: /essays/2012-09-29-streaming-live-sports-schedule-scores-stats-api
 title: Schedules & Scores API for Streaming Live Sports Stats
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Recently, I've been looking for an API that exposes schedules and scores for "the big four" American leagues. Here's what I was looking for:

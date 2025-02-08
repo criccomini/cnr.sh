@@ -1,6 +1,12 @@
 ---
 backreferences:
 - index.md
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 link: /talks
 links:
 - date: October 4, 2022
@@ -63,4 +69,5 @@ links:
   title: Building Applications on YARN
   url: https://www.slideshare.net/criccomini/building-applications-on-yarn
 title: Talks
+updated_at: '2025-02-08T09:43:29+08:00'
 ---

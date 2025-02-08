@@ -2,9 +2,16 @@
 blurb: I recently came across a Wired story about Jim Allison, a Nobel Prize winning
   researcher in cancer immunotherapy. The story is a long form piece that's half character
   study, and half high-level ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: January 15, 2019
 link: /essays/2019-01-15-research-cell-animal-human-software-simulation-speed-up-experimentation
 title: Research in cell, animal, and human software simulation can speed up experimentation
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I recently came across a [Wired story about Jim Allison](https://www.wired.com/story/meet-jim-allison-the-texan-who-just-won-a-nobel-cancer-breakthrough/), a Nobel Prize winning researcher in cancer immunotherapy. The story is a long form piece that's half character study, and half high-level biology. The article sparked my interest. Specifically, how engineering might be able to accelerate the way in which medical research is conducted.

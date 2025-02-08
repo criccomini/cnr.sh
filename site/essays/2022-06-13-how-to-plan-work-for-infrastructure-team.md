@@ -2,9 +2,16 @@
 blurb: Building tooling and systems for other engineers at a company can be tough.
   Project planning, in particular, presents a challenge. Infrastructure teams have
   several unique traits that hinder ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: June 13, 2022
 link: /essays/2022-06-13-how-to-plan-work-for-infrastructure-team
 title: How to Plan Work for an Infrastructure Team
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Building tooling and systems for other engineers at a company can be tough. Project planning, in particular, presents a challenge. Infrastructure teams have several unique traits that hinder predictable planning.

@@ -2,9 +2,16 @@
 blurb: I’m excited to release Recap, a dead simple data catalog for engineers, written
   in Python. Recap makes it easy for engineers to build infrastructure and tools that
   need metadata. Unlike ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: January 5, 2023
 link: /essays/2023-01-05-recap-for-people-who-hate-data-catalogs
 title: 'Recap: A Data Catalog for People Who Hate Data Catalogs'
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I’m excited to release [Recap](https://github.com/recap-cloud/recap), a dead simple data catalog for engineers, written in Python. Recap makes it easy for engineers to build infrastructure and tools that need metadata. Unlike traditional data catalogs, Recap is designed to power software.

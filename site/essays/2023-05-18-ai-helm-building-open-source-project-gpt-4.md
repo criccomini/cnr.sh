@@ -2,9 +2,16 @@
 blurb: I've mostly been a LLM and GPT skeptic. Every so often I'd bang my head against
   ChatGPT, and it usually gave me junk. I'd wander off grumbling things jaded engineers
   grumble.
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: May 18, 2023
 link: /essays/2023-05-18-ai-helm-building-open-source-project-gpt-4
 title: 'AI at the Helm: Building an Entire Open Source Project With GPT-4'
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I've mostly been a [LLM](https://en.wikipedia.org/wiki/Large_language_model) and [GPT](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) skeptic. Every so often I'd bang my head against [ChatGPT](https://openai.com/blog/chatgpt), and it usually gave me junk. I'd wander off grumbling things jaded engineers grumble.

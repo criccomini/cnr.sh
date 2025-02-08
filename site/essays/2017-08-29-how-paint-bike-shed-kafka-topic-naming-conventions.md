@@ -2,9 +2,16 @@
 blurb: Today, I'll be tackling the controversial subject of Kafka topic names. Not
   only will I review various schemes, but I've decided to take a stand on a few issues
   and outline my reasoning. Get out ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: August 29, 2017
 link: /essays/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions
 title: Kafka Topic Naming Conventions
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 Today, I'll be tackling the controversial subject of [Kafka](https://kafka.apache.org/) topic names. Not only will I review various schemes, but I've decided to take a stand on a few issues and outline my reasoning. Get out your brush, and let's [paint this bike shed](https://en.wiktionary.org/wiki/bikeshedding)!

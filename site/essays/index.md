@@ -1,6 +1,12 @@
 ---
 backreferences:
 - index.md
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 link: /essays
 siblings:
 - essays/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions.md
@@ -35,4 +41,5 @@ siblings:
 - essays/2017-09-11-trust-but-automate.md
 - essays/2019-07-29-future-data-engineering.md
 title: Index
+updated_at: '2025-02-08T09:43:29+08:00'
 ---

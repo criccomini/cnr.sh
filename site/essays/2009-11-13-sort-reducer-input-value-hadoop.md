@@ -2,9 +2,16 @@
 blurb: I HIGHLY recommend that you read the email thread by Owen O'Malley that describes
   this technique in brief. I should also note that this example is using the 0.18
   Hadoop API.
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 13, 2009
 link: /essays/2009-11-13-sort-reducer-input-value-hadoop
 title: Sorting Reducer Input Values in Hadoop
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 I HIGHLY recommend that you read the email thread by [Owen O'Malley](http://markmail.org/message/7gonm3kiasyh2xnf#query:setOutputKeyComparatorClass+page:3+mid:esn3lgzyx3ag26cy+state:results) that describes this technique in brief. I should also note that this example is using the 0.18 Hadoop API. 

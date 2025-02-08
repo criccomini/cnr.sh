@@ -2,9 +2,16 @@
 blurb: You work for two companies, whether you know it or not. These companies are
   your "big-C" (as in uppercase-C) and "little-c" (as in lowercase-c) companies. Your
   Company job is your 9-to-5. Everyone ...
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: November 8, 2021
 link: /essays/2021-11-08-work-for-two-companies
 title: Work for Two Companies
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 You work for two companies, whether you know it or not. These companies are your "big-C" (as in uppercase-C) and "little-c" (as in lowercase-c) companies. Your Company job is your 9-to-5. Everyone knows they work for a Company and what their job entails. Surprisingly few know that they work for a "little-c" company, let alone how to do the job.

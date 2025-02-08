@@ -2,9 +2,16 @@
 blurb: When I built WANT, I avoided adding OAuth2 sign-ins at first; I knew it'd be
   a headache. Instead, I used Devise, Rails's standard authentication framework, to
   handle email-based sign-ins.
+changelog:
+- author: Chris Riccomini
+  date: '2025-02-08T09:43:29+08:00'
+  hash: c458b25ff141276d08b4fc8719ea0b9a164014e0
+  message: Site is starting
+created_at: '2025-02-08T09:43:29+08:00'
 date: October 11, 2021
 link: /essays/2021-10-11-google-oauth-wkwebview
 title: OAuth "Sign In With Google" in a WkWebView
+updated_at: '2025-02-08T09:43:29+08:00'
 ---
 
 When I built [WANT](https://want.app), I avoided adding OAuth2 sign-ins at first; I knew it'd be a headache. Instead, I used [Devise](https://github.com/heartcombo/devise), [Rails](https://rubyonrails.org/)'s standard authentication framework, to handle email-based sign-ins.
