@@ -32,6 +32,8 @@ def _strip_404(md, _):
 # TODO remove * when transform handles single file paths
 transform("site/index*.md", _strip_404)
 
+transform("site/*/index.md", lambda md, _: md.update_frontmatter({"template": "index"}))
+
 # Render site
 render("site/**/*.md", site={"title": "cnr.sh"})
 
