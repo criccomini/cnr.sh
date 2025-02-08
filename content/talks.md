@@ -1,0 +1,60 @@
+---
+links:
+  - title: "Navigating the future of Modern Data Stack with Chris Riccomini"
+    date: October 4, 2022
+    url: https://www.youtube.com/watch?v=D--kcFdnAR8
+  - title: "Ledgers at Scale! With Chris Riccomini"
+    date: September 29, 2022
+    url: https://www.youtube.com/watch?v=xQ7Gmkb9zts
+  - title: "Data Engineering Podcast: Maintain Your Data Engineers' Sanity By Embracing Automation"
+    date: July 10, 2022
+    url: https://podcasts.apple.com/us/podcast/maintain-your-data-engineers-sanity-by-embracing-automation/id1193040557?i=1000569454511
+  - title: "A DevOps Angle to Data Mesh and WePay's Journey"
+    date: April 4, 2022
+    url: https://podcasts.apple.com/us/podcast/a-devops-angle-to-data-mesh-and-wepays/id1601585312?i=1000556136565
+  - title: "The Data Mesh with Chris Riccomini"
+    date: March 2, 2022
+    url: https://podcasts.apple.com/us/podcast/episode-1-the-data-mesh-with-chris-riccomini/id1612532253?i=1000552753665
+  - title: "Beyond SELECT *: Unpacking the Complexity of Database Snapshots"
+    date: December 16, 2021
+    url: https://www.youtube.com/watch?v=opBSNm7rR1k
+  - title: "Data Warehousing Trends"
+    date: December 9, 2021
+    url: https://www.slideshare.net/criccomini/data-warehousing-trends
+  - title: "Software Engineering Radio: Chris Riccomini and Dmitriy Ryaboy on The Missing README"
+    date: December 1, 2021
+    url: https://www.se-radio.net/2021/12/episode-488-chris-riccomini-and-dmitriy-ryaboy-on-the-missing-readme/
+  - title: "What Your Tech Lead Thinks You Know (But Didn't Teach You)"
+    date: November 18, 2021
+    url: https://www.slideshare.net/criccomini/what-your-tech-lead-thinks-you-know-but-didnt-teach-you
+  - title: "Modern Data Architectures, Pipelines, & Streams QCon 2021 Panel"
+    date: November 8, 2021
+    url: https://plus.qconferences.com/plus2021/track/modern-data-architectures-pipelines-streams
+  - title: "The Missing README interview with Curai, Dmitriy Ryaboy, and Chris Riccomini"
+    date: October 20, 2021
+    url: https://blog.themissingreadme.com/the-missing-readme-curai-interviews-dmitriy-ryaboy-and-chris-riccomini-7b46a3d927c8
+  - title: "Software Engineering Daily: The Missing README"
+    date: September 1, 2021
+    url: https://softwareengineeringdaily.com/2021/09/01/the-missing-readme-with-chris-riccomini-and-dmitriy-ryaboy/
+  - title: Modern Data Engineering QCon 2020 Panel
+    date: November 17, 2020
+    url: https://plus.qconferences.com/plus2020/presentation/modern-data-engineering-panel
+  - title: The Future of Data Engineering
+    date: December 4, 2019
+    url: https://www.infoq.com/presentations/data-engineering-pipelines-warehouses/
+  - title: The History of Apache Kafka and Stream Processing
+    date: May 16, 2019
+    url: https://developer.confluent.io/podcast/chris-riccomini-on-the-history-of-apache-kafka-and-stream-processing
+  - title: "The Airflow Podcast: Best Practices"
+    date: March 21, 2018
+    url: https://soundcloud.com/the-airflow-podcast/best-practices
+  - title: Airflow at WePay
+    date: June 14, 2016
+    url: https://wepayinc.app.box.com/s/hf1chwmthuet29ux2a83f5quc8o5q18k
+  - title: "Samza: Real-time Stream Processing at LinkedIn"
+    date: November 28, 2013
+    url: https://www.infoq.com/presentations/samza-linkedin/
+  - title: Building Applications on YARN
+    date: October 12, 2012
+    url: https://www.slideshare.net/criccomini/building-applications-on-yarn
+---

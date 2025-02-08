@@ -1,0 +1,3 @@
+- Re-add newsletter
+- Add colophon
+- Re-add links

@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>https://cnr.sh</id>
+  <title>Chris Riccomini</title>
+  <updated>2025-02-08T01:42:54.481246+00:00</updated>
+  <link href="https://cnr.sh" rel="alternate"/>
+  <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
+  <subtitle>Chris Riccomini's blog</subtitle>
+  <entry>
+    <id>https://cnr.sh/essays/2019-07-29-future-data-engineering</id>
+    <title>The Future of Data Engineering</title>
+    <updated>2025-02-08T01:42:54.555066+00:00</updated>
+    <content>I have been thinking lately about where we’ve come in data engineering over the past few years, and about what the future holds for work in this area. Most of this thought has been framed in the context of what some of our teams are doing at WePay, but I believe the framework below applies more broadly, and is worth sharing.</content>
+    <link href="https://cnr.sh/essays/2019-07-29-future-data-engineering"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2017-09-11-trust-but-automate</id>
+    <title>Trust, but automate</title>
+    <updated>2025-02-08T01:42:54.551841+00:00</updated>
+    <content>If you want to enforce a technical guideline or rule, you must automate the enforcement mechanism. Relying on human beings to do the enforcement is too error prone, yet this is exactly the pattern that I see pop up again and again.</content>
+    <link href="https://cnr.sh/essays/2017-09-11-trust-but-automate"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2023-01-05-recap-for-people-who-hate-data-catalogs</id>
+    <title>Recap: A Data Catalog for People Who Hate Data Catalogs</title>
+    <updated>2025-02-08T01:42:54.550327+00:00</updated>
+    <content>I’m excited to release [Recap](https://github.com/recap-cloud/recap), a dead simple data catalog for engineers, written in Python. Recap makes it easy for engineers to build infrastructure and tools that need metadata. Unlike traditional data catalogs, Recap is designed to power software.</content>
+    <link href="https://cnr.sh/essays/2023-01-05-recap-for-people-who-hate-data-catalogs"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2018-11-19-minimum-viable-infrastructure</id>
+    <title>Minimum viable infrastructure</title>
+    <updated>2025-02-08T01:42:54.548906+00:00</updated>
+    <content>We've been discussing building some new infrastructure at work. The project involves writing some fresh code and interfacing with some other systems that we've never used before. There are a lot of unknowns. During a discussion about the project, I found myself making the statement, **"Your goal is to build the smallest amount of the system while still providing value to at least one user."**</content>
+    <link href="https://cnr.sh/essays/2018-11-19-minimum-viable-infrastructure"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2021-06-08-what-the-heck-data-mesh</id>
+    <title>What the Heck is a Data Mesh?!</title>
+    <updated>2025-02-08T01:42:54.547666+00:00</updated>
+    <content>I got sucked into a data mesh  [Twitter thread](https://twitter.com/fulhack/status/1400461693197570051)  this weekend (it’s worth a read if you haven’t seen it). Data meshes have clearly struck a nerve. Some don’t understand them, while others believe they’re a bad idea. Yet, "Demystifying Data Mesh" and "Putting Data Mesh to Work" articles abound.</content>
+    <link href="https://cnr.sh/essays/2021-06-08-what-the-heck-data-mesh"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2012-09-29-streaming-live-sports-schedule-scores-stats-api</id>
+    <title>Schedules &amp; Scores API for Streaming Live Sports Stats</title>
+    <updated>2025-02-08T01:42:54.543403+00:00</updated>
+    <content>Recently, I've been looking for an API that exposes schedules and scores for "the big four" American leagues. Here's what I was looking for:</content>
+    <link href="https://cnr.sh/essays/2012-09-29-streaming-live-sports-schedule-scores-stats-api"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2023-05-18-ai-helm-building-open-source-project-gpt-4</id>
+    <title>AI at the Helm: Building an Entire Open Source Project With GPT-4</title>
+    <updated>2025-02-08T01:42:54.540905+00:00</updated>
+    <content>I've mostly been a [LLM](https://en.wikipedia.org/wiki/Large_language_model) and [GPT](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) skeptic. Every so often I'd bang my head against [ChatGPT](https://openai.com/blog/chatgpt), and it usually gave me junk. I'd wander off grumbling things jaded engineers grumble.</content>
+    <link href="https://cnr.sh/essays/2023-05-18-ai-helm-building-open-source-project-gpt-4"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2021-11-01-missing-readme-books-and-links</id>
+    <title>The Missing README Software Engineering Links &amp; Resources</title>
+    <updated>2025-02-08T01:42:54.538611+00:00</updated>
+    <content>This page contains all books, links, and resources referenced in [The Missing README: A Guide for the New Software Engineer](https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=missingreadme-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B08XM2CDZM&amp;linkId=b8b400351a3448f858341fe3e5b69eca). If you find these resources useful, you might enjoy the book! You can [buy it on Amazon](https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=missingreadme-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B08XM2CDZM&amp;linkId=b8b400351a3448f858341fe3e5b69eca) or anywhere books are sold.</content>
+    <link href="https://cnr.sh/essays/2021-11-01-missing-readme-books-and-links"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2018-11-27-in-defense-of-design-documents</id>
+    <title>In defense of design documents</title>
+    <updated>2025-02-08T01:42:54.535334+00:00</updated>
+    <content>Design documents aren't just a chore; something that you begrudgingly slog through before getting to the fun work of writing code. Writing a design document might be challenging, but it should be a productive exercise that gets everyone on the same page. Let's start with what a design document is.</content>
+    <link href="https://cnr.sh/essays/2018-11-27-in-defense-of-design-documents"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2013-06-14-yarn-with-cgroups</id>
+    <title>Using YARN with Cgroups</title>
+    <updated>2025-02-08T01:42:54.533909+00:00</updated>
+    <content>I'm still a novice with Cgroups, but I thought it would be worth documenting how to set YARN up with them, since there seems to be a surprising lack of documentation on how to get this stuff going. I'm going to show you how to:</content>
+    <link href="https://cnr.sh/essays/2013-06-14-yarn-with-cgroups"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays</id>
+    <title>Index</title>
+    <updated>2025-02-08T01:42:54.531449+00:00</updated>
+    <content/>
+    <link href="https://cnr.sh/essays"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2012-10-05-kafka-consumer-memory-tuning</id>
+    <title>Kafka Consumer Memory Tuning</title>
+    <updated>2025-02-08T01:42:54.531238+00:00</updated>
+    <content>Yesterday, I had a process that was consuming a single Kafka topic. I was running it in our "staging" environment, and everything worked great. My heap space for the process was set to 512 megabytes (`-Xmx512M`). When I moved this process to production, my process would fail with an out of memory exception. I was seeing:</content>
+    <link href="https://cnr.sh/essays/2012-10-05-kafka-consumer-memory-tuning"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2021-12-13-how-to-write-a-technical-book</id>
+    <title>How to Write a Technical Book</title>
+    <updated>2025-02-08T01:42:54.530293+00:00</updated>
+    <content>I've been asked for advice about writing a book several times since  [The Missing README](https://themissingreadme.com/)  came out in August. This post is my attempt at an answer. If you've ever thought about writing a book (or are just curious), read on.</content>
+    <link href="https://cnr.sh/essays/2021-12-13-how-to-write-a-technical-book"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation</id>
+    <title>Kafka change data capture breaks database encapsulation</title>
+    <updated>2025-02-08T01:42:54.526951+00:00</updated>
+    <content>Realtime [change data capture](https://en.wikipedia.org/wiki/Change_data_capture) (CDC) is becoming a popular architecture for [data integration](https://en.wikipedia.org/wiki/Data_integration) and [data pipelines](https://en.wikipedia.org/wiki/Pipeline_(computing)). The rise of [Kafka connect](https://docs.confluent.io/current/connect/index.html), in particular, has triggered a lot of interest in the subject. In realtime CDC, a database's changes (inserts, updates, and deletes) are available as a stream of mutations for downstream consumers to tail. This architecture is showing up a lot in modern ETL and data integration implementations, and it has a number of advantages:</content>
+    <link href="https://cnr.sh/essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2019-02-04-managing-kafka-topic-configuration</id>
+    <title>Managing Kafka topic configuration</title>
+    <updated>2025-02-08T01:42:54.523079+00:00</updated>
+    <content>The lack of tooling available for managing Kafka topic configuration has been in the back of my mind for a while. It seems like a fairly obvious need, but there doesn't appear to be much available. Unsurprisingly, I'm not the only person to recognize this need:</content>
+    <link href="https://cnr.sh/essays/2019-02-04-managing-kafka-topic-configuration"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2019-01-15-research-cell-animal-human-software-simulation-speed-up-experimentation</id>
+    <title>Research in cell, animal, and human software simulation can speed up experimentation</title>
+    <updated>2025-02-08T01:42:54.521112+00:00</updated>
+    <content>I recently came across a [Wired story about Jim Allison](https://www.wired.com/story/meet-jim-allison-the-texan-who-just-won-a-nobel-cancer-breakthrough/), a Nobel Prize winning researcher in cancer immunotherapy. The story is a long form piece that's half character study, and half high-level biology. The article sparked my interest. Specifically, how engineering might be able to accelerate the way in which medical research is conducted.</content>
+    <link href="https://cnr.sh/essays/2019-01-15-research-cell-animal-human-software-simulation-speed-up-experimentation"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2019-02-19-yes-you-still-need-qa-team-not-for-writing-tests</id>
+    <title>Yes, you still need a QA team (but not for writing your tests)</title>
+    <updated>2025-02-08T01:42:54.519880+00:00</updated>
+    <content>I was having lunch with a friend of mine recently where we were talking about a discussion he'd been having with a [QA](https://en.wikipedia.org/wiki/Quality_assurance#Software_development) manager that he was interviewing. The discussion was about the role of QA in a modern engineering organization. The candidate had responded that they viewed their role like that of security. I found this really thought provoking, and I want to unpack it a little bit.</content>
+    <link href="https://cnr.sh/essays/2019-02-19-yes-you-still-need-qa-team-not-for-writing-tests"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2017-08-21-choosing-where-to-work</id>
+    <title>Choosing Where to Work</title>
+    <updated>2025-02-08T01:42:54.518895+00:00</updated>
+    <content>Making the right decision about where to work can have a profound effect on one’s life. A company needs to want you to join, but you also need to want to join. I’ve had a few people ask for advice on taking a new job recently, so I thought it might be useful to others to write down my thoughts.</content>
+    <link href="https://cnr.sh/essays/2017-08-21-choosing-where-to-work"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2021-11-08-work-for-two-companies</id>
+    <title>Work for Two Companies</title>
+    <updated>2025-02-08T01:42:54.516239+00:00</updated>
+    <content>You work for two companies, whether you know it or not. These companies are your "big-C" (as in uppercase-C) and "little-c" (as in lowercase-c) companies. Your Company job is your 9-to-5. Everyone knows they work for a Company and what their job entails. Surprisingly few know that they work for a "little-c" company, let alone how to do the job.</content>
+    <link href="https://cnr.sh/essays/2021-11-08-work-for-two-companies"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2018-10-23-your-first-technical-presentation</id>
+    <title>Your First Technical Presentation</title>
+    <updated>2025-02-08T01:42:54.515498+00:00</updated>
+    <content>Congratulations! You've been picked you to give a technical presentation. People are interested in what you have to say, and you're excited and nervous. What now?</content>
+    <link href="https://cnr.sh/essays/2018-10-23-your-first-technical-presentation"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2018-11-12-dont-tell-people-what-to-do-ask-them-how-to-do-it</id>
+    <title>Don't tell people what to do, ask them how to do it</title>
+    <updated>2025-02-08T01:42:54.513168+00:00</updated>
+    <content>When I first joined LinkedIn, there was very little automation in production deployments. Believe it or not, each deployment day had a wiki page with a run book of all the services that needed to be deployed, complete with configuration changes that needed to be executed. Roll outs happened on Thursday evenings, and the entire site was brought offline during the deployments. Metrics and monitoring weren't much better. We had very limited visibility into metrics and logs. Obviously, this caused a bunch of problems for the engineers. For one thing, it meant that we had to rely heavily on the operations staff anytime we needed to do just about anything.</content>
+    <link href="https://cnr.sh/essays/2018-11-12-dont-tell-people-what-to-do-ask-them-how-to-do-it"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2012-10-22-tech-exits</id>
+    <title>Tech exits</title>
+    <updated>2025-02-08T01:42:54.511423+00:00</updated>
+    <content>What follows is a brain dump of some things that I've learned about the way that software companies are sold on the public and private market.</content>
+    <link href="https://cnr.sh/essays/2012-10-22-tech-exits"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2009-11-13-sort-reducer-input-value-hadoop</id>
+    <title>Sorting Reducer Input Values in Hadoop</title>
+    <updated>2025-02-08T01:42:54.505142+00:00</updated>
+    <content>I HIGHLY recommend that you read the email thread by [Owen O'Malley](http://markmail.org/message/7gonm3kiasyh2xnf#query:setOutputKeyComparatorClass+page:3+mid:esn3lgzyx3ag26cy+state:results) that describes this technique in brief. I should also note that this example is using the 0.18 Hadoop API. </content>
+    <link href="https://cnr.sh/essays/2009-11-13-sort-reducer-input-value-hadoop"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2021-10-11-google-oauth-wkwebview</id>
+    <title>OAuth "Sign In With Google" in a WkWebView</title>
+    <updated>2025-02-08T01:42:54.503851+00:00</updated>
+    <content>When I built [WANT](https://want.app), I avoided adding OAuth2 sign-ins at first; I knew it'd be a headache. Instead, I used [Devise](https://github.com/heartcombo/devise), [Rails](https://rubyonrails.org/)'s standard authentication framework, to handle email-based sign-ins.</content>
+    <link href="https://cnr.sh/essays/2021-10-11-google-oauth-wkwebview"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2019-01-22-kafka-escape-hatch</id>
+    <title>Kafka is your escape hatch</title>
+    <updated>2025-02-08T01:42:54.502315+00:00</updated>
+    <content>I've become much more comfortable with the idea of vendor lock-in. Or rather, I don't feel as locked in as I used to. The odd thing is, I'm using more proprietary systems than I ever have before (thanks to the cloud). Apache Kafka is what's making me comfortable. Specifically, Kafka connect.</content>
+    <link href="https://cnr.sh/essays/2019-01-22-kafka-escape-hatch"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2021-06-21-preventing-technology-turf-wars</id>
+    <title>Preventing Technology Turf Wars</title>
+    <updated>2025-02-08T01:42:54.501354+00:00</updated>
+    <content>The new [SaaS Slack](https://join.slack.com/t/saas-hgv7803/shared_invite/zt-qwvrywyr-8DmSpEzBiSWD2WQuB9r9pw) (it’s awesome; you should totally join it) had a good question on technical decision processes:</content>
+    <link href="https://cnr.sh/essays/2021-06-21-preventing-technology-turf-wars"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2012-09-25-kill-subprocesses-linux-bash</id>
+    <title>Killing Subprocesses in Linux/Bash</title>
+    <updated>2025-02-08T01:42:54.498619+00:00</updated>
+    <content>Lately, I've been working with [YARN](http://hadoop.apache.org/docs/r0.23.0/hadoop-yarn/hadoop-yarn-site/YARN.html) at LinkedIn. This framework allows you to execute Bash scripts on one or more machines. It's used primarily for Hadoop. When using YARN, you often end up with nested Bash scripts with no parent process ID (PPID) when the NodeManager launches the Bash script. This can be pretty problematic when the NodeManager is shut down, since you must make sure to clean up all child subprocesses via your parent Bash script.</content>
+    <link href="https://cnr.sh/essays/2012-09-25-kill-subprocesses-linux-bash"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2022-06-13-how-to-plan-work-for-infrastructure-team</id>
+    <title>How to Plan Work for an Infrastructure Team</title>
+    <updated>2025-02-08T01:42:54.497163+00:00</updated>
+    <content>Building tooling and systems for other engineers at a company can be tough. Project planning, in particular, presents a challenge. Infrastructure teams have several unique traits that hinder predictable planning.</content>
+    <link href="https://cnr.sh/essays/2022-06-13-how-to-plan-work-for-infrastructure-team"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2017-08-14-one-big-cluster-many-small-ones</id>
+    <title>One big cluster, or many small ones?</title>
+    <updated>2025-02-08T01:42:54.494730+00:00</updated>
+    <content>I bumped into something recently that seems to recur at every company I work for. Should we run one big cluster, or many smaller ones? The discussion is usually triggered when you have more than one team that wants to use the infrastructure in question.</content>
+    <link href="https://cnr.sh/essays/2017-08-14-one-big-cluster-many-small-ones"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2017-08-07-build-kafka-connector-source</id>
+    <title>So, you want to build a Kafka Connector? Source edition.</title>
+    <updated>2025-02-08T01:42:54.492338+00:00</updated>
+    <content>I've been [talking](https://github.com/datamountaineer/stream-reactor/issues/162) to some of the folks at [Data Mountaineer](https://datamountaineer.com/) about their new [Cassandra CDC connector](http://docs.datamountaineer.com/en/latest/cassandra-cdc.html) for [Kafka connect](http://docs.confluent.io/current/connect/intro.html), and I wanted to record some of the nuances that developers should consider when building out a new Kafka connect [source connector](http://docs.confluent.io/3.3.0/connect/javadocs/index.html?org/apache/kafka/connect/source/SourceConnector.html). I'm primarily focusing on source connectors where the upstream source is some kind of database.</content>
+    <link href="https://cnr.sh/essays/2017-08-07-build-kafka-connector-source"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack</id>
+    <title>Models and microservices should be running on the same continuous delivery stack</title>
+    <updated>2025-02-08T01:42:54.488776+00:00</updated>
+    <content>I've been interested in data science platforms for a long time. My fascination began when I was at LinkedIn, and helped build out the first model building and deployment system for [People You May Know](https://engineering.linkedin.com/teams/data/projects/pymk). At the time, we did feature engineering and training on [Hadoop](https://hadoop.apache.org/), job scheduling on [Azkaban](https://azkaban.github.io/), and model deployment on [Voldemort](https://www.project-voldemort.com/voldemort/).</content>
+    <link href="https://cnr.sh/essays/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/essays/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions</id>
+    <title>Kafka Topic Naming Conventions</title>
+    <updated>2025-02-08T01:42:54.485881+00:00</updated>
+    <content>Today, I'll be tackling the controversial subject of [Kafka](https://kafka.apache.org/) topic names. Not only will I review various schemes, but I've decided to take a stand on a few issues and outline my reasoning. Get out your brush, and let's [paint this bike shed](https://en.wiktionary.org/wiki/bikeshedding)!</content>
+    <link href="https://cnr.sh/essays/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/talks</id>
+    <title>Talks</title>
+    <updated>2025-02-08T01:42:54.483335+00:00</updated>
+    <content/>
+    <link href="https://cnr.sh/talks"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/404</id>
+    <title>Oops!</title>
+    <updated>2025-02-08T01:42:54.482925+00:00</updated>
+    <content>You've landed on a page that doesn't exist.</content>
+    <link href="https://cnr.sh/404"/>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/.</id>
+    <title>Home</title>
+    <updated>2025-02-08T01:42:54.482717+00:00</updated>
+    <content>Hi! I'm Chris Riccomini, a software engineer, author, investor, and advisor.</content>
+    <link href="https://cnr.sh/."/>
+  </entry>
+</feed>

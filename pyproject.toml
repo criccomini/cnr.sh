@@ -1,0 +1,15 @@
+[project]
+name = "cnr.sh"
+version = "0.1.0"
+description = "cnr.sh website"
+authors = [
+    {name = "Chris Riccomini", email = "criccomini@apache.org"},
+]
+dependencies = ["markupdown>=0.1.0"]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "CC BY-NC 4.0"}
+
+
+[tool.pdm]
+distribution = false
