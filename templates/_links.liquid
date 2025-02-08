@@ -6,12 +6,14 @@
 - `tags`: A list of tags for the link. (optional)
 {% endcomment -%}
 {%- if links -%}
-<nav>
+<nav class="links">
 <ul>
 {%- assign entries = links | sort: "created_at" | reverse -%}
 {%- for entry in entries -%}
-<li><a href="{{ entry.link }}">{{ entry.title }}</a></li>
-<span style="font-size: 80%;">{{ entry.created_at | date: '%B %-d, %Y' }}</span>
+<li>
+<a href="{{ entry.link }}">{{ entry.title }}</a>
+<sub>{{ entry.created_at | date: '%B %-d, %Y' }}</sub>
+</li>
 {%- endfor -%}
 </ul>
 </nav>

@@ -103,3 +103,16 @@ html {
         margin: 0;
     }
 }
+
+nav.links ul {
+    margin-left: 1rem;
+    padding-left: 0rem;
+}
+
+nav.links ul li:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+nav.links ul li sub {
+    display: block;
+}
