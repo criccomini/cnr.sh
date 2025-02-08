@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Condensed:wght@700&display=swap');
-
 body {
     background-color: #E0E1DD;
     color: #415A77;
-    font-family: system-ui, sans-serif;
+    /* From bootstrap */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 nav, header, footer, main, h1, h2, h3, h4, h5, h6, p {
@@ -18,7 +17,7 @@ h1:not(header h1), h2, h3, h4, h5, h6 {
 
 main, header, footer, nav:not(header nav), footer {
     width: 100%;
-    max-width: 56rem;
+    max-width: 36rem;
     margin: 2.5rem auto;
     line-height: 150%;
 }
@@ -81,7 +80,7 @@ header nav ul li {
 }
 
 html {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 @media (max-width: 1024px) {
