@@ -1,5 +1,4 @@
 - Re-add newsletter
 - Add colophon
-- Make font-awesome load without swapping (no flash)
 - Track links with Wallbag
 - Add https://tinylytics.app/
