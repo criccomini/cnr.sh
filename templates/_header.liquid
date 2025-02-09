@@ -1,7 +1,7 @@
 {%- assign index = "index.md" | frontmatter -%}
 {%- assign children = index.children | or_array -%}
 {%- assign siblings = index.siblings | or_array -%}
-{%- assign entries = children | concat:siblings| frontmatter | sort: "created_at" | reverse -%}
+{%- assign entries = children | concat:siblings| frontmatter | sort: "title" -%}
 <header>
 <h1><a href="/">{{ site.title }}</a></h1>
 <nav>
