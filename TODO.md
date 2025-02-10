@@ -1,0 +1,2 @@
+- Add colophon
+- Track links with linkwarden.app

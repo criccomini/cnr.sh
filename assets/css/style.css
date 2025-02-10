@@ -1,0 +1,119 @@
+body {
+    background-color: #E0E1DD;
+    color: #415A77;
+    /* From bootstrap */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+nav, header, footer, main, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1:not(header h1), h2, h3, h4, h5, h6 {
+    margin: 1rem 0rem;
+    line-height: 100%;
+}
+
+main, header, footer, nav:not(header nav) {
+    width: 100%;
+    max-width: 36rem;
+    line-height: 150%;
+}
+
+main, header, footer {
+    margin: 2.5rem auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+}
+
+header h1 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+header h1 a {
+    color: #415A77;
+    text-decoration: none;
+}
+
+body footer {
+    font-size: 0.75rem;
+    color: #778DA9;
+}
+
+main {
+    margin: 2.5rem auto 2.5rem auto;
+}
+
+main p {
+    margin: 1rem 0;
+}
+
+a {
+    text-decoration: underline;
+    color: #415A77;
+}
+
+header nav a {
+    color: #778DA9;
+    text-decoration: none;
+}
+
+header nav {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    padding: 0.5rem 1rem;
+}
+
+html {
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    header {
+        margin: 0;
+    }
+}
+
+nav.links ul {
+    margin-left: 1rem;
+    padding-left: 0rem;
+}
+
+nav.links ul li:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+nav.links ul li sub {
+    display: block;
+}
