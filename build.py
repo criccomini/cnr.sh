@@ -4,6 +4,7 @@ from markupdown import *
 # Copy files to the site directory
 cp("assets/**/*.*", "site")
 cp("content/**/*.md", "site")
+cp("CNAME", "site")
 
 # Update markdown frontmatter
 title("site/**/*.md")
