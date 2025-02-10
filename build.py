@@ -32,7 +32,8 @@ def _strip_404(md, _):
     md.save()
 transform("site/index.md", _strip_404)
 
-# Use index template for index subpages
+# Set custom template for index and post pages
+transform("site/posts/*.md", lambda md, _: md.update_frontmatter({"template": "post"}))
 transform("site/*/index.md", lambda md, _: md.update_frontmatter({"template": "index"}))
 
 # Render site
