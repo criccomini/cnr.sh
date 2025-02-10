@@ -1,2 +1,3 @@
 - Add colophon
 - Track links with linkwarden.app
+- Add changelog and backrefs to posts

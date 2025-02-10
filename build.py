@@ -30,13 +30,16 @@ def _strip_404(md, _):
     siblings = filter(lambda s: s != "404.md", siblings)
     md.update_frontmatter({"siblings": list(siblings)})
     md.save()
-# TODO remove * when transform handles single file paths
-transform("site/index*.md", _strip_404)
+transform("site/index.md", _strip_404)
 
+# Use index template for index subpages
 transform("site/*/index.md", lambda md, _: md.update_frontmatter({"template": "index"}))
 
 # Render site
 render("site/**/*.md", site={"title": "cnr.sh"})
+
+# Move 404.html to site/404.html
+cp("site/404/index.html", "site/404.html")
 
 # Minify site HTML, CSS, and JS
 minify("site/**/*.html")
