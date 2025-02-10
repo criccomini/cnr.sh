@@ -5,7 +5,7 @@ description = "cnr.sh website"
 authors = [
     {name = "Chris Riccomini", email = "criccomini@apache.org"},
 ]
-dependencies = ["markupdown>=0.1.0"]
+dependencies = ["markupdown>=0.2"]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "CC BY-NC 4.0"}
