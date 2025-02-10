@@ -116,6 +116,7 @@ talks:
   - title: "Database Internals - SlateDB with Chris Riccomini"
     created_at: "2024-10-06"
     link: https://www.youtube.com/watch?v=wEAcNoJOBFI
+    tags: [interview, podcast]
 ---
 
 # Talks
