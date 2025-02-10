@@ -1,3 +1,2 @@
-- Re-add newsletter
 - Add colophon
 - Track links with linkwarden.app
