@@ -122,7 +122,7 @@ files = [
 
 [[package]]
 name = "markupdown"
-version = "0.2.1"
+version = "0.2.2"
 requires_python = "<3.13,>=3.10"
 summary = "A modular static site generator in Python"
 groups = ["default"]
@@ -139,8 +139,8 @@ dependencies = [
     "pyyaml>=6.0.2",
 ]
 files = [
-    {file = "markupdown-0.2.1-py3-none-any.whl", hash = "sha256:5ccc61d23ff006f9af93f072ed123c87e2ac5fe19aac968dd98e714e49b15d6e"},
-    {file = "markupdown-0.2.1.tar.gz", hash = "sha256:52a97a637e5628b590210e84fe5066a6f6c16f2824644d238cf06d7e0e625180"},
+    {file = "markupdown-0.2.2-py3-none-any.whl", hash = "sha256:46349880bfd1b3e15b55ef23c830e196f77ad193c23360e3c46f2f42cfb9ed62"},
+    {file = "markupdown-0.2.2.tar.gz", hash = "sha256:9e9822c9eab0ec6cf3cb5994a4be9786a2f3fbf54ec6739c0ead6a7bf42dc1c4"},
 ]
 
 [[package]]
