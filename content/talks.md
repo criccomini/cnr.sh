@@ -58,6 +58,36 @@ talks:
   - title: Building Applications on YARN
     created_at: "2012-10-12"
     link: https://www.slideshare.net/criccomini/building-applications-on-yarn
+  - title: "Database Internals - SlateDB with Chris Riccomini"
+    created_at: "2024-10-10"
+    link: https://podcasts.apple.com/us/podcast/database-internals-slatedb-with-chris-riccomini/id1619407689?i=1000672653654
+  - title: "Building a Cloud Native LSM on Object Storage by Chris Riccomini & Rohan Desai"
+    created_at: "2024-10-03"
+    link: https://www.youtube.com/watch?v=8L_4kWhdzNc
+  - title: "Prefect Summit Industry Keynote by Chris Riccomini"
+    created_at: "2024-06-25"
+    link: https://www.youtube.com/watch?v=8X0_RymDOHY
+  - title: "The Materialized View infra influencer is back again! Chat with Chris Riccomini"
+    created_at: "2025-02-10"
+    link: https://podcasts.apple.com/us/podcast/the-materialized-view-infra-influencer-is-back-again/id1689151910?i=1000690879072
+  - title: "Databases are becoming commodity, what's next? Chat with Chris from Materialized View"
+    created_at: "2024-03-19"
+    link: https://podcasts.apple.com/us/podcast/databases-are-becoming-commodity-whats-next-chat-with/id1689151910?i=1000649753945
+  - title: "175: The Parts, Pieces, and Future of Composable Data Systems, Featuring Wes McKinney, Pedro Pedreira, Chris Riccomini, and Ryan Blue"
+    created_at: "2024-01-31"
+    link: https://podcasts.apple.com/us/podcast/175-the-parts-pieces-and-future-of-composable/id1526164119?i=1000643641179
+  - title: "Stream processing, LSMs and leaky abstractions with Chris Riccomini"
+    created_at: "2024-08-22"
+    link: https://podcasts.apple.com/us/podcast/stream-processing-lsms-and-leaky-abstractions-with/id1763670562?i=1000666321439
+  - title: "Chris Riccomini - Building (and Writing About) Data Intensive Applications"
+    created_at: "2025-01-12"
+    link: https://www.youtube.com/watch?v=FhJkqVLqUpc
+  - title: "Datacast Episode 110: Wisdom in Building Data Infrastructure, Lessons from Open-Source Development, The Missing README, and The Future of Data Engineering with Chris Riccomini"
+    created_at: "2023-03-14"
+    link: https://open.spotify.com/episode/2kduFCvLHbpHWlokpQqKZj
+  - title: "Database Internals - SlateDB with Chris Riccomini"
+    created_at: "2024-10-06"
+    link: https://www.youtube.com/watch?v=wEAcNoJOBFI
 ---
 
 # Talks
