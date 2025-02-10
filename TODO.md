@@ -1,4 +1,3 @@
 - Re-add newsletter
 - Add colophon
-- Track links with Wallbag
-- Add https://tinylytics.app/
+- Track links with linkwarden.app
