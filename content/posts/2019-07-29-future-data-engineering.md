@@ -1,6 +1,6 @@
 ---
 created_at: '2019-07-29T00:00:00Z'
-redirects_from: /essays/2019-07-29-future-of-data-engineering
+redirects_from: /essays/2019-07-29-future-data-engineering
 ---
 
 # The Future of Data Engineering
