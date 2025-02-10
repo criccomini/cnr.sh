@@ -1,7 +1,9 @@
 ---
-title: Preventing Technology Turf Wars
-date: June 21, 2021
+created_at: '2021-06-21T00:00:00Z'
+redirects_from: /essays/2021-06-21-preventing-technology-turf-wars
 ---
+
+# Preventing Technology Turf Wars
 
 The new [SaaS Slack](https://join.slack.com/t/saas-hgv7803/shared_invite/zt-qwvrywyr-8DmSpEzBiSWD2WQuB9r9pw) (it’s awesome; you should totally join it) had a good question on technical decision processes:
 

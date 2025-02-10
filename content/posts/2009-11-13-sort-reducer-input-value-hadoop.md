@@ -1,7 +1,9 @@
 ---
-title: Sorting Reducer Input Values in Hadoop
-date: November 13, 2009
+created_at: '2009-11-13T00:00:00Z'
+redirects_from: essays/2009-11-13-sort-reducer-input-value-hadoop
 ---
+
+# Sorting Reducer Input Values in Hadoop
 
 I HIGHLY recommend that you read the email thread by [Owen O'Malley](http://markmail.org/message/7gonm3kiasyh2xnf#query:setOutputKeyComparatorClass+page:3+mid:esn3lgzyx3ag26cy+state:results) that describes this technique in brief. I should also note that this example is using the 0.18 Hadoop API. 
 

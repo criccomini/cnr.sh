@@ -1,7 +1,9 @@
 ---
-title:  Trust, but automate
-date: November 11, 2017
+created_at: '2017-09-11T00:00:00Z'
+redirects_from: /essays/2017-09-11-trust-but-automate
 ---
+
+# Trust, but automate
 
 If you want to enforce a technical guideline or rule, you must automate the enforcement mechanism. Relying on human beings to do the enforcement is too error prone, yet this is exactly the pattern that I see pop up again and again.
 

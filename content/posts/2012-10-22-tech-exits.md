@@ -1,7 +1,9 @@
 ---
-title: Tech exits
-date: October 22, 2012
+created_at: '2012-10-22T00:00:00Z'
+redirects_from: /essays/2012-10-22-tech-exits
 ---
+
+# Tech exits
 
 What follows is a brain dump of some things that I've learned about the way that software companies are sold on the public and private market.
 

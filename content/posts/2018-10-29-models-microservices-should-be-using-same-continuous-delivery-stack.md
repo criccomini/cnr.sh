@@ -1,7 +1,9 @@
 ---
-title: Models and microservices should be running on the same continuous delivery stack
-date: October 29, 2018
+created_at: '2018-10-29T00:00:00Z'
+redirects_from: /essays/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack
 ---
+
+# Models and microservices should be running on the same continuous delivery stack
 
 I've been interested in data science platforms for a long time. My fascination began when I was at LinkedIn, and helped build out the first model building and deployment system for [People You May Know](https://engineering.linkedin.com/teams/data/projects/pymk). At the time, we did feature engineering and training on [Hadoop](https://hadoop.apache.org/), job scheduling on [Azkaban](https://azkaban.github.io/), and model deployment on [Voldemort](https://www.project-voldemort.com/voldemort/).
 

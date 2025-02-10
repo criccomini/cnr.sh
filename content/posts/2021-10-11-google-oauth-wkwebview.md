@@ -1,7 +1,9 @@
 ---
-title: OAuth "Sign In With Google" in a WkWebView
-date: October 11, 2021
+created_at: '2021-10-11T00:00:00Z'
+redirects_from: /essays/2021-10-11-google-oauth-wkwebview
 ---
+
+# OAuth "Sign In With Google" in a WkWebView
 
 When I built [WANT](https://want.app), I avoided adding OAuth2 sign-ins at first; I knew it'd be a headache. Instead, I used [Devise](https://github.com/heartcombo/devise), [Rails](https://rubyonrails.org/)'s standard authentication framework, to handle email-based sign-ins.
 

@@ -1,7 +1,9 @@
 ---
-title: How to Write a Technical Book
-date: December 13, 2021
+created_at: '2021-12-13T00:00:00Z'
+redirects_from: /essays/2021-12-13-how-to-write-a-technical-book
 ---
+
+# How to Write a Technical Book
 
 I've been asked for advice about writing a book several times since  [The Missing README](https://themissingreadme.com/)  came out in August. This post is my attempt at an answer. If you've ever thought about writing a book (or are just curious), read on.
 

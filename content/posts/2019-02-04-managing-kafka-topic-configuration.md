@@ -1,7 +1,9 @@
 ---
-title: Managing Kafka topic configuration
-date: February 4, 2019
+created_at: '2019-02-04T00:00:00Z'
+redirects_from: /essays/2019-02-04-managing-kafka-topic-configuration
 ---
+
+# Managing Kafka topic configuration
 
 The lack of tooling available for managing Kafka topic configuration has been in the back of my mind for a while. It seems like a fairly obvious need, but there doesn't appear to be much available. Unsurprisingly, I'm not the only person to recognize this need:
 

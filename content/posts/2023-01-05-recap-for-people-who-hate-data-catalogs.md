@@ -1,7 +1,9 @@
 ---
-title: "Recap: A Data Catalog for People Who Hate Data Catalogs"
-date: January 5, 2023
+created_at: '2023-01-05T00:00:00Z'
+redirects_from: /essays/2023-01-05-recap-for-people-who-hate-data-catalogs
 ---
+
+# Recap: A Data Catalog for People Who Hate Data Catalogs
 
 I’m excited to release [Recap](https://github.com/recap-cloud/recap), a dead simple data catalog for engineers, written in Python. Recap makes it easy for engineers to build infrastructure and tools that need metadata. Unlike traditional data catalogs, Recap is designed to power software.
 

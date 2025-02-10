@@ -1,7 +1,9 @@
 ---
-title: How to Plan Work for an Infrastructure Team
-date: June 13, 2022
+created_at: '2022-06-13T00:00:00Z'
+redirects_from: /essays/2022-06-13-how-to-plan-work-for-infrastructure-team
 ---
+
+# How to Plan Work for an Infrastructure Team
 
 Building tooling and systems for other engineers at a company can be tough. Project planning, in particular, presents a challenge. Infrastructure teams have several unique traits that hinder predictable planning.
 

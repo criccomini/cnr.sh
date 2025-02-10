@@ -1,7 +1,9 @@
 ---
-title: Using YARN with Cgroups
-date: June 14, 2013
+created_at: '2013-06-14T00:00:00Z'
+redirects_from: /essays/2013-06-14-yarn-with-cgroups
 ---
+
+# Using YARN with Cgroups
 
 I'm still a novice with Cgroups, but I thought it would be worth documenting how to set YARN up with them, since there seems to be a surprising lack of documentation on how to get this stuff going. I'm going to show you how to:
 

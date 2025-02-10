@@ -1,7 +1,9 @@
 ---
-title: One big cluster, or many small ones?
-date: August 14, 2017
+created_at: '2017-08-14T00:00:00Z'
+redirects_from: /essays/2017-08-14-one-big-cluster-many-small-ones
 ---
+
+# One big cluster, or many small ones?
 
 I bumped into something recently that seems to recur at every company I work for. Should we run one big cluster, or many smaller ones? The discussion is usually triggered when you have more than one team that wants to use the infrastructure in question.
 

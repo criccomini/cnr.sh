@@ -1,7 +1,9 @@
 ---
-title: The Future of Data Engineering
-date: July 29, 2019
+created_at: '2019-07-29T00:00:00Z'
+redirects_from: /essays/2019-07-29-future-of-data-engineering
 ---
+
+# The Future of Data Engineering
 
 I have been thinking lately about where we’ve come in data engineering over the past few years, and about what the future holds for work in this area. Most of this thought has been framed in the context of what some of our teams are doing at WePay, but I believe the framework below applies more broadly, and is worth sharing.
 

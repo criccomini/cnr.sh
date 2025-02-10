@@ -1,7 +1,9 @@
 ---
-title: Your First Technical Presentation
-date: October 23, 2018
+created_at: '2018-10-23T00:00:00Z'
+redirects_from: /essays/2018-10-23-your-first-technical-presentation
 ---
+
+# Your First Technical Presentation
 
 Congratulations! You've been picked you to give a technical presentation. People are interested in what you have to say, and you're excited and nervous. What now?
 

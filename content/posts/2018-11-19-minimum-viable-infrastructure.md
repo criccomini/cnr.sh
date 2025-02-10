@@ -1,7 +1,9 @@
 ---
-title: Minimum viable infrastructure
-date: November 19, 2018
+created_at: '2018-11-19T00:00:00Z'
+redirect_from: /essays/2018-11-19-minimum-viable-infrastructure
 ---
+
+# Minimum viable infrastructure
 
 We've been discussing building some new infrastructure at work. The project involves writing some fresh code and interfacing with some other systems that we've never used before. There are a lot of unknowns. During a discussion about the project, I found myself making the statement, **"Your goal is to build the smallest amount of the system while still providing value to at least one user."**
 

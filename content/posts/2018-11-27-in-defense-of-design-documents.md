@@ -1,7 +1,9 @@
 ---
-title: In defense of design documents
-date: November 27, 2018
+created_at: '2018-11-27T00:00:00Z'
+redirect_from: /essays/2018-11-27-in-defense-of-design-documents
 ---
+
+# In defense of design documents
 
 Design documents aren't just a chore; something that you begrudgingly slog through before getting to the fun work of writing code. Writing a design document might be challenging, but it should be a productive exercise that gets everyone on the same page. Let's start with what a design document is.
 

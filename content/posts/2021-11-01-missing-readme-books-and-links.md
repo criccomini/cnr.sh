@@ -1,7 +1,9 @@
 ---
-title: "The Missing README Software Engineering Links & Resources"
-date: November 1, 2021
+created_at: '2021-11-01T00:00:00Z'
+redirects_from: /essays/2021-11-01-missing-readme-books-and-links
 ---
+
+# The Missing README Software Engineering Links & Resources
 
 This page contains all books, links, and resources referenced in [The Missing README: A Guide for the New Software Engineer](https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca). If you find these resources useful, you might enjoy the book! You can [buy it on Amazon](https://www.amazon.com/gp/product/B08XM2CDZM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=missingreadme-20&creative=9325&linkCode=as2&creativeASIN=B08XM2CDZM&linkId=b8b400351a3448f858341fe3e5b69eca) or anywhere books are sold.
 

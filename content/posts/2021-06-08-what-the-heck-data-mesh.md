@@ -1,7 +1,9 @@
 ---
-title: What the Heck is a Data Mesh?!
-date: June 8, 2021
+created_at: '2021-06-08T00:00:00Z'
+redirects_from: /essays/2021-06-08-what-the-heck-data-mesh
 ---
+
+# What the Heck is a Data Mesh?!
 
 I got sucked into a data mesh  [Twitter thread](https://twitter.com/fulhack/status/1400461693197570051)  this weekend (it’s worth a read if you haven’t seen it). Data meshes have clearly struck a nerve. Some don’t understand them, while others believe they’re a bad idea. Yet, "Demystifying Data Mesh" and "Putting Data Mesh to Work" articles abound.
 

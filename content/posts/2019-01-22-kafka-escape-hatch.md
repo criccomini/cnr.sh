@@ -1,7 +1,9 @@
 ---
-title: Kafka is your escape hatch
-date: January 22, 2019
+created_at: '2019-01-22T00:00:00Z'
+redirects_from: /essays/2019-01-22-kafka-escape-hatch
 ---
+
+# Kafka is your escape hatch
 
 I've become much more comfortable with the idea of vendor lock-in. Or rather, I don't feel as locked in as I used to. The odd thing is, I'm using more proprietary systems than I ever have before (thanks to the cloud). Apache Kafka is what's making me comfortable. Specifically, Kafka connect.
 

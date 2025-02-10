@@ -1,9 +1,9 @@
 ---
-title: "AI at the Helm: Building an Entire Open Source Project With GPT-4"
-date: May 18, 2023
-redirects_from:
-    - /essays/2023-05-18-ai-helm-building-open-source-project-gpt-4
+created_at: '2023-05-18T00:00:00Z'
+redirects_from: /essays/2023-05-18-ai-helm-building-open-source-project-gpt-4
 ---
+
+# AI at the Helm: Building an Entire Open Source Project With GPT-4
 
 I've mostly been a [LLM](https://en.wikipedia.org/wiki/Large_language_model) and [GPT](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) skeptic. Every so often I'd bang my head against [ChatGPT](https://openai.com/blog/chatgpt), and it usually gave me junk. I'd wander off grumbling things jaded engineers grumble.
 
