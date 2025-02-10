@@ -1,6 +1,6 @@
 ---
 created_at: '2017-09-11T00:00:00Z'
-redirects_from: /essays/2017-09-11-trust-but-automate
+redirects_from: /essays/trust-but-automate
 ---
 
 # Trust, but automate

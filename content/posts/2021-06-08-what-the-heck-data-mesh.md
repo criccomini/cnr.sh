@@ -1,6 +1,6 @@
 ---
 created_at: '2021-06-08T00:00:00Z'
-redirects_from: /essays/2021-06-08-what-the-heck-data-mesh
+redirects_from: /essays/what-the-heck-data-mesh
 ---
 
 # What the Heck is a Data Mesh?!

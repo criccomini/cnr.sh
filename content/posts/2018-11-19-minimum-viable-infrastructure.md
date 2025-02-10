@@ -1,6 +1,6 @@
 ---
 created_at: '2018-11-19T00:00:00Z'
-redirects_from: /essays/2018-11-19-minimum-viable-infrastructure
+redirects_from: /essays/minimum-viable-infrastructure
 ---
 
 # Minimum viable infrastructure

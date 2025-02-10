@@ -1,6 +1,6 @@
 ---
 created_at: '2021-11-01T00:00:00Z'
-redirects_from: /essays/2021-11-01-missing-readme-books-and-links
+redirects_from: /essays/missing-readme-books-and-links
 ---
 
 # The Missing README Software Engineering Links & Resources

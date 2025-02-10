@@ -1,6 +1,6 @@
 ---
 created_at: '2012-09-25T00:00:00Z'
-redirects_from: /essays/2012-09-25-kill-subprocesses-linux-bash
+redirects_from: /essays/kill-subprocesses-linux-bash
 ---
 
 # Killing Subprocesses in Linux/Bash

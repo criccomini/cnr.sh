@@ -1,6 +1,6 @@
 ---
 created_at: '2012-10-22T00:00:00Z'
-redirects_from: /essays/2012-10-22-tech-exits
+redirects_from: /essays/tech-exits
 ---
 
 # Tech exits

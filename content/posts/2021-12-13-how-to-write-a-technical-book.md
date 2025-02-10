@@ -1,6 +1,6 @@
 ---
 created_at: '2021-12-13T00:00:00Z'
-redirects_from: /essays/2021-12-13-how-to-write-a-technical-book
+redirects_from: /essays/how-to-write-a-technical-book
 ---
 
 # How to Write a Technical Book

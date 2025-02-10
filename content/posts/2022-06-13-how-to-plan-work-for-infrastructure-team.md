@@ -1,6 +1,6 @@
 ---
 created_at: '2022-06-13T00:00:00Z'
-redirects_from: /essays/2022-06-13-how-to-plan-work-for-infrastructure-team
+redirects_from: /essays/how-to-plan-work-for-infrastructure-team
 ---
 
 # How to Plan Work for an Infrastructure Team

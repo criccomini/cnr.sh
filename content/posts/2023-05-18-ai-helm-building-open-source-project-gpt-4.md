@@ -1,6 +1,6 @@
 ---
 created_at: '2023-05-18T00:00:00Z'
-redirects_from: /essays/2023-05-18-ai-helm-building-open-source-project-gpt-4
+redirects_from: /essays/helm-building-open-source-project-gpt-4
 ---
 
 # AI at the Helm: Building an Entire Open Source Project With GPT-4

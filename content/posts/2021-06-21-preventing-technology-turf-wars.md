@@ -1,6 +1,6 @@
 ---
 created_at: '2021-06-21T00:00:00Z'
-redirects_from: /essays/2021-06-21-preventing-technology-turf-wars
+redirects_from: /essays/preventing-technology-turf-wars
 ---
 
 # Preventing Technology Turf Wars

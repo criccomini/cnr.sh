@@ -1,6 +1,6 @@
 ---
 created_at: '2017-08-29T00:00:00Z'
-redirects_from: /essays/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions
+redirects_from: /essays/how-paint-bike-shed-kafka-topic-naming-conventions
 ---
 
 # Kafka Topic Naming Conventions

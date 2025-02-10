@@ -1,6 +1,6 @@
 ---
 created_at: '2023-01-05T00:00:00Z'
-redirects_from: /essays/2023-01-05-recap-for-people-who-hate-data-catalogs
+redirects_from: /essays/recap-for-people-who-hate-data-catalogs
 ---
 
 # Recap: A Data Catalog for People Who Hate Data Catalogs

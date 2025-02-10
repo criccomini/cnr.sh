@@ -1,6 +1,6 @@
 ---
 created_at: '2017-08-21T00:00:00Z'
-redirects_from: /essays/2017-08-21-choosing-where-to-work
+redirects_from: /essays/choosing-where-to-work
 ---
 
 # Choosing Where to Work

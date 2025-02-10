@@ -1,6 +1,6 @@
 ---
 created_at: '2017-08-14T00:00:00Z'
-redirects_from: /essays/2017-08-14-one-big-cluster-many-small-ones
+redirects_from: /essays/one-big-cluster-many-small-ones
 ---
 
 # One big cluster, or many small ones?

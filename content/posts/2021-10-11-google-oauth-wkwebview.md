@@ -1,6 +1,6 @@
 ---
 created_at: '2021-10-11T00:00:00Z'
-redirects_from: /essays/2021-10-11-google-oauth-wkwebview
+redirects_from: /essays/google-oauth-wkwebview
 ---
 
 # OAuth "Sign In With Google" in a WkWebView

@@ -1,6 +1,6 @@
 ---
 created_at: '2018-11-12T00:00:00Z'
-redirects_from: /essays/2018-11-12-dont-tell-people-what-to-do-ask-them-how-to-do-it
+redirects_from: /essays/dont-tell-people-what-to-do-ask-them-how-to-do-it
 ---
 
 # Don't tell people what to do, ask them how to do it

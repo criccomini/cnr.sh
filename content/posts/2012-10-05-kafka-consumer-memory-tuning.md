@@ -1,6 +1,6 @@
 ---
 created_at: '2012-10-05T00:00:00Z'
-redirects_from: /essays/2012-10-05-kafka-consumer-memory-tuning
+redirects_from: /essays/kafka-consumer-memory-tuning
 ---
 
 # Kafka Consumer Memory Tuning

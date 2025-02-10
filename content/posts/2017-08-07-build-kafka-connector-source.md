@@ -1,6 +1,6 @@
 ---
 created_at: '2017-08-07T00:00:00Z'
-redirects_from: /essays/2017-08-07-build-kafka-connector-source
+redirects_from: /essays/build-kafka-connector-source
 ---
 
 # So, you want to build a Kafka Connector? Source edition.

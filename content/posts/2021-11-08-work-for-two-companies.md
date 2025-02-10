@@ -1,6 +1,6 @@
 ---
 created_at: '2021-11-08T00:00:00Z'
-redirects_from: /essays/2021-11-08-work-for-two-companies
+redirects_from: /essays/work-for-two-companies
 ---
 
 # Work for Two Companies

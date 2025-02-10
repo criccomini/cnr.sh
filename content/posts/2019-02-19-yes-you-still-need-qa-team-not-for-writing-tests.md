@@ -1,6 +1,6 @@
 ---
 created_at: '2019-02-19T00:00:00Z'
-redirects_from: /essays/2019-02-19-yes-you-still-need-qa-team-not-for-writing-tests
+redirects_from: /essays/yes-you-still-need-qa-team-not-for-writing-tests
 ---
 
 # Yes, you still need a QA team (but not for writing your tests)

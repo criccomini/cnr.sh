@@ -1,6 +1,6 @@
 ---
 created_at: '2018-10-23T00:00:00Z'
-redirects_from: /essays/2018-10-23-your-first-technical-presentation
+redirects_from: /essays/your-first-technical-presentation
 ---
 
 # Your First Technical Presentation

@@ -1,6 +1,6 @@
 ---
 created_at: '2018-10-29T00:00:00Z'
-redirects_from: /essays/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack
+redirects_from: /essays/models-microservices-should-be-using-same-continuous-delivery-stack
 ---
 
 # Models and microservices should be running on the same continuous delivery stack

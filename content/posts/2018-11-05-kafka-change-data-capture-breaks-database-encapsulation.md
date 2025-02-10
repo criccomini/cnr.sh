@@ -1,6 +1,6 @@
 ---
 created_at: '2018-11-05T00:00:00Z'
-redirects_from: /essays/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation
+redirects_from: /essays/kafka-change-data-capture-breaks-database-encapsulation
 ---
 
 # Kafka change data capture breaks database encapsulation

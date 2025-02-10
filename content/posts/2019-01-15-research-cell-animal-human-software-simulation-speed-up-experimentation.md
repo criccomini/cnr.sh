@@ -1,6 +1,6 @@
 ---
 created_at: '2019-01-15T00:00:00Z'
-redirects_from: /essays/2019-01-15-research-cell-animal-human-software-simulation-speed-up-experimentation
+redirects_from: /essays/research-cell-animal-human-software-simulation-speed-up-experimentation
 ---
 
 # Research in cell, animal, and human software simulation can speed up experimentation

@@ -1,6 +1,6 @@
 ---
 created_at: '2019-01-22T00:00:00Z'
-redirects_from: /essays/2019-01-22-kafka-escape-hatch
+redirects_from: /essays/kafka-escape-hatch
 ---
 
 # Kafka is your escape hatch

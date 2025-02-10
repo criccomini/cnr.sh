@@ -1,6 +1,6 @@
 ---
 created_at: '2019-02-04T00:00:00Z'
-redirects_from: /essays/2019-02-04-managing-kafka-topic-configuration
+redirects_from: /essays/managing-kafka-topic-configuration
 ---
 
 # Managing Kafka topic configuration

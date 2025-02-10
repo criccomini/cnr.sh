@@ -1,6 +1,6 @@
 ---
 created_at: '2013-06-14T00:00:00Z'
-redirects_from: /essays/2013-06-14-yarn-with-cgroups
+redirects_from: /essays/yarn-with-cgroups
 ---
 
 # Using YARN with Cgroups

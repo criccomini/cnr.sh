@@ -1,6 +1,6 @@
 ---
 created_at: '2009-11-13T00:00:00Z'
-redirects_from: essays/2009-11-13-sort-reducer-input-value-hadoop
+redirects_from: /essays/sort-reducer-input-value-hadoop
 ---
 
 # Sorting Reducer Input Values in Hadoop

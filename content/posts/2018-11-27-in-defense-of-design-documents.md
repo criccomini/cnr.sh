@@ -1,6 +1,6 @@
 ---
 created_at: '2018-11-27T00:00:00Z'
-redirects_from: /essays/2018-11-27-in-defense-of-design-documents
+redirects_from: /essays/in-defense-of-design-documents
 ---
 
 # In defense of design documents
