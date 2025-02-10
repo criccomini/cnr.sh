@@ -12,7 +12,13 @@
 {%- for entry in entries -%}
 <li>
 <a href="{{ entry.link }}">{{ entry.title }}</a>
-<sub>{{ entry.created_at | date: '%B %-d, %Y' }}</sub>
+<sub>{{ entry.created_at | date: '%B %-d, %Y' }}
+{%- for tag in entry.tags -%}
+    {%- if forloop.first == true %} • {% endif -%}
+    #{{ tag }}
+    {%- if forloop.last == false %}, {% endif -%}
+{%- endfor -%}
+</sub>
 </li>
 {%- endfor -%}
 </ul>
