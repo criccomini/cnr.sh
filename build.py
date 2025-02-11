@@ -27,7 +27,7 @@ sitemap("site/**/*.md", site_url="https://cnr.sh")
 def _hide_from_nav(md, _):
     frontmatter = md.frontmatter()
     siblings = frontmatter.get("siblings", [])
-    siblings = filter(lambda s: s not in ["404.md", "colophon.md"], siblings)
+    siblings = filter(lambda s: s not in ["404.md", "colophon.md", "newsletter.md"], siblings)
     md.update_frontmatter({"siblings": list(siblings)})
     md.save()
 transform("site/index.md", _hide_from_nav)
