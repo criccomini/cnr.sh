@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:bf35b9fa74f0e3983954544c44be8a41261dafe3bae8793ab06cfa9158ffbf72"
+content_hash = "sha256:36f07d128c0eb7ba4aab059b3ffff89bc861b5262c1feec69931e234f4aca90d"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -122,7 +122,7 @@ files = [
 
 [[package]]
 name = "markupdown"
-version = "0.2.2"
+version = "0.2.3"
 requires_python = "<3.13,>=3.10"
 summary = "A modular static site generator in Python"
 groups = ["default"]
@@ -139,8 +139,8 @@ dependencies = [
     "pyyaml>=6.0.2",
 ]
 files = [
-    {file = "markupdown-0.2.2-py3-none-any.whl", hash = "sha256:46349880bfd1b3e15b55ef23c830e196f77ad193c23360e3c46f2f42cfb9ed62"},
-    {file = "markupdown-0.2.2.tar.gz", hash = "sha256:9e9822c9eab0ec6cf3cb5994a4be9786a2f3fbf54ec6739c0ead6a7bf42dc1c4"},
+    {file = "markupdown-0.2.3-py3-none-any.whl", hash = "sha256:203e0d1e9b519f319fa935c335529d8378af9f6c186a8e110d256f4056ce7e32"},
+    {file = "markupdown-0.2.3.tar.gz", hash = "sha256:9a2d6a06a9b573d4c6c953dfa78f98eec48f57804bc97d008e8bbb6cc26d395b"},
 ]
 
 [[package]]
