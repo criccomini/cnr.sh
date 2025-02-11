@@ -118,3 +118,9 @@ nav.links ul li:not(:last-child) {
 nav.links ul li sub {
     display: block;
 }
+
+blockquote {
+    border-left: 2px solid #415A77;
+    padding-left: 1rem;
+    margin-left: 0rem;
+}

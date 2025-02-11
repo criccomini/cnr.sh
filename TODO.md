@@ -1,4 +1,5 @@
+- Add left bar for quote blocks
+- Add changelog and backrefs to posts
 - Add colophon
 - Track links with linkwarden.app
-- Add changelog and backrefs to posts
-- Add left bar for quote blocks
+- Automate weekly emails
