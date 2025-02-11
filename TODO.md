@@ -1,4 +1,2 @@
-- Add changelog and backrefs to posts
-- Add colophon
 - Track links with linkwarden.app
 - Automate weekly emails
