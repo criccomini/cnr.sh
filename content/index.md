@@ -2,7 +2,7 @@
 title: Home
 ---
 
-Hi! I'm Chris Riccomini, a software engineer, author, investor, and advisor.
+Hi! I'm Chris Riccomini, a software engineer, author, and investor.
 
 I write [posts](posts/index.md) and give [talks](talks.md). Subscribe to my [newsletter](https://materializedview.io) or follow me on [Bluesky](https://bsky.app/profile/chris.blue) <i class="fab fa-bluesky"></i> for updates!
 

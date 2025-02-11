@@ -90,15 +90,9 @@ html {
     font-size: 18px;
 }
 
-@media (max-width: 1024px) {
-    html {
-        font-size: 14px;
-    }
-}
-
 @media (max-width: 768px) {
-    html {
-        font-size: 14px;
+    body {
+        padding: 1rem;
     }
 
     header {
