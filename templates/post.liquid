@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "_head.liquid" -%}
+</head>
+<body>
+{% include "_header.liquid" -%}
+<main>
+{{ content }}
+{% include "_refs.liquid" %}
+</main>
+{%- include "_footer.liquid" -%}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{%- if page.references -%}
+<hr/>
+<h4>References</h4>
+{%- assign entries = page.references | frontmatter -%}
+{% render '_links.liquid', links: entries %}
+{%- endif -%}
+
+{%- if page.backreferences -%}
+<hr/>
+<h4>Back References</h4>
+{%- assign entries = page.backreferences | frontmatter -%}
+{% render '_links.liquid', links: entries %}
+{%- endif -%}
+
+{%- if page.changelog -%}
+<hr/>
+<h4>Changelog</h4>
+<ul>
+{%- for changelog in page.changelog -%}
+<li><strong>{{ changelog.message }}</strong> by {{ changelog.author }} on {{ changelog.date | date: '%B %-d, %Y' }}</li>
+{%- endfor -%}
+</ul>
+{%- endif -%}
