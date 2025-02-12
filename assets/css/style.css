@@ -13,7 +13,7 @@ nav, header, footer, main, h1, h2, h3, h4, h5, h6, p {
 
 h1:not(header h1), h2, h3, h4, h5, h6 {
     margin: 1rem 0rem;
-    line-height: 100%;
+    line-height: 120%;
 }
 
 main, header, footer, nav:not(header nav) {
