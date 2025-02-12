@@ -21,6 +21,8 @@ One of the paradoxes of Apache is that it does such a good job educating develop
 > Learn the rules like a pro, so you can break them like an artist
 > --Picasso
 
+## BDFL
+
 Apache simply doesn't allow you to make these choices. As my work on Airflow died down, I swore I would never do another foundation. Instead, I committed to being a [benevolent dictator for life](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life) (BDFL) for all future projects. The BDFL model was popularized by [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum), creator of Python. Many successful projects have BDFs including Ethereum, Clojure, Django, Zig, Ruby, and even Linux.
 
 My commitment to BDFL conflated two things, though. A benevolent dictator is a governance model, not a foundation. Even Python, which pioneered the BDFL model, has the [Python Software Foundation](https://www.python.org/psf-landing/). If you go with the BDFL model, you still need to manage and promote your project--the stuff I listed above.
