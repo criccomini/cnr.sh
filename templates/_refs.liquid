@@ -17,7 +17,7 @@
 <h4>Changelog</h4>
 <ul>
 {%- for changelog in page.changelog -%}
-<li><strong>{{ changelog.message }}</strong> by {{ changelog.author }} on {{ changelog.date | date: '%B %-d, %Y' }}</li>
+<li><strong>{{ changelog.message }}</strong> on {{ changelog.date | date: '%B %-d, %Y' }}</li>
 {%- endfor -%}
 </ul>
 {%- endif -%}
