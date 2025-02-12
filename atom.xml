@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>https://cnr.sh</id>
+  <title>Chris Riccomini</title>
+  <updated>2025-02-12T23:58:31.577580+00:00</updated>
+  <link href="https://cnr.sh" rel="alternate"/>
+  <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
+  <subtitle>Chris Riccomini's blog</subtitle>
+  <entry>
+    <id>https://cnr.sh/posts/2019-02-19-yes-you-still-need-qa-team-not-for-writing-tests</id>
+    <title>Yes, you still need a QA team (but not for writing your tests)</title>
+    <updated>2025-02-12T23:58:31.759846+00:00</updated>
+    <content># Yes, you still need a QA team (but not for writing your tests)</content>
+    <link href="https://cnr.sh/posts/2019-02-19-yes-you-still-need-qa-team-not-for-writing-tests"/>
+    <published>2019-02-19T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2023-01-05-recap-for-people-who-hate-data-catalogs</id>
+    <title>Recap: A Data Catalog for People Who Hate Data Catalogs</title>
+    <updated>2025-02-12T23:58:31.757452+00:00</updated>
+    <content># Recap: A Data Catalog for People Who Hate Data Catalogs</content>
+    <link href="https://cnr.sh/posts/2023-01-05-recap-for-people-who-hate-data-catalogs"/>
+    <published>2023-01-05T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2018-11-19-minimum-viable-infrastructure</id>
+    <title>Minimum viable infrastructure</title>
+    <updated>2025-02-12T23:58:31.753879+00:00</updated>
+    <content># Minimum viable infrastructure</content>
+    <link href="https://cnr.sh/posts/2018-11-19-minimum-viable-infrastructure"/>
+    <published>2018-11-19T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2018-10-23-your-first-technical-presentation</id>
+    <title>Your First Technical Presentation</title>
+    <updated>2025-02-12T23:58:31.750796+00:00</updated>
+    <content># Your First Technical Presentation</content>
+    <link href="https://cnr.sh/posts/2018-10-23-your-first-technical-presentation"/>
+    <published>2018-10-23T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2018-11-27-in-defense-of-design-documents</id>
+    <title>In defense of design documents</title>
+    <updated>2025-02-12T23:58:31.745144+00:00</updated>
+    <content># In defense of design documents</content>
+    <link href="https://cnr.sh/posts/2018-11-27-in-defense-of-design-documents"/>
+    <published>2018-11-27T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2013-06-14-yarn-with-cgroups</id>
+    <title>Using YARN with Cgroups</title>
+    <updated>2025-02-12T23:58:31.741940+00:00</updated>
+    <content># Using YARN with Cgroups</content>
+    <link href="https://cnr.sh/posts/2013-06-14-yarn-with-cgroups"/>
+    <published>2013-06-14T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions</id>
+    <title>Kafka Topic Naming Conventions</title>
+    <updated>2025-02-12T23:58:31.736507+00:00</updated>
+    <content># Kafka Topic Naming Conventions</content>
+    <link href="https://cnr.sh/posts/2017-08-29-how-paint-bike-shed-kafka-topic-naming-conventions"/>
+    <published>2017-08-29T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2017-08-07-build-kafka-connector-source</id>
+    <title>So, you want to build a Kafka Connector? Source edition.</title>
+    <updated>2025-02-12T23:58:31.730889+00:00</updated>
+    <content># So, you want to build a Kafka Connector? Source edition.</content>
+    <link href="https://cnr.sh/posts/2017-08-07-build-kafka-connector-source"/>
+    <published>2017-08-07T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2012-09-29-streaming-live-sports-schedule-scores-stats-api</id>
+    <title>Schedules &amp; Scores API for Streaming Live Sports Stats</title>
+    <updated>2025-02-12T23:58:31.722578+00:00</updated>
+    <content># Schedules &amp; Scores API for Streaming Live Sports Stats</content>
+    <link href="https://cnr.sh/posts/2012-09-29-streaming-live-sports-schedule-scores-stats-api"/>
+    <published>2012-09-29T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2019-01-15-research-cell-animal-human-software-simulation-speed-up-experimentation</id>
+    <title>Research in cell, animal, and human software simulation can speed up experimentation</title>
+    <updated>2025-02-12T23:58:31.716722+00:00</updated>
+    <content># Research in cell, animal, and human software simulation can speed up experimentation</content>
+    <link href="https://cnr.sh/posts/2019-01-15-research-cell-animal-human-software-simulation-speed-up-experimentation"/>
+    <published>2019-01-15T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack</id>
+    <title>Models and microservices should be running on the same continuous delivery stack</title>
+    <updated>2025-02-12T23:58:31.713688+00:00</updated>
+    <content># Models and microservices should be running on the same continuous delivery stack</content>
+    <link href="https://cnr.sh/posts/2018-10-29-models-microservices-should-be-using-same-continuous-delivery-stack"/>
+    <published>2018-10-29T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2022-06-13-how-to-plan-work-for-infrastructure-team</id>
+    <title>How to Plan Work for an Infrastructure Team</title>
+    <updated>2025-02-12T23:58:31.707637+00:00</updated>
+    <content># How to Plan Work for an Infrastructure Team</content>
+    <link href="https://cnr.sh/posts/2022-06-13-how-to-plan-work-for-infrastructure-team"/>
+    <published>2022-06-13T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2019-02-04-managing-kafka-topic-configuration</id>
+    <title>Managing Kafka topic configuration</title>
+    <updated>2025-02-12T23:58:31.702533+00:00</updated>
+    <content># Managing Kafka topic configuration</content>
+    <link href="https://cnr.sh/posts/2019-02-04-managing-kafka-topic-configuration"/>
+    <published>2019-02-04T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2012-09-25-kill-subprocesses-linux-bash</id>
+    <title>Killing Subprocesses in Linux/Bash</title>
+    <updated>2025-02-12T23:58:31.697740+00:00</updated>
+    <content># Killing Subprocesses in Linux/Bash</content>
+    <link href="https://cnr.sh/posts/2012-09-25-kill-subprocesses-linux-bash"/>
+    <published>2012-09-25T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2021-11-01-missing-readme-books-and-links</id>
+    <title>The Missing README Software Engineering Links &amp; Resources</title>
+    <updated>2025-02-12T23:58:31.694460+00:00</updated>
+    <content># The Missing README Software Engineering Links &amp; Resources</content>
+    <link href="https://cnr.sh/posts/2021-11-01-missing-readme-books-and-links"/>
+    <published>2021-11-01T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts</id>
+    <title>Posts</title>
+    <updated>2025-02-12T23:58:31.687147+00:00</updated>
+    <content># Posts</content>
+    <link href="https://cnr.sh/posts"/>
+    <published>2025-02-11T02:34:29+08:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2021-12-13-how-to-write-a-technical-book</id>
+    <title>How to Write a Technical Book</title>
+    <updated>2025-02-12T23:58:31.686412+00:00</updated>
+    <content># How to Write a Technical Book</content>
+    <link href="https://cnr.sh/posts/2021-12-13-how-to-write-a-technical-book"/>
+    <published>2021-12-13T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2021-11-08-work-for-two-companies</id>
+    <title>Work for Two Companies</title>
+    <updated>2025-02-12T23:58:31.678482+00:00</updated>
+    <content># Work for Two Companies</content>
+    <link href="https://cnr.sh/posts/2021-11-08-work-for-two-companies"/>
+    <published>2021-11-08T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2018-11-12-dont-tell-people-what-to-do-ask-them-how-to-do-it</id>
+    <title>Don't tell people what to do, ask them how to do it</title>
+    <updated>2025-02-12T23:58:31.676524+00:00</updated>
+    <content># Don't tell people what to do, ask them how to do it</content>
+    <link href="https://cnr.sh/posts/2018-11-12-dont-tell-people-what-to-do-ask-them-how-to-do-it"/>
+    <published>2018-11-12T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/comparing-apache-cncf-commonhaus</id>
+    <title>Comparing Apache, CNCF, and Commonhaus</title>
+    <updated>2025-02-12T23:58:31.672361+00:00</updated>
+    <content># Comparing Apache, CNCF, and Commonhaus</content>
+    <link href="https://cnr.sh/posts/comparing-apache-cncf-commonhaus"/>
+    <published>2025-02-13T05:23:23+08:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation</id>
+    <title>Kafka change data capture breaks database encapsulation</title>
+    <updated>2025-02-12T23:58:31.664260+00:00</updated>
+    <content># Kafka change data capture breaks database encapsulation</content>
+    <link href="https://cnr.sh/posts/2018-11-05-kafka-change-data-capture-breaks-database-encapsulation"/>
+    <published>2018-11-05T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2021-06-21-preventing-technology-turf-wars</id>
+    <title>Preventing Technology Turf Wars</title>
+    <updated>2025-02-12T23:58:31.655034+00:00</updated>
+    <content># Preventing Technology Turf Wars</content>
+    <link href="https://cnr.sh/posts/2021-06-21-preventing-technology-turf-wars"/>
+    <published>2021-06-21T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2009-11-13-sort-reducer-input-value-hadoop</id>
+    <title>Sorting Reducer Input Values in Hadoop</title>
+    <updated>2025-02-12T23:58:31.648422+00:00</updated>
+    <content># Sorting Reducer Input Values in Hadoop</content>
+    <link href="https://cnr.sh/posts/2009-11-13-sort-reducer-input-value-hadoop"/>
+    <published>2009-11-13T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2017-08-21-choosing-where-to-work</id>
+    <title>Choosing Where to Work</title>
+    <updated>2025-02-12T23:58:31.645477+00:00</updated>
+    <content># Choosing Where to Work</content>
+    <link href="https://cnr.sh/posts/2017-08-21-choosing-where-to-work"/>
+    <published>2017-08-21T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2021-06-08-what-the-heck-data-mesh</id>
+    <title>What the Heck is a Data Mesh?!</title>
+    <updated>2025-02-12T23:58:31.639154+00:00</updated>
+    <content># What the Heck is a Data Mesh?!</content>
+    <link href="https://cnr.sh/posts/2021-06-08-what-the-heck-data-mesh"/>
+    <published>2021-06-08T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2012-10-22-tech-exits</id>
+    <title>Tech exits</title>
+    <updated>2025-02-12T23:58:31.628965+00:00</updated>
+    <content># Tech exits</content>
+    <link href="https://cnr.sh/posts/2012-10-22-tech-exits"/>
+    <published>2012-10-22T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2021-10-11-google-oauth-wkwebview</id>
+    <title>OAuth "Sign In With Google" in a WkWebView</title>
+    <updated>2025-02-12T23:58:31.616145+00:00</updated>
+    <content># OAuth "Sign In With Google" in a WkWebView</content>
+    <link href="https://cnr.sh/posts/2021-10-11-google-oauth-wkwebview"/>
+    <published>2021-10-11T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2023-05-18-ai-helm-building-open-source-project-gpt-4</id>
+    <title>AI at the Helm: Building an Entire Open Source Project With GPT-4</title>
+    <updated>2025-02-12T23:58:31.612634+00:00</updated>
+    <content># AI at the Helm: Building an Entire Open Source Project With GPT-4</content>
+    <link href="https://cnr.sh/posts/2023-05-18-ai-helm-building-open-source-project-gpt-4"/>
+    <published>2023-05-18T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2019-01-22-kafka-escape-hatch</id>
+    <title>Kafka is your escape hatch</title>
+    <updated>2025-02-12T23:58:31.607265+00:00</updated>
+    <content># Kafka is your escape hatch</content>
+    <link href="https://cnr.sh/posts/2019-01-22-kafka-escape-hatch"/>
+    <published>2019-01-22T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2012-10-05-kafka-consumer-memory-tuning</id>
+    <title>Kafka Consumer Memory Tuning</title>
+    <updated>2025-02-12T23:58:31.605092+00:00</updated>
+    <content># Kafka Consumer Memory Tuning</content>
+    <link href="https://cnr.sh/posts/2012-10-05-kafka-consumer-memory-tuning"/>
+    <published>2012-10-05T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2017-08-14-one-big-cluster-many-small-ones</id>
+    <title>One big cluster, or many small ones?</title>
+    <updated>2025-02-12T23:58:31.602766+00:00</updated>
+    <content># One big cluster, or many small ones?</content>
+    <link href="https://cnr.sh/posts/2017-08-14-one-big-cluster-many-small-ones"/>
+    <published>2017-08-14T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2017-09-11-trust-but-automate</id>
+    <title>Trust, but automate</title>
+    <updated>2025-02-12T23:58:31.596930+00:00</updated>
+    <content># Trust, but automate</content>
+    <link href="https://cnr.sh/posts/2017-09-11-trust-but-automate"/>
+    <published>2017-09-11T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/posts/2019-07-29-future-data-engineering</id>
+    <title>The Future of Data Engineering</title>
+    <updated>2025-02-12T23:58:31.593026+00:00</updated>
+    <content># The Future of Data Engineering</content>
+    <link href="https://cnr.sh/posts/2019-07-29-future-data-engineering"/>
+    <published>2019-07-29T00:00:00+00:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/talks</id>
+    <title>Talks</title>
+    <updated>2025-02-12T23:58:31.584977+00:00</updated>
+    <content># Talks</content>
+    <link href="https://cnr.sh/talks"/>
+    <published>2025-02-11T02:34:29+08:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/colophon</id>
+    <title>Colophon</title>
+    <updated>2025-02-12T23:58:31.583123+00:00</updated>
+    <content># Colophon</content>
+    <link href="https://cnr.sh/colophon"/>
+    <published>2025-02-11T09:45:25+08:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/.</id>
+    <title>Home</title>
+    <updated>2025-02-12T23:58:31.582121+00:00</updated>
+    <content>Hi! I'm Chris, a software engineer, author, and investor.</content>
+    <link href="https://cnr.sh/."/>
+    <published>2025-02-11T02:34:29+08:00</published>
+  </entry>
+  <entry>
+    <id>https://cnr.sh/404</id>
+    <title>Oops!</title>
+    <updated>2025-02-12T23:58:31.580146+00:00</updated>
+    <content>You've landed on a page that doesn't exist.</content>
+    <link href="https://cnr.sh/404"/>
+    <published>2025-02-11T02:34:29+08:00</published>
+  </entry>
+</feed>
