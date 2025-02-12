@@ -118,3 +118,7 @@ blockquote {
     padding-left: 1rem;
     margin-left: 0rem;
 }
+
+div.twitter-tweet, div.bluesky-embed {
+    margin: 0 auto;
+}
