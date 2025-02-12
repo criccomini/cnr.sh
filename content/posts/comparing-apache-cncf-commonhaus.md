@@ -4,8 +4,6 @@ I've used open source projects for over 30 years and contributed for about 20 of
 
 Open source foundations offer a wide range of services. Such services commonly include legal guidance, trademark management, a governance structure, a code of conduct, software infrastructure, funding, grants, community support, marketing, conferences, and a lot more. Some, like CNCF and Apache, are quite expansive. Others, like Commonhaus, are more minimal. Which foundation is right for you depends on your project's needs.
 
-**_(skip to the bottom for a tl;dr)_**
-
 ## Apache
 
 Apache is the most well known of the open source foundations. It offers most of the services listed above. It's also home to many successful projects, including Apache Kafka, Apache Flink, Apache Hadoop, Apache Spark, and Apache Airflow. The foundation adopts [The Apache Way](https://www.apache.org/theapacheway/), a set of values and principles that guide operations and decision-making.
