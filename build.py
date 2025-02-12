@@ -37,7 +37,10 @@ transform("site/posts/*.md", lambda md, _: md.update_frontmatter({"template": "p
 transform("site/*/index.md", lambda md, _: md.update_frontmatter({"template": "index"}))
 
 # Render site
-render("site/**/*.md", site={"title": "cnr.sh"})
+render("site/**/*.md", site={
+    "title": "cnr.sh",
+    "image": "images/shoes.png",
+})
 
 # Move 404.html to site/404.html
 cp("site/404/index.html", "site/404.html")

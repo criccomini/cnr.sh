@@ -26,8 +26,9 @@
 <meta name="twitter:description" content="{{ page.blurb }}">
 <meta property="og:description" content="{{ page.blurb }}">
 {%- endif -%}
-{%- if page.image %}
-<meta name="twitter:image" content="{{ page.image }}">
-<meta property="og:image" content="{{ page.image }}">
+{%- if page.image or site.image %}
+{% assign image = page.image | default: site.image %}
+<meta name="twitter:image" content="{{ image }}">
+<meta property="og:image" content="{{ image }}">
 {% endif -%}
 <script src="https://tinylytics.app/embed/DsgFkjZH7dLkhSPiTKbn.js" defer></script>
