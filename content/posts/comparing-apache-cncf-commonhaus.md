@@ -69,12 +69,12 @@ It's not all roses, of course. Commonhaus is very young, so it could grow a lot 
 
 ## tl;dr
 
-So, which foundation is right for you? As staff software engineers say, "it depends". I started to write out a full-fledged decision tree, but there are too many variables to consider. Instead, here's some vibes-based guidance:
+So, which foundation is right for you? As staff software engineers say, "it depends". I started to write out a full decision tree, but there are too many variables to consider. Instead, here's some vibes-based guidance:
 
 - Always start as a BDFL.
 - Stay a BDFL as long as your project is new, small, or doesn't have companies depending on it.
-- Never use Apache.
 - Use CNCF if you don't know what you're doing, if you want help with branding and marketing, or if you're backed by a company that wants to pay CNCF.
+- Use Apache if you want to use CNCF but they reject you.
 - Use Commonhaus if you know what you're doing and want flexibility. If you're a SaaS vendor with an AGPL license, use Commonhaus.
 
 This list is non-exhaustive. I'm sure there will be much to quibble over.
