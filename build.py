@@ -39,7 +39,7 @@ transform("site/*/index.md", lambda md, _: md.update_frontmatter({"template": "i
 # Render site
 render("site/**/*.md", site={
     "title": "cnr.sh",
-    "image": "images/shoes.png",
+    "image": "/images/shoes.png",
 })
 
 # Move 404.html to site/404.html
