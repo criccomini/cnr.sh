@@ -9,6 +9,7 @@ cp("CNAME", "site")
 # Update markdown frontmatter
 title("site/**/*.md")
 link("site/**/*.md")
+toc("site/**/*.md")
 blurb("site/**/*.md")
 siblings("site/**/index.md")
 children("site/**/index.md")
