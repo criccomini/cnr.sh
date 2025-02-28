@@ -1,5 +1,7 @@
 /* https://coolors.co/0d1b2a-1b263b-415a77-778da9-e0e1dd */
 body {
+    padding: 0rem;
+    margin: 0rem;
     background-color: #E0E1DD;
     color: #415A77;
     /* From bootstrap */
@@ -22,7 +24,7 @@ main, header, footer, nav:not(header nav) {
     line-height: 150%;
 }
 
-main, header, footer {
+main, footer {
     margin: 2.5rem auto;
 }
 
@@ -32,6 +34,8 @@ img {
 
 header {
     display: flex;
+    margin: 0 auto;
+    padding-top: 2.5rem;
 }
 
 header h1 {
@@ -97,6 +101,7 @@ html {
 
     header {
         margin: 0;
+        padding: 0;
     }
 }
 
